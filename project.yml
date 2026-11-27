@@ -1,0 +1,94 @@
+name: ChanCuocGoi
+fileGroups:
+  - Config/Signing.xcconfig
+  - ios/Entitlements
+options:
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+  developmentLanguage: vi
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "16.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SUPPORTS_MACCATALYST: NO
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+    SWIFT_STRICT_CONCURRENCY: minimal
+packages:
+  BlockerCore:
+    path: BlockerCore
+targets:
+  ChanCuocGoi:
+    type: application
+    platform: iOS
+    sources:
+      - path: ios/App
+        excludes:
+          - Info.plist
+      - path: ios/Shared
+    dependencies:
+      - package: BlockerCore
+        product: BlockerCore
+      - target: CallDirectoryExtension
+        embed: true
+    configFiles:
+      Debug: Config/App.xcconfig
+      Release: Config/App.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(APP_BUNDLE_ID)
+        PRODUCT_NAME: ChanCuocGoi
+        INFOPLIST_FILE: ios/App/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: YES
+        TARGETED_DEVICE_FAMILY: "1"
+  CallDirectoryExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ios/Extension
+        excludes:
+          - Info.plist
+      - path: ios/Shared
+    dependencies:
+      - package: BlockerCore
+        product: BlockerCore
+    configFiles:
+      Debug: Config/Extension.xcconfig
+      Release: Config/Extension.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(EXTENSION_BUNDLE_ID)
+        PRODUCT_NAME: CallDirectoryExtension
+        PRODUCT_MODULE_NAME: CallDirectoryExtension
+        INFOPLIST_FILE: ios/Extension/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SKIP_INSTALL: YES
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  ChanCuocGoi:
+    build:
+      targets:
+        ChanCuocGoi: all
+        CallDirectoryExtension: all
+    run:
+      config: Debug
+      executable: ChanCuocGoi
+    test:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

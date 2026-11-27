@@ -1,0 +1,36 @@
+// =============================================================================
+// MỘT FILE DUY NHẤT cần sửa trước khi build.
+// Đổi Team, prefix bundle id, và bật/tắt App Group tại đây.
+// App Group luôn là group.<BUNDLE_PREFIX>. Extension là <BUNDLE_PREFIX>.CallDirectory.
+// Sau khi sửa, build lại. Chỉ chạy `xcodegen generate` khi đổi project.yml.
+// =============================================================================
+//
+// PERSONAL TEAM (Apple ID miễn phí, chưa có Apple Developer Program):
+//   TEAM_ID = mã 10 ký tự của Personal Team, hoặc để trống rồi chọn Team trong Xcode.
+//   ENABLE_APP_GROUPS = NO     ← mặc định, để ký và cài được.
+//   Muốn THỬ App Group (trang capability của Apple đang đánh dấu có trên
+//   tài khoản miễn phí, nhưng Xcode thường từ chối): đặt YES. Nếu ký lỗi
+//   "Personal development teams do not support the App Groups capability",
+//   đặt lại NO. App vẫn chạy, quy tắc lưu cục bộ, chưa chặn cuộc gọi.
+//
+// KHI ĐÃ CÓ APPLE DEVELOPER PROGRAM (trả phí):
+//   TEAM_ID = mã team trả phí (10 ký tự, khác Personal Team).
+//   ENABLE_APP_GROUPS = YES
+//   Xóa app cũ trên iPhone nếu đổi team (iOS không cho cài đè khác team),
+//   rồi cài lại. Trước khi xóa, bấm Xuất quy tắc trong app.
+//
+// ENABLE_APP_GROUPS chỉ nhận YES hoặc NO (chữ hoa).
+
+TEAM_ID =
+BUNDLE_PREFIX = dev.changeme.chancuocgoi
+ENABLE_APP_GROUPS = NO
+
+APP_BUNDLE_ID = $(BUNDLE_PREFIX)
+EXTENSION_BUNDLE_ID = $(BUNDLE_PREFIX).CallDirectory
+APP_GROUP_ID = group.$(BUNDLE_PREFIX)
+DEVELOPMENT_TEAM = $(TEAM_ID)
+
+APP_ENTITLEMENTS_NO = ios/Entitlements/App.NoGroup.entitlements
+APP_ENTITLEMENTS_YES = ios/Entitlements/App.AppGroup.entitlements
+EXTENSION_ENTITLEMENTS_NO = ios/Entitlements/Extension.NoGroup.entitlements
+EXTENSION_ENTITLEMENTS_YES = ios/Entitlements/Extension.AppGroup.entitlements

@@ -1,0 +1,4 @@
+// Đừng sửa file này. Team, bundle id và App Group nằm trong Signing.xcconfig.
+#include "Signing.xcconfig"
+
+CODE_SIGN_ENTITLEMENTS = $(EXTENSION_ENTITLEMENTS_$(ENABLE_APP_GROUPS))
