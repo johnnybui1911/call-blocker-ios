@@ -40,6 +40,7 @@ public struct BlockRule: Codable, Equatable, Identifiable, Sendable {
 public enum RuleValidationError: Error, Equatable {
     case normalization(NormalizeError)
     case targetLengthOutOfRange(Int)
+    case prefixTooShort(digits: Int)
     case prefixNotShorterThanTarget(patternLength: Int, targetLength: Int)
     case fullNumberTooShort(Int)
     case fullNumberTooLong(Int)
@@ -165,6 +166,12 @@ enum ExpansionMath {
     static func prefixSpan(pattern: String, targetLength: Int) -> Result<NumberSpan, RuleValidationError> {
         guard (Limits.minimumTargetLength...Limits.maximumTargetLength).contains(targetLength) else {
             return .failure(.targetLengthOutOfRange(targetLength))
+        }
+        // The pattern is E.164 (country code + national digits without the
+        // trunk 0), so the typed length is pattern.count - countryCode.count + 1.
+        let typedDigits = pattern.count - Limits.countryCode.count + 1
+        guard typedDigits >= Limits.minimumPrefixDigits else {
+            return .failure(.prefixTooShort(digits: typedDigits))
         }
         guard pattern.count < targetLength else {
             return .failure(.prefixNotShorterThanTarget(

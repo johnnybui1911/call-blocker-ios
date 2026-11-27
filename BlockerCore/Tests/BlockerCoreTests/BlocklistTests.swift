@@ -91,28 +91,82 @@ final class BlocklistTests: XCTestCase {
     }
 
     func testSoftCapWarnsAndHardCapRefuses() throws {
-        let oneMillion = RuleFactory.preview(kind: .prefix, rawInput: "02888", targetLength: 12)
-        XCTAssertEqual(oneMillion.normalized, "842888")
-        XCTAssertEqual(oneMillion.count, 1_000_000)
-        XCTAssertNil(oneMillion.error)
-        XCTAssertTrue(oneMillion.reachesSoftCap)
+        let tenLandlinePrefixes = try (0..<10).map {
+            try make(kind: .prefix, raw: "02888\($0)", target: 12, enabled: true)
+        }
+        let atSoftCap = BlocklistBuild.evaluate(rules: tenLandlinePrefixes)
+        XCTAssertEqual(atSoftCap.mergedCount, 1_000_000)
+        XCTAssertTrue(atSoftCap.reachesSoftCap)
+        XCTAssertFalse(atSoftCap.hardCapExceeded)
 
         let tooBroad = RuleFactory.preview(kind: .prefix, rawInput: "0288", targetLength: 12)
         XCTAssertEqual(tooBroad.normalized, "84288")
-        XCTAssertEqual(tooBroad.count, 10_000_000)
-        XCTAssertEqual(tooBroad.error, .expansionExceedsHardCap(count: 10_000_000))
+        XCTAssertEqual(tooBroad.error, .prefixTooShort(digits: 4))
 
-        let first = try make(kind: .prefix, raw: "02888", target: 12, enabled: true)
-        let second = try make(kind: .prefix, raw: "02488", target: 12, enabled: true)
-        let third = try make(kind: .prefix, raw: "02388", target: 12, enabled: true)
-        let atCap = BlocklistBuild.evaluate(rules: [first, second])
+        let atCap = BlocklistBuild.evaluate(rules: try landlinePrefixes(count: 20))
         XCTAssertEqual(atCap.mergedCount, 2_000_000)
-        XCTAssertTrue(atCap.reachesSoftCap)
         XCTAssertFalse(atCap.hardCapExceeded)
 
-        let overCap = BlocklistBuild.evaluate(rules: [first, second, third])
-        XCTAssertEqual(overCap.mergedCount, 3_000_000)
+        let overCap = BlocklistBuild.evaluate(rules: try landlinePrefixes(count: 21))
+        XCTAssertEqual(overCap.mergedCount, 2_100_000)
         XCTAssertTrue(overCap.hardCapExceeded)
+    }
+
+    func testHardCapStillRejectsASingleHugeSixDigitPrefix() {
+        // Target 15 turns a 6-digit prefix into 10^8 numbers.
+        XCTAssertEqual(
+            RuleFactory.preview(kind: .prefix, rawInput: "028888", targetLength: 15).error,
+            .expansionExceedsHardCap(count: 100_000_000)
+        )
+    }
+
+    func testPrefixMinimumLength() throws {
+        XCTAssertEqual(Limits.minimumPrefixDigits, 6)
+        for raw in ["02888", "+842888", "842888", "0084 2888", "0", "09012"] {
+            let error = RuleFactory.preview(kind: .prefix, rawInput: raw, targetLength: 12).error
+            guard case .prefixTooShort(let digits)? = error else {
+                return XCTFail("\(raw) should be too short, got \(String(describing: error))")
+            }
+            XCTAssertLessThan(digits, 6)
+        }
+        XCTAssertEqual(
+            RuleFactory.preview(kind: .prefix, rawInput: "02888", targetLength: 12).error,
+            .prefixTooShort(digits: 5)
+        )
+        XCTAssertEqual(RuleFactory.make(kind: .prefix, rawInput: "02888", targetLength: 12, enabled: true, note: ""),
+                       .failure(.prefixTooShort(digits: 5)))
+
+        // 6 digits counting the leading 0, in every accepted spelling.
+        for raw in ["028888", "+8428888", "8428888", "090123"] {
+            XCTAssertNil(RuleFactory.preview(kind: .prefix, rawInput: raw, targetLength: 12).error, raw)
+        }
+        XCTAssertEqual(RuleFactory.preview(kind: .prefix, rawInput: "090123", targetLength: 11).count, 10_000)
+        // 7 or more digits.
+        for raw in ["0288881", "02888812", "090123456"] {
+            XCTAssertNil(RuleFactory.preview(kind: .prefix, rawInput: raw, targetLength: 12).error, raw)
+        }
+        // Full numbers are not subject to the prefix minimum.
+        XCTAssertNil(RuleFactory.preview(kind: .fullNumber, rawInput: "0901234567", targetLength: 11).error)
+    }
+
+    func testShortPrefixFromImportedOrStoredRulesIsSkippedNotCrashed() throws {
+        let valid = try make(kind: .prefix, raw: "028888", target: 12, enabled: true)
+        let short = BlockRule(
+            id: UUID(), kind: .prefix, rawInput: "02888", pattern: "842888",
+            targetLength: 12, enabled: true, note: ""
+        )
+        let url = FileManager.default.temporaryDirectory
+            .appendingPathComponent("rules-\(UUID().uuidString).json")
+        defer { try? FileManager.default.removeItem(at: url) }
+        try RuleArchive.save([short, valid], to: url)
+
+        let loaded = try RuleArchive.loadIfPresent(from: url)
+        XCTAssertEqual(loaded.count, 2)
+        let build = BlocklistBuild.evaluate(rules: loaded)
+        XCTAssertEqual(build.skippedRuleIDs, [short.id])
+        XCTAssertTrue(build.estimates.first { $0.id == short.id }?.invalid == true)
+        XCTAssertEqual(build.mergedCount, 100_000)
+        XCTAssertFalse(build.hardCapExceeded)
     }
 
     func testRejectsBadRules() {
@@ -168,6 +222,13 @@ final class BlocklistTests: XCTestCase {
         ])
         XCTAssertEqual(top, [NumberRange(lower: UInt64.max - 1, upper: UInt64.max)])
         XCTAssertEqual(NumberRange.merge([]), [])
+    }
+
+    private func landlinePrefixes(count: Int) throws -> [BlockRule] {
+        try (0..<count).map { index in
+            let area = 2_000 + index
+            return try make(kind: .prefix, raw: "0\(area)0", target: 12, enabled: true)
+        }
     }
 
     private func make(kind: RuleKind, raw: String, target: Int, enabled: Bool) throws -> BlockRule {

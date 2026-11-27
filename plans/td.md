@@ -67,7 +67,7 @@ API public khớp source:
 | `RuleArchive` | `rules.json`, encode pretty-printed, key sắp xếp |
 | `Limits` | Ngưỡng và độ dài mặc định |
 
-19 hàm `test*` trong `BlockerCore/Tests/BlockerCoreTests`: chuẩn hóa, mở rộng `028888` thành 100.000 số, thứ tự tăng, gộp trùng, ngưỡng 1 triệu và 2 triệu, đọc lại file nhị phân, vòng `rules.json`. Dương Quá báo `swift test` trên Linux pass. Máy viết tài liệu này không có Swift toolchain nên không chạy lại.
+22 hàm `test*` trong `BlockerCore/Tests/BlockerCoreTests`: chuẩn hóa, mở rộng `028888` thành 100.000 số, thứ tự tăng, gộp trùng, ngưỡng 1 triệu và 2 triệu, độ dài tối thiểu 6 của đầu số (kể cả quy tắc đã lưu), đọc lại file nhị phân, vòng `rules.json`. Dương Quá báo `swift test` trên Linux pass. Máy viết tài liệu này không có Swift toolchain nên không chạy lại.
 
 ## Luồng dữ liệu
 
@@ -205,6 +205,8 @@ Trong app (`Limits`):
 PM ghi “cảnh báo khi > 1 triệu, chặn lưu khi > 2 triệu”. Lệch ở biên: code cảnh báo từ **đúng** 1.000.000, và **đúng** 2.000.000 vẫn lưu được.
 
 Một đầu số ngắn hơn đích đúng `n` chữ số sinh `10^n` số. `10^6` chạm cảnh báo. `10^7` bị từ chối ngay ở `prefixSpan` vì `width > hardCap`.
+
+Độ dài tối thiểu: `Limits.minimumPrefixDigits = 6`, tính theo cách người dùng gõ (cả số 0 đầu). Mẫu đã chuẩn hóa là E.164 nên `prefixSpan` tính `pattern.count - countryCode.count + 1`; nhỏ hơn 6 thì trả `RuleValidationError.prefixTooShort(digits:)`, kiểm tra sau `targetLengthOutOfRange` và trước các kiểm tra khác. Vì `ExpansionMath.range(for:)` dùng chung `prefixSpan`, quy tắc ngắn đến từ nhập JSON hoặc `rules.json` đã lưu được `BlocklistBuild.evaluate` bỏ qua (`skippedRuleIDs`, `invalid = true`), không làm app lỗi và không vào `blocklist.bin`. UI nhập tay hiện `Vietnamese.message(for:)` ở footer ô Số và chặn nút Lưu. Số đầy đủ không bị giới hạn này.
 
 Chưa đo trên máy. Nếu sau này reload trả `maximumEntriesExceeded`, extension biến mất, hoặc iOS giết extension, thu hẹp đầu số rồi mới tính chuyện nới `softCap`.
 

@@ -22,6 +22,11 @@ public enum Limits {
     public static let minimumTargetLength = 8
     public static let maximumTargetLength = 15
 
+    /// Shortest prefix a rule may use, counted the way a person types it:
+    /// national digits including the leading 0 (`028888` is 6). Shorter
+    /// prefixes expand to far too many numbers for the Call Directory extension.
+    public static let minimumPrefixDigits = 6
+
     public static let minimumFullNumberLength = 10
     public static let maximumFullNumberLength = 15
 

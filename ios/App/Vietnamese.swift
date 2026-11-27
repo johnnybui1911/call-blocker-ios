@@ -21,6 +21,8 @@ enum Vietnamese {
             return message(for: normalizeError)
         case .targetLengthOutOfRange:
             return "Độ dài E.164 phải từ \(Limits.minimumTargetLength) đến \(Limits.maximumTargetLength)."
+        case .prefixTooShort:
+            return "Đầu số phải có ít nhất \(Limits.minimumPrefixDigits) chữ số, tính cả số 0 đầu. Ví dụ 028888 hoặc 090123."
         case .prefixNotShorterThanTarget:
             return "Đầu số đã dài bằng hoặc hơn độ dài đích. Hãy chọn Số đầy đủ, hoặc tăng độ dài E.164."
         case .fullNumberTooShort(let length):

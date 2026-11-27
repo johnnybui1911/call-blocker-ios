@@ -43,9 +43,15 @@ Mã quốc gia mặc định `84`. Bốn dạng đều được nhận: `0…`, 
 
 Ba cách gõ `028888`, `+8428888` và `8428888` ra cùng một đầu số `8428888`.
 
-### Cảnh báo khi đầu số quá ngắn
+### Độ dài tối thiểu của đầu số
 
-Đầu số ngắn hơn độ dài đích `n` chữ số thì sinh đúng `10^n` số. Danh sách quá lớn làm extension dễ bị iOS tắt vì hết bộ nhớ hoặc hết thời gian.
+Đầu số phải có ít nhất **6 chữ số, tính cả số 0 đầu** (ví dụ `028888` cho số bàn, `090123` cho di động). Đầu số 5 chữ số trở xuống bị từ chối, không có mức cảnh báo. Đầu số dài hơn vẫn được. Với 6 chữ số, đầu số sinh 10.000 (di động) đến 100.000 (số bàn) số, an toàn cho extension. Với 5 chữ số có thể tới 1.000.000.
+
+Quy tắc này áp dụng cho nhập tay, nhập JSON và quy tắc đã lưu. Quy tắc đầu số ngắn từ file JSON hoặc `rules.json` không làm app lỗi: app vẫn hiển thị, đánh dấu “không hợp lệ” và không đưa vào danh sách chặn. Số đầy đủ không bị giới hạn này.
+
+### Cảnh báo khi danh sách quá lớn
+
+Đầu số ngắn hơn độ dài đích `n` chữ số thì sinh đúng `10^n` số (với độ dài tối thiểu 6, một đầu số đơn lẻ không còn chạm ngưỡng cảnh báo, nhưng nhiều quy tắc cộng lại vẫn có thể). Danh sách quá lớn làm extension dễ bị iOS tắt vì hết bộ nhớ hoặc hết thời gian.
 
 Ngưỡng trong code (`Limits`), không phải câu “> 1 triệu / > 2 triệu” của PM:
 
@@ -145,7 +151,7 @@ PM gọi M1 là “dựng SwiftUI app + extension + App Group đã xong”. Dư�
 | --- | --- | --- |
 | M1 | Chốt scope và plan | Xong |
 | M2 | Màn hình quy tắc: thêm, sửa, xóa, bật tắt, đầu số hoặc số đầy đủ, kiểm tra dữ liệu, cảnh báo danh sách lớn | Code xong |
-| M3 | Mở rộng đầu số ra E.164, sắp tăng dần, ghi `blocklist.bin`, extension gọi `addBlockingEntry` | Code xong. 19 unit test của `BlockerCore` (`swift test` trên Linux) được báo là pass |
+| M3 | Mở rộng đầu số ra E.164, sắp tăng dần, ghi `blocklist.bin`, extension gọi `addBlockingEntry` | Code xong. 22 unit test của `BlockerCore` (`swift test` trên Linux) được báo là pass |
 | M4 | `reloadExtension` sau mỗi lần lưu, nút Tải lại, hiện lỗi CallKit | Code xong |
 | M5 | Màn hình Hướng dẫn và trạng thái extension (`getEnabledStatusForExtension`, nút `openSettings`, dự phòng `openSettingsURLString`) | Code xong |
 | M6 | Build và thử trên iPhone thật | Chưa. Johnny dự kiến build khoảng 12:45 trên MacBook M1 Pro. Code iOS chưa từng được compile |
