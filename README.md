@@ -4,6 +4,8 @@ App iOS cá nhân để chặn im lặng cuộc gọi đến theo **đầu số*
 
 Phiên bản này chỉ có iOS. Không có thống kê, không có lịch sử cuộc gọi bị chặn.
 
+Yêu cầu và thiết kế: [plans/prd.md](plans/prd.md), [plans/td.md](plans/td.md).
+
 ## Cấu trúc
 
 ```
