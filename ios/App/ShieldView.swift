@@ -48,7 +48,8 @@ struct ShieldView: View {
         if isProtected || reduceMotion {
             shield
         } else {
-            TimelineView(.animation(minimumInterval: nil, paused: scenePhase != .active)) { context in
+            // The timeline only renders while the app is on screen, so it needs no extra pause.
+            TimelineView(.animation) { context in
                 shield.rotationEffect(.degrees(Self.tilt(at: context.date.timeIntervalSinceReferenceDate)))
             }
         }

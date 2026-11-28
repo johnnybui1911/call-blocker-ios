@@ -68,6 +68,7 @@ struct HomeView: View {
                     .font(Theme.font(.subheadline, weight: .heavy))
                     .foregroundStyle(Theme.ink)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 12)
                     .padding(.horizontal, 8)
                     .padding(.bottom, store.rules.isEmpty ? 8 : 4)
                     .accessibilityAddTraits(.isHeader)
@@ -227,6 +228,7 @@ struct HomeView: View {
         let copy = heroCopy
         return VStack(spacing: 4) {
             ShieldView(isProtected: isProtectedLook, stampTrigger: store.blockedCount)
+                .padding(.top, 20)
             Text(copy.title)
                 .font(Theme.font(.title, weight: .heavy))
                 .foregroundStyle(isProtectedLook ? Theme.protectedText : Theme.dangerText)
@@ -254,7 +256,7 @@ struct HomeView: View {
         .fixedSize(horizontal: false, vertical: true)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 8)
-        .padding(.bottom, 8)
+        .padding(.bottom, 16)
     }
 
     // MARK: List
