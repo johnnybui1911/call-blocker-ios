@@ -51,21 +51,19 @@ struct ToastView: View {
 
     private var text: String {
         switch banner {
-        case .error(let value), .success(let value), .warning(let value):
+        case .error(let value), .warning(let value):
             return value
         }
     }
 
     private var background: Color {
         switch banner {
-        case .success: return Theme.toastBg
         case .warning, .error: return Theme.sheet
         }
     }
 
     private var foreground: Color {
         switch banner {
-        case .success: return Theme.toastInk
         case .warning: return Theme.warnText
         case .error: return Theme.dangerText
         }

@@ -96,7 +96,8 @@ struct BlockNumberSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Hủy") { dismiss() }
+                    Button { dismiss() } label: { CircleIcon(systemName: "xmark", title: "Hủy") }
+                        .buttonStyle(PressableStyle())
                 }
             }
             .safeAreaInset(edge: .bottom) {

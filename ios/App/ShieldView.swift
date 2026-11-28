@@ -13,9 +13,19 @@ struct ShieldView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.scenePhase) private var scenePhase
     @ScaledMetric(relativeTo: .largeTitle) private var scaledWidth: CGFloat = 124
-    @State private var rocking = false
     @State private var stampScale: CGFloat = 1
     @State private var stampTilt: Double = 0
+
+    /// Not protected: lean left and come back, rest, lean right and come back, rest, repeat.
+    private static let tiltLean = 1.4, tiltRest = 0.4, tiltAmplitude = 5.0
+    private static func tilt(at t: TimeInterval) -> Double {
+        let period = 2 * (tiltLean + tiltRest)
+        let x = t.truncatingRemainder(dividingBy: period)
+        if x < tiltLean { return -tiltAmplitude * sin(.pi * x / tiltLean) }
+        let y = x - tiltLean - tiltRest
+        if y >= 0 && y < tiltLean { return tiltAmplitude * sin(.pi * y / tiltLean) }
+        return 0
+    }
 
     private var width: CGFloat { min(scaledWidth, 168) }
     private var tint: Color { isProtected ? Theme.protected : Theme.danger }
@@ -24,16 +34,24 @@ struct ShieldView: View {
     var body: some View {
         ZStack {
             if isProtected { pulse }
-            shield
-                .rotationEffect(.degrees(!isProtected && rocking ? 5 : (!isProtected && !reduceMotion ? -5 : 0)))
+            tiltedShield
                 .scaleEffect(stampScale)
                 .rotationEffect(.degrees(stampTilt))
         }
-        .frame(width: width * 1.6, height: width * 148 / 132 * 1.4)
-        .onAppear(perform: startLoops)
-        .onChange(of: isProtected) { _ in startLoops() }
+        .frame(width: width * 1.9, height: width * 1.9)
         .onChange(of: stampTrigger) { _ in stamp() }
         .accessibilityHidden(true)
+    }
+
+    @ViewBuilder
+    private var tiltedShield: some View {
+        if isProtected || reduceMotion {
+            shield
+        } else {
+            TimelineView(.animation(minimumInterval: nil, paused: scenePhase != .active)) { context in
+                shield.rotationEffect(.degrees(Self.tilt(at: context.date.timeIntervalSinceReferenceDate)))
+            }
+        }
     }
 
     private var shield: some View {
@@ -91,16 +109,6 @@ struct ShieldView: View {
         let period = Theme.Motion.shieldPulse
         let x = (t - delay).truncatingRemainder(dividingBy: period)
         return (x < 0 ? x + period : x) / period
-    }
-
-    private func startLoops() {
-        rocking = false
-        guard !reduceMotion else { return }
-        DispatchQueue.main.async {
-            if !isProtected {
-                withAnimation(.easeInOut(duration: 1.6).repeatForever(autoreverses: true)) { rocking = true }
-            }
-        }
     }
 
     /// Mockup keyframes over 620 ms: 1 -> 0.72 (-8°) at 35% -> 1.18 (4°) at 70% -> 1.

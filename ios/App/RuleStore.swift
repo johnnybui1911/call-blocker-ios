@@ -12,7 +12,6 @@ enum RuleStorageKind: Equatable {
 final class RuleStore: ObservableObject {
     enum Banner: Equatable {
         case error(String)
-        case success(String)
         case warning(String)
     }
 
@@ -27,6 +26,8 @@ final class RuleStore: ObservableObject {
     @Published private(set) var blockedCount = 0
 
     private let previewMode: Bool
+    /// Debug demo only: makes saving fail so the error toast can be shown.
+    var previewSaveFails = false
     private var directory: URL?
 
     var usesAppGroup: Bool {
@@ -95,9 +96,8 @@ final class RuleStore: ObservableObject {
             next.insert(rule, at: 0)
             isNew = true
         }
-        let name = Vietnamese.name(for: rule)
         let blocksNow = isNew && rule.enabled
-        let saved = commit(next, reloadAfterSave: true, success: blocksNow ? "Đã chặn \(name)." : "Đã lưu \(name).")
+        let saved = commit(next, reloadAfterSave: true)
         if saved && blocksNow {
             blockedCount += 1
         }
@@ -105,7 +105,7 @@ final class RuleStore: ObservableObject {
 
     func delete(_ id: UUID) {
         guard let rule = rules.first(where: { $0.id == id }) else { return }
-        commit(rules.filter { $0.id != id }, reloadAfterSave: true, success: "Đã bỏ chặn \(Vietnamese.name(for: rule)).")
+        commit(rules.filter { $0.id != id }, reloadAfterSave: true)
     }
 
     func setEnabled(_ id: UUID, _ enabled: Bool) {
@@ -113,8 +113,7 @@ final class RuleStore: ObservableObject {
         guard rules[index].enabled != enabled else { return }
         var next = rules
         next[index].enabled = enabled
-        let name = Vietnamese.name(for: next[index])
-        commit(next, reloadAfterSave: true, success: enabled ? "Đang chặn \(name)." : "Đã tạm ngưng chặn \(name).")
+        commit(next, reloadAfterSave: true)
     }
 
     func replaceAll(with imported: [BlockRule]) {
@@ -131,7 +130,7 @@ final class RuleStore: ObservableObject {
             banner = .error(Vietnamese.hardCapMessage(count: importedBuild.mergedCount) + " Đã khôi phục danh sách nhưng chưa chặn số nào.")
             return
         }
-        commit(imported, reloadAfterSave: true, success: "Đã khôi phục \(imported.count) số chặn.")
+        commit(imported, reloadAfterSave: true)
     }
 
     func exportFileURL() throws -> URL {
@@ -141,20 +140,24 @@ final class RuleStore: ObservableObject {
     }
 
     func reloadFromUser() {
-        reload(success: usesAppGroup ? "Đã cập nhật danh sách chặn." : Vietnamese.localOnlySaved, quietPersonalTeamFailure: false)
+        reload(quietPersonalTeamFailure: false)
     }
 
     @discardableResult
-    private func commit(_ next: [BlockRule], reloadAfterSave: Bool, success: String) -> Bool {
+    private func commit(_ next: [BlockRule], reloadAfterSave: Bool) -> Bool {
         let nextBuild = BlocklistBuild.evaluate(rules: next)
         if nextBuild.hardCapExceeded {
             banner = .error(Vietnamese.hardCapMessage(count: nextBuild.mergedCount))
             return false
         }
+        if previewMode && previewSaveFails {
+            banner = .error("Không lưu được. Bộ nhớ của máy đang đầy hoặc không ghi được.")
+            return false
+        }
         if previewMode {
             rules = next
             build = nextBuild
-            banner = .success(success)
+            banner = nil
             return true
         }
         do {
@@ -166,13 +169,13 @@ final class RuleStore: ObservableObject {
         rules = next
         build = nextBuild
         guard reloadAfterSave else {
-            banner = .success(success)
+            banner = nil
             return true
         }
         if usesAppGroup {
-            reload(success: success, quietPersonalTeamFailure: false)
+            reload(quietPersonalTeamFailure: false)
         } else {
-            reload(success: Vietnamese.localOnlySaved, quietPersonalTeamFailure: true)
+            reload(quietPersonalTeamFailure: true)
         }
         return true
     }
@@ -204,7 +207,7 @@ final class RuleStore: ObservableObject {
         )
     }
 
-    private func reload(success: String, quietPersonalTeamFailure: Bool) {
+    private func reload(quietPersonalTeamFailure: Bool) {
         let identifier = SharedConfig.extensionBundleIdentifier
         guard SharedConfig.isConfigured(identifier) else {
             banner = .error("Bản cài này thiếu cấu hình chặn cuộc gọi.")
@@ -222,7 +225,7 @@ final class RuleStore: ObservableObject {
                         self.banner = .error(Vietnamese.reloadMessage(for: error))
                     }
                 } else {
-                    self.banner = .success(success)
+                    self.banner = nil
                 }
             }
         }

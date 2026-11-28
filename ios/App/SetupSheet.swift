@@ -34,7 +34,8 @@ struct SetupSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Đóng") { dismiss() }
+                    Button { dismiss() } label: { CircleIcon(systemName: "xmark", title: "Đóng") }
+                        .buttonStyle(PressableStyle())
                 }
             }
             .onAppear { status.refresh() }

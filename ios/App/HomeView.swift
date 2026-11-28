@@ -29,6 +29,8 @@ struct HomeView: View {
 
     /// Debug demo only: opens the sheet with this text typed in.
     var demoInput: String?
+    /// Debug demo only: `block`, `unblock` or `fail`, run once after launch.
+    var demoAction: String?
 
     @State private var sheet: HomeSheet?
     @State private var pendingDelete: BlockRule?
@@ -67,13 +69,18 @@ struct HomeView: View {
                     .foregroundStyle(Theme.ink)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 8)
-                    .padding(.bottom, 8)
+                    .padding(.bottom, store.rules.isEmpty ? 8 : 4)
                     .accessibilityAddTraits(.isHeader)
+                if !store.rules.isEmpty {
+                    Text("← Vuốt một dòng sang trái để bỏ chặn")
+                        .font(Theme.font(.footnote))
+                        .foregroundStyle(Theme.muted)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 8)
+                        .padding(.bottom, 8)
+                }
                 listCard
                 VStack(spacing: 6) {
-                    if !store.rules.isEmpty {
-                        Text("Vuốt một dòng sang trái để sửa hoặc bỏ chặn.")
-                    }
                     Text("Số bạn chặn sẽ không làm máy đổ chuông.\nKhông cần tài khoản. Không đọc danh bạ.")
                 }
                 .font(Theme.font(.footnote))
@@ -94,6 +101,17 @@ struct HomeView: View {
         .overlay(alignment: .top) {
             ConfettiBurst(trigger: reduceMotion ? 0 : store.blockedCount)
                 .padding(.top, 150)
+        }
+        .task {
+            #if DEBUG
+            guard let demoAction else { return }
+            try? await Task.sleep(nanoseconds: 2_500_000_000)
+            switch demoAction {
+            case "unblock": if let first = store.rules.first { store.delete(first.id) }
+            default:
+                if let rule = try? RuleFactory.make(kind: .fullNumber, rawInput: "0912345678", targetLength: NumberInput.interpret("0912345678").targetLength, enabled: true, note: "").get() { store.upsert(rule) }
+            }
+            #endif
         }
         .onAppear {
             status.refresh()
@@ -152,11 +170,6 @@ struct HomeView: View {
                 .minimumScaleFactor(0.8)
                 .accessibilityAddTraits(.isHeader)
             Spacer(minLength: 8)
-            Button(action: toggleAppearance) {
-                CircleIcon(systemName: colorScheme == .dark ? "sun.max.fill" : "moon.fill",
-                           title: colorScheme == .dark ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối")
-            }
-            .buttonStyle(PressableStyle())
             Menu {
                 Button { sheet = .setup } label: { Label("Cách bật chặn cuộc gọi", systemImage: "questionmark.circle") }
                 Button(action: exportList) { Label("Sao lưu danh sách", systemImage: "square.and.arrow.up") }
@@ -183,11 +196,6 @@ struct HomeView: View {
         // Opaque, in the same colour the backdrop starts with, so scrolled rows pass
         // under it instead of colliding with the title and the status bar.
         .background(Theme.bgTop.ignoresSafeArea(edges: .top))
-    }
-
-    private func toggleAppearance() {
-        Haptics.tap()
-        appearance = (colorScheme == .dark ? Appearance.light : Appearance.dark).rawValue
     }
 
     // MARK: Hero
@@ -246,7 +254,6 @@ struct HomeView: View {
         .fixedSize(horizontal: false, vertical: true)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 8)
-        .padding(.top, 12)
         .padding(.bottom, 8)
     }
 
