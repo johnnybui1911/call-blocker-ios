@@ -14,7 +14,7 @@ Không có số điện thoại cứng trong app. `028888` chỉ là đầu số
 
 1. Dùng cá nhân trước, trên iPhone của Johnny.
 2. Nếu chặn ổn, phát hành lên App Store, rồi Google Play.
-3. iOS làm trước, trong repo này. Tên hiển thị là “Chặn cuộc gọi”. Target app là `ChanCuocGoi`.
+3. iOS làm trước, trong repo này. Tên hiển thị là “AntiCall”. Target app là `ChanCuocGoi`.
 4. Android làm sau, repo riêng `call-blocker-android`. Swift và Kotlin không dùng chung code, nên không nhét hai nền tảng vào một repo.
 
 ## Phạm vi MVP

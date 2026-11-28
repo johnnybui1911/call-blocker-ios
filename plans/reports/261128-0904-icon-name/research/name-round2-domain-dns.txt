@@ -1,0 +1,21 @@
+callstop: .com=ns3.afternic.com. .app=FREE? .vn=FREE?
+stopcall: .com=ns67.domaincontrol.com. .app=FREE? .vn=FREE?
+blockcall: .com=ns1.afternic.com. .app=ns-cloud-d2.googledomains.com. .vn=FREE?
+callblock: .com=ns1.dan.com. .app=FREE? .vn=FREE?
+nocall: .com=ns1.afternic.com. .app=dns1.registrar-servers.com. .vn=FREE?
+callbye: .com=FREE? .app=FREE? .vn=FREE?
+byecall: .com=james.ns.cloudflare.com. .app=FREE? .vn=FREE?
+callnope: .com=FREE? .app=FREE? .vn=FREE?
+callwall: .com=FREE? .app=ns41.domaincontrol.com. .vn=FREE?
+callgate: .com=ns-1319.awsdns-36.org. .app=ns1.lander.d.parity.domains. .vn=FREE?
+callsafe: .com=ns67.domaincontrol.com. .app=ns-214-a.gandi.net. .vn=FREE?
+safecall: .com=ns60.worldnic.com. .app=ns47.domaincontrol.com. .vn=FREE?
+callguard: .com=ns-125.awsdns-15.com. .app=FREE? .vn=FREE?
+calloff: .com=ns1.namefind.com. .app=FREE? .vn=FREE?
+callzero: .com=;; connection timed out; no servers could be reached .app=FREE? .vn=FREE?
+callcut: .com=ns45.domaincontrol.com. .app=FREE? .vn=FREE?
+callmute: .com=FREE? .app=FREE? .vn=FREE?
+calllock: .com=intention.ns04.org. .app=FREE? .vn=FREE?
+callban: .com=salvador.ns.porkbun.com. .app=FREE? .vn=FREE?
+callkick: .com=ns1.afternic.com. .app=FREE? .vn=FREE?
+callzero.com: 

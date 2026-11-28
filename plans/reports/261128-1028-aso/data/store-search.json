@@ -1,0 +1,4369 @@
+{
+ "collectedAt": "2026-11-28 10:33 +0700",
+ "hints": {
+  "chặn": [
+   "chặn cuộc gọi rác",
+   "chặn quảng cáo",
+   "chặn cuộc gọi lạ",
+   "chặn cuộc gọi ngoài danh bạ",
+   "chặn cuộc gọi lừa đảo",
+   "chặn cuộc gọi",
+   "chặn quảng cáo youtube",
+   "chặn quảng cáo safari",
+   "chặn số rác",
+   "chặn tin nhắn rác"
+  ],
+  "chặn c": [
+   "chặn cuộc gọi rác",
+   "ứng dụng chặn cuộc gọi rác",
+   "chặn cuộc gọi ngoài danh bạ",
+   "chặn cuộc gọi số lạ",
+   "chặn cuộc gọi",
+   "chặn cuộc gọi lừa đảo",
+   "chặn cuộc gọi lạ",
+   "ap chặn cuộc gọi",
+   "captureshield: chặn cuộc gọi",
+   "tra cứu ngăn chặn cà mau"
+  ],
+  "chặn cuộc gọi": [
+   "chặn cuộc gọi ngoài danh bạ",
+   "app chặn cuộc gọi rác",
+   "chặn cuộc gọi rác",
+   "chặn cuộc gọi số lạ",
+   "ứng dụng chặn cuộc gọi rác",
+   "chặn cuộc gọi",
+   "chặn cuộc gọi lừa đảo",
+   "chặn cuộc gọi lạ",
+   "ap chặn cuộc gọi",
+   "captureshield: chặn cuộc gọi"
+  ],
+  "chặn s": [
+   "app chặn số lạ",
+   "chặn số rác",
+   "app chặn số lừa đảo",
+   "ứng dụng chặn số lạ",
+   "chặn số điện thoại lạ",
+   "chặn số",
+   "ap chặn số lạ"
+  ],
+  "chặn số": [
+   "app chặn số lạ",
+   "app chặn số lừa đảo",
+   "chặn số rác",
+   "ứng dụng chặn số lạ",
+   "chặn số điện thoại lạ",
+   "chặn số",
+   "ap chặn số lạ"
+  ],
+  "chan": [
+   "chắn sân đình",
+   "chắn vạn văn",
+   "chắn online",
+   "chắn sân đình chắn online",
+   "chặn quảng cáo",
+   "changee",
+   "chặn cuộc gọi rác",
+   "chắn",
+   "chặn cuộc gọi ngoài danh bạ",
+   "chặn cuộc gọi lạ"
+  ],
+  "chan cuoc": [
+   "chặn cuộc gọi số lạ",
+   "app chặn cuộc gọi rác",
+   "chặn cuộc gọi ngoài danh bạ",
+   "chặn cuộc gọi rác",
+   "chặn cuộc gọi lừa đảo",
+   "chặn cuộc gọi lạ",
+   "app chặn cuộc gọi",
+   "ứng dụng chặn cuộc gọi rác",
+   "chặn cuộc gọi",
+   "ap chặn cuộc gọi"
+  ],
+  "cuộc gọi": [
+   "cuộc gọi giả",
+   "cuộc gọi",
+   "chặn cuộc gọi lừa đảo",
+   "chặn cuộc gọi rác",
+   "cuộc gọi ảo",
+   "cuộc gọi lừa đảo",
+   "chặn cuộc gọi lạ",
+   "chặn cuộc gọi ngoài danh bạ",
+   "base call-quản lý cuộc gọi",
+   "chặn cuộc gọi"
+  ],
+  "lừa đảo": [
+   "lừa đảo",
+   "app chống lừa đảo",
+   "cuộc gọi lừa đảo",
+   "cảnh báo lừa đảo",
+   "vệ sĩ số: cảnh báo lừa đảo",
+   "chống lừa đảo",
+   "chặn số lừa đảo",
+   "phòng chống lừa đảo",
+   "số lừa đảo",
+   "áp chống lừa đảo"
+  ],
+  "số rác": [
+   "chặn số rác"
+  ],
+  "số lạ": [
+   "số lạ",
+   "app chặn số lạ",
+   "ứng dụng chặn số lạ",
+   "cửa khẩu số lạng sơn",
+   "ap chặn số lạ",
+   "chặn cuộc gọi số lạ"
+  ],
+  "spam": [
+   "spamchat",
+   "spam click",
+   "spam",
+   "spam tin nhắn",
+   "spam call",
+   "begone: spam call blocker",
+   "spam shield by brickline",
+   "spamzilla sms engelleyici",
+   "spam sms",
+   "spamngr"
+  ],
+  "block": [
+   "block blast",
+   "block crush",
+   "block craft 3d",
+   "blockman go",
+   "block puzzle",
+   "block blast !",
+   "block",
+   "block blast đổi màu",
+   "block black",
+   "block out"
+  ],
+  "call b": [
+   "call blocker",
+   "call blacklist",
+   "call bridge",
+   "smart call blocker",
+   "banner call: bắn cung",
+   "phony – smart call blocker",
+   "simple call blocker",
+   "call bts",
+   "smart call block",
+   "wideprotect spam call blocker"
+  ],
+  "call": [
+   "call of duty mobile",
+   "call of duty",
+   "call of dragons",
+   "callshop",
+   "call video với người lạ",
+   "call video",
+   "call recorder",
+   "call",
+   "call voice changer",
+   "callio 4.0"
+  ]
+ },
+ "appStore": {
+  "app chặn cuộc gọi rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Chặn Cuộc Gọi",
+    "subtitle": "Định danh cuộc gọi",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "ứng dụng chặn cuộc gọi rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6833927075",
+    "title": "CaptureShield: Chặn cuộc gọi",
+    "subtitle": "Lọc telesale, gắn nhãn đầu số",
+    "rating": 5,
+    "ratingCount": "2",
+    "ad": false
+   },
+   {
+    "id": "1247758515",
+    "title": "Real Car Driving : Online Xe",
+    "subtitle": "ô tô Parking Asian Road Rider",
+    "rating": 4.3,
+    "ratingCount": "1,7 N",
+    "ad": false
+   }
+  ],
+  "app chặn số lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Chặn số làm phiền",
+    "subtitle": "Chặn cả dãy số, 10 triệu số",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6822302782",
+    "title": "Medi24h: Massage tại nhà",
+    "subtitle": "Chọn KTV, thư giãn tại nhà",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi ngoài danh bạ": [
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi số lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "6801486911",
+    "title": "Truecaller : Caller ID & Block",
+    "subtitle": "Tiện Ích",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi": [
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Chặn Cuộc Gọi",
+    "subtitle": "Định danh cuộc gọi",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chặn số rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6813024850",
+    "title": "AiCall: Nhận diện cuộc gọi",
+    "subtitle": "Nhận diện & Chặn cuộc gọi rác",
+    "rating": 5,
+    "ratingCount": "11",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6826218388",
+    "title": "IZY AntiSpam",
+    "subtitle": "Chặn cuộc gọi & tin nhắn rác",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6761518423",
+    "title": "Bonia: Trợ lý nghe điện thoại",
+    "subtitle": "AI bắt máy khi bạn bận",
+    "rating": 5,
+    "ratingCount": "9",
+    "ad": false
+   },
+   {
+    "id": "6790678596",
+    "title": "Chặn tin nhắn rác và lừa đảo",
+    "subtitle": "Lọc SMS lừa đảo và phishing",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Tra Cứu Số Điện Thoại: Ai Gọi",
+    "subtitle": "Hiện Tên Người Gọi, Chặn Spam",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Chặn Cuộc Gọi",
+    "subtitle": "Định danh cuộc gọi",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chặn số lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Tra Cứu Số Điện Thoại: Ai Gọi",
+    "subtitle": "Hiện Tên Người Gọi, Chặn Spam",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "6804384530",
+    "title": "Idyno: Định Danh Người Gọi",
+    "subtitle": "Chặn số lạ và làm phiền",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:Chặn spam/SMS lừa đảo",
+    "subtitle": "Chặn dải số + SMS lừa đảo",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi lừa đảo": [
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:Chặn spam/SMS lừa đảo",
+    "subtitle": "Chặn dải số + SMS lừa đảo",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6826218388",
+    "title": "IZY AntiSpam",
+    "subtitle": "Chặn cuộc gọi & tin nhắn rác",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6838626571",
+    "title": "Vệ Sĩ Số: Cảnh báo lừa đảo",
+    "subtitle": "Nhận ra cuộc gọi, tin nhắn lừa",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Chặn số làm phiền",
+    "subtitle": "Chặn cả dãy số, 10 triệu số",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "6761407068",
+    "title": "CodeMap: Chặn Cuộc Gọ",
+    "subtitle": "Chặn Spam, Tra Mã Quốc Gia",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn số lừa đảo": [
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:Chặn spam/SMS lừa đảo",
+    "subtitle": "Chặn dải số + SMS lừa đảo",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Chặn số làm phiền",
+    "subtitle": "Chặn cả dãy số, 10 triệu số",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6748690764",
+    "title": "Trang Trắng - Chống lừa đảo",
+    "subtitle": "Chặn số lừa đảo, làm phiền",
+    "rating": 4.2,
+    "ratingCount": "13",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6756947899",
+    "title": "True ID Caller - Tra Số",
+    "subtitle": "Chặn Spam & Tra Cứu SĐT",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn spam": [
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:Chặn spam/SMS lừa đảo",
+    "subtitle": "Chặn dải số + SMS lừa đảo",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "936601391",
+    "title": "Me - Caller ID & Chặn Spam",
+    "subtitle": "Xem ai lưu số bạn & tên gì",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "6761407068",
+    "title": "CodeMap: Chặn Cuộc Gọ",
+    "subtitle": "Chặn Spam, Tra Mã Quốc Gia",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6796882125",
+    "title": "BINIT - dọn hộp thư, chặn spam",
+    "subtitle": "Hủy đăng ký quảng cáo, lọc rác",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn đầu số": [
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Chặn số làm phiền",
+    "subtitle": "Chặn cả dãy số, 10 triệu số",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "6748315509",
+    "title": "Kolokoon",
+    "subtitle": "Mua Sắm",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1148495423",
+    "title": "Callblock",
+    "subtitle": "Hiệu Suất",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chặn số điện thoại": [
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Tra Cứu Số Điện Thoại: Ai Gọi",
+    "subtitle": "Hiện Tên Người Gọi, Chặn Spam",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6761518423",
+    "title": "Bonia: Trợ lý nghe điện thoại",
+    "subtitle": "AI bắt máy khi bạn bận",
+    "rating": 5,
+    "ratingCount": "9",
+    "ad": false
+   },
+   {
+    "id": "6774125423",
+    "title": "True Call ID: Ai Gọi Đến",
+    "subtitle": "Chặn Cuộc Gọi Rác & Lừa Đảo",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6819630770",
+    "title": "SEAL: Chặn Mạng Xã Hội, Focus",
+    "subtitle": "App Lock & Habit Tracker",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi quảng cáo": [
+   {
+    "id": "1235601864",
+    "title": "TikTok",
+    "subtitle": "Kết nối tài năng và sáng tạo",
+    "rating": 4.7,
+    "ratingCount": "4,5 Tr",
+    "ad": true
+   },
+   {
+    "id": "454638411",
+    "title": "Messenger",
+    "subtitle": "Tin nhắn, cuộc gọi video/thoại",
+    "rating": 4.5,
+    "ratingCount": "4,7 Tr",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Chặn số làm phiền",
+    "subtitle": "Chặn cả dãy số, 10 triệu số",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "284882215",
+    "title": "Facebook",
+    "subtitle": "Khám phá điều bạn yêu thích",
+    "rating": 4.5,
+    "ratingCount": "8 Tr",
+    "ad": false
+   },
+   {
+    "id": "6834787235",
+    "title": "ALinkgram",
+    "subtitle": "Thư mục, NAS và lọc quảng cáo",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Tra Cứu Số Điện Thoại: Ai Gọi",
+    "subtitle": "Hiện Tên Người Gọi, Chặn Spam",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chan cuoc goi": [
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Giải Trí",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Chặn cuộc gọi quảng cáo đòi nợ",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme-Nhận diện gọi lừa đảo",
+    "subtitle": "Tra cứu & Chặn số lạ",
+    "rating": 4.7,
+    "ratingCount": "3 N",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Chặn Cuộc Gọi",
+    "subtitle": "Định danh cuộc gọi",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chan so rac": [
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Hiện tên cuộc gọi QC, Spam",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6813024850",
+    "title": "AiCall: Nhận diện cuộc gọi",
+    "subtitle": "Nhận diện & Chặn cuộc gọi rác",
+    "rating": 5,
+    "ratingCount": "11",
+    "ad": false
+   },
+   {
+    "id": "6826218388",
+    "title": "IZY AntiSpam",
+    "subtitle": "Chặn cuộc gọi & tin nhắn rác",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Chặn spam cuộc",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6761518423",
+    "title": "Bonia: Trợ lý nghe điện thoại",
+    "subtitle": "AI bắt máy khi bạn bận",
+    "rating": 5,
+    "ratingCount": "9",
+    "ad": false
+   },
+   {
+    "id": "6790678596",
+    "title": "Chặn tin nhắn rác và lừa đảo",
+    "subtitle": "Lọc SMS lừa đảo và phishing",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Tra Cứu Số Điện Thoại: Ai Gọi",
+    "subtitle": "Hiện Tên Người Gọi, Chặn Spam",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   }
+  ],
+  "call blocker": [
+   {
+    "id": "1180310843",
+    "title": "Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.8,
+    "ratingCount": "65",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Chặn số làm phiền",
+    "subtitle": "Chặn cả dãy số, 10 triệu số",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "1409872025",
+    "title": "Simple Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.5,
+    "ratingCount": "116",
+    "ad": false
+   },
+   {
+    "id": "6745689906",
+    "title": "Caller ID Spam Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6761407068",
+    "title": "CodeMap: Chặn Cuộc Gọ",
+    "subtitle": "Chặn Spam, Tra Mã Quốc Gia",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6782010075",
+    "title": "Prefixly - Block Spam Calls",
+    "subtitle": "Tiện Ích",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6759800463",
+    "title": "Call Blocker: Spam & Caller ID",
+    "subtitle": "Tiện Ích",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6761413435",
+    "title": "BlockR: Spam Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "spam call blocker": [
+   {
+    "id": "6811833735",
+    "title": "Chặn cuộc gọi spam, Spamveto",
+    "subtitle": "Lừa đảo,Số lạ,Bộ lọc,Quấy rối",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Chặn cuộc gọi rác, số lạ",
+    "subtitle": "Phát hiện cuộc gọi lừa đảo",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Chặn Cuộc Gọi Rác",
+    "subtitle": "Định Danh & Tra Số Điện Thoại",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1596818195",
+    "title": "Begone: Spam Call Blocker",
+    "subtitle": "Hiệu Suất",
+    "rating": 4.9,
+    "ratingCount": "41",
+    "ad": false
+   },
+   {
+    "id": "986999874",
+    "title": "Hiya: Spam Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.7,
+    "ratingCount": "84",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "1180310843",
+    "title": "Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.8,
+    "ratingCount": "65",
+    "ad": false
+   },
+   {
+    "id": "6774064372",
+    "title": "Spam Call Blocker • Caller ID",
+    "subtitle": "Manage SMS & Block Lists",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1171024059",
+    "title": "WideProtect Spam Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.1,
+    "ratingCount": "11",
+    "ad": false
+   }
+  ],
+  "block unknown caller": [
+   {
+    "id": "1180310843",
+    "title": "Call Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.8,
+    "ratingCount": "65",
+    "ad": false
+   },
+   {
+    "id": "929968679",
+    "title": "Whoscall: Caller ID & Block",
+    "subtitle": "Tiện Ích",
+    "rating": 4.7,
+    "ratingCount": "64",
+    "ad": false
+   },
+   {
+    "id": "6801486911",
+    "title": "Truecaller : Caller ID & Block",
+    "subtitle": "Tiện Ích",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6796200077",
+    "title": "Truecaller ~ Caller ID & Block",
+    "subtitle": "Tiện Ích",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1488464489",
+    "title": "ViewCaller: Caller ID",
+    "subtitle": "Chặn spam cuộc gọi không định",
+    "rating": 4.6,
+    "ratingCount": "191",
+    "ad": false
+   },
+   {
+    "id": "6739289261",
+    "title": "Callapp: ID Người gọi & Chặn",
+    "subtitle": "Định danh người gọi",
+    "rating": 5,
+    "ratingCount": "6",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "986999874",
+    "title": "Hiya: Spam Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.7,
+    "ratingCount": "84",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller:Xác định cuộc gọi",
+    "subtitle": "Gọi rác: nhận diện & chặn.",
+    "rating": 4.4,
+    "ratingCount": "9 N",
+    "ad": true
+   },
+   {
+    "id": "6502348779",
+    "title": "Caller ID - Spam Call Blocker",
+    "subtitle": "Kinh Doanh",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "block spam calls": [
+   {
+    "id": "986999874",
+    "title": "Hiya: Spam Blocker",
+    "subtitle": "Tiện Ích",
+    "rating": 4.7,
+    "ratingCount": "84",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "Chặn Đầu Số - Cuộc Gọi Rác",
+    "subtitle": "Chặn số làm phiền, telesale",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "1603462111",
+    "title": "My Call Filter Digital Secure",
+    "subtitle": "App to free up your phone",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1596818195",
+    "title": "Begone: Spam Call Blocker",
+    "subtitle": "Hiệu Suất",
+    "rating": 4.9,
+    "ratingCount": "41",
+    "ad": false
+   },
+   {
+    "id": "6801486911",
+    "title": "Truecaller : Caller ID & Block",
+    "subtitle": "Tiện Ích",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Cảnh báo cuộc gọi",
+    "subtitle": "Nhận diện & chặn cuộc gọi rác",
+    "rating": 4.7,
+    "ratingCount": "5,9 N",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Chặn & Tra Cứu Số Điện Thoại",
+    "subtitle": "Chặn Số ĐT quảng cáo & lừa đảo",
+    "rating": 4.5,
+    "ratingCount": "1,6 N",
+    "ad": false
+   },
+   {
+    "id": "1563456455",
+    "title": "Block-Spam: Chặn cuộc gọi",
+    "subtitle": "Chặn spam & nhận diện số",
+    "rating": 3,
+    "ratingCount": "2",
+    "ad": false
+   },
+   {
+    "id": "929968679",
+    "title": "Whoscall: Caller ID & Block",
+    "subtitle": "Tiện Ích",
+    "rating": 4.7,
+    "ratingCount": "64",
+    "ad": false
+   },
+   {
+    "id": "1010631459",
+    "title": "Getcontact",
+    "subtitle": "ID Cuộc gọi & Chặn Spam",
+    "rating": 3.5,
+    "ratingCount": "707",
+    "ad": false
+   }
+  ]
+ },
+ "appStoreEn": {
+  "app chặn cuộc gọi rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Stop Calling",
+    "subtitle": "Call identification",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "ứng dụng chặn cuộc gọi rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6833927075",
+    "title": "CaptureShield: Chặn cuộc gọi",
+    "subtitle": "Utilities",
+    "rating": 5,
+    "ratingCount": "2",
+    "ad": false
+   },
+   {
+    "id": "1247758515",
+    "title": "Car Driving & Parking Games",
+    "subtitle": "Drive Simulator : Car_Games",
+    "rating": 4.3,
+    "ratingCount": "1.7k",
+    "ad": false
+   }
+  ],
+  "app chặn số lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Block Nuisance Calls",
+    "subtitle": "Block ranges, 10M numbers",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6822302782",
+    "title": "Medi24h: Massage tại nhà",
+    "subtitle": "Health & Fitness",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi ngoài danh bạ": [
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi số lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "6801486911",
+    "title": "Truecaller : Caller ID & Block",
+    "subtitle": "Spam & Scam Call Blocker",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi": [
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Stop Calling",
+    "subtitle": "Call identification",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chặn số rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6813024850",
+    "title": "AiCall: Nhận diện cuộc gọi",
+    "subtitle": "Utilities",
+    "rating": 5,
+    "ratingCount": "11",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6826218388",
+    "title": "IZY AntiSpam",
+    "subtitle": "Utilities",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6761518423",
+    "title": "Bonia: Trợ lý nghe điện thoại",
+    "subtitle": "Productivity",
+    "rating": 5,
+    "ratingCount": "9",
+    "ad": false
+   },
+   {
+    "id": "6790678596",
+    "title": "Spam Text Blocker & Filter",
+    "subtitle": "Filter scam & phishing SMS",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Who Saved Me: Number Lookup",
+    "subtitle": "Caller ID, Spam Call Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi rác": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Stop Calling",
+    "subtitle": "Call identification",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chặn số lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Who Saved Me: Number Lookup",
+    "subtitle": "Caller ID, Spam Call Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "6804384530",
+    "title": "Idyno: Caller ID & Numberbook",
+    "subtitle": "Who's calling? Block nuisance",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi lạ": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:迷惑電話・ﾒｯｾｰｼﾞﾌﾞﾛｯｸ",
+    "subtitle": "範囲指定で迷惑電話拒否、詐欺SMSも自動ブロック",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi lừa đảo": [
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:迷惑電話・ﾒｯｾｰｼﾞﾌﾞﾛｯｸ",
+    "subtitle": "範囲指定で迷惑電話拒否、詐欺SMSも自動ブロック",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6826218388",
+    "title": "IZY AntiSpam",
+    "subtitle": "Utilities",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6838626571",
+    "title": "Vệ Sĩ Số: Cảnh báo lừa đảo",
+    "subtitle": "Utilities",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Block Nuisance Calls",
+    "subtitle": "Block ranges, 10M numbers",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "6761407068",
+    "title": "Spam Call Blocker, ID: CodeMap",
+    "subtitle": "Stop Scam Robocalls & Filter",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn số lừa đảo": [
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:迷惑電話・ﾒｯｾｰｼﾞﾌﾞﾛｯｸ",
+    "subtitle": "範囲指定で迷惑電話拒否、詐欺SMSも自動ブロック",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Block Nuisance Calls",
+    "subtitle": "Block ranges, 10M numbers",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6748690764",
+    "title": "Trang Trắng - Chống lừa đảo",
+    "subtitle": "Utilities",
+    "rating": 4.2,
+    "ratingCount": "13",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6756947899",
+    "title": "True ID Caller - Number Finder",
+    "subtitle": "Spam Blocker & Phone Lookup",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn spam": [
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6763714399",
+    "title": "Kabe:迷惑電話・ﾒｯｾｰｼﾞﾌﾞﾛｯｸ",
+    "subtitle": "範囲指定で迷惑電話拒否、詐欺SMSも自動ブロック",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "936601391",
+    "title": "Me - Caller ID & Spam Blocker",
+    "subtitle": "See Who Saved Your Number",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "6761407068",
+    "title": "Spam Call Blocker, ID: CodeMap",
+    "subtitle": "Stop Scam Robocalls & Filter",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6796882125",
+    "title": "BINIT - Mail & Spam Clean Up",
+    "subtitle": "Unsubscribe, Block & Delete",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chặn đầu số": [
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Block Nuisance Calls",
+    "subtitle": "Block ranges, 10M numbers",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "6748315509",
+    "title": "Kolokoon",
+    "subtitle": "Shopping",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1148495423",
+    "title": "Callblock",
+    "subtitle": "Adblock for unwanted calls",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chặn số điện thoại": [
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Who Saved Me: Number Lookup",
+    "subtitle": "Caller ID, Spam Call Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6761518423",
+    "title": "Bonia: Trợ lý nghe điện thoại",
+    "subtitle": "Productivity",
+    "rating": 5,
+    "ratingCount": "9",
+    "ad": false
+   },
+   {
+    "id": "6774125423",
+    "title": "True Call ID: Who Called Me",
+    "subtitle": "Caller Name & Spam Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6819630770",
+    "title": "SEAL: App Blocker, Screen Time",
+    "subtitle": "Social Media Blocker & Detox",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   }
+  ],
+  "chặn cuộc gọi quảng cáo": [
+   {
+    "id": "1235601864",
+    "title": "TikTok-Global Video Community",
+    "subtitle": "Short-Form Video Platform",
+    "rating": 4.7,
+    "ratingCount": "4.5m",
+    "ad": true
+   },
+   {
+    "id": "454638411",
+    "title": "Messenger",
+    "subtitle": "Text, audio and video calls",
+    "rating": 4.5,
+    "ratingCount": "4.7m",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Block Nuisance Calls",
+    "subtitle": "Block ranges, 10M numbers",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "284882215",
+    "title": "Facebook",
+    "subtitle": "Explore the things you love",
+    "rating": 4.5,
+    "ratingCount": "8m",
+    "ad": false
+   },
+   {
+    "id": "6834787235",
+    "title": "ALinkgram",
+    "subtitle": "Folders, NAS and ad filtering",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Who Saved Me: Number Lookup",
+    "subtitle": "Caller ID, Spam Call Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "chan cuoc goi": [
+   {
+    "id": "967587600",
+    "title": "Chống làm phiền",
+    "subtitle": "Entertainment",
+    "rating": 2.9,
+    "ratingCount": "310",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "1531648039",
+    "title": "vCaller",
+    "subtitle": "Utilities",
+    "rating": 4.6,
+    "ratingCount": "733",
+    "ad": false
+   },
+   {
+    "id": "6474283670",
+    "title": "iCallme - Caller ID Lookup",
+    "subtitle": "Spam Scam Detection & Blocker",
+    "rating": 4.7,
+    "ratingCount": "3k",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "1223417298",
+    "title": "Stop Calling",
+    "subtitle": "Call identification",
+    "rating": 1,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "chan so rac": [
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6462660717",
+    "title": "Số Lạ",
+    "subtitle": "Utilities",
+    "rating": 4.8,
+    "ratingCount": "962",
+    "ad": false
+   },
+   {
+    "id": "6813024850",
+    "title": "AiCall: Nhận diện cuộc gọi",
+    "subtitle": "Utilities",
+    "rating": 5,
+    "ratingCount": "11",
+    "ad": false
+   },
+   {
+    "id": "6826218388",
+    "title": "IZY AntiSpam",
+    "subtitle": "Utilities",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6744879291",
+    "title": "True CallerID: Number Search",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 3.9,
+    "ratingCount": "14",
+    "ad": false
+   },
+   {
+    "id": "6761518423",
+    "title": "Bonia: Trợ lý nghe điện thoại",
+    "subtitle": "Productivity",
+    "rating": 5,
+    "ratingCount": "9",
+    "ad": false
+   },
+   {
+    "id": "6790678596",
+    "title": "Spam Text Blocker & Filter",
+    "subtitle": "Filter scam & phishing SMS",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1225061815",
+    "title": "Who Saved Me: Number Lookup",
+    "subtitle": "Caller ID, Spam Call Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   }
+  ],
+  "call blocker": [
+   {
+    "id": "1180310843",
+    "title": "Call Blocker",
+    "subtitle": "Block & Identify spam calls",
+    "rating": 4.8,
+    "ratingCount": "65",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "6831969401",
+    "title": "Chanso – Block Nuisance Calls",
+    "subtitle": "Block ranges, 10M numbers",
+    "rating": 4.2,
+    "ratingCount": "5",
+    "ad": false
+   },
+   {
+    "id": "1409872025",
+    "title": "Simple Call Blocker",
+    "subtitle": "Block phone number ranges.",
+    "rating": 4.5,
+    "ratingCount": "116",
+    "ad": false
+   },
+   {
+    "id": "6745689906",
+    "title": "Caller ID Spam Call Blocker",
+    "subtitle": "Robocall Stop & SMS Filter",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6761407068",
+    "title": "Spam Call Blocker, ID: CodeMap",
+    "subtitle": "Stop Scam Robocalls & Filter",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6782010075",
+    "title": "Prefixly - Block Spam Calls",
+    "subtitle": "Block spam calls by prefix",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6759800463",
+    "title": "Call Blocker: Spam & Caller ID",
+    "subtitle": "Stop Scam, Text & Robocalls",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "6761413435",
+    "title": "BlockR: Spam Call Blocker",
+    "subtitle": "Protect from Scam, Filter ID",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   }
+  ],
+  "spam call blocker": [
+   {
+    "id": "6811833735",
+    "title": "Block Unwanted Calls, Spamveto",
+    "subtitle": "Spam,Nuisance,Caller,ID,Filter",
+    "rating": 5,
+    "ratingCount": "4",
+    "ad": false
+   },
+   {
+    "id": "1505796584",
+    "title": "Spam Call Blocker: Stop Scam",
+    "subtitle": "Caller ID & Nuisance Calls",
+    "rating": 2,
+    "ratingCount": "353",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "6799370168",
+    "title": "Spam Call Blocker: Caller ID",
+    "subtitle": "Scam Number Lookup & Case Log",
+    "rating": 4.7,
+    "ratingCount": "3",
+    "ad": false
+   },
+   {
+    "id": "1596818195",
+    "title": "Begone: Spam Call Blocker",
+    "subtitle": "Call blocking and directory",
+    "rating": 4.9,
+    "ratingCount": "41",
+    "ad": false
+   },
+   {
+    "id": "986999874",
+    "title": "Hiya: Spam Blocker",
+    "subtitle": "AI fraud & spam protection",
+    "rating": 4.7,
+    "ratingCount": "84",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "1180310843",
+    "title": "Call Blocker",
+    "subtitle": "Block & Identify spam calls",
+    "rating": 4.8,
+    "ratingCount": "65",
+    "ad": false
+   },
+   {
+    "id": "6774064372",
+    "title": "Spam Call Blocker • Caller ID",
+    "subtitle": "Robocall Filter & Phone Lookup",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1171024059",
+    "title": "WideProtect Spam Call Blocker",
+    "subtitle": "Block Foreign Spam Calls",
+    "rating": 4.1,
+    "ratingCount": "11",
+    "ad": false
+   }
+  ],
+  "block unknown caller": [
+   {
+    "id": "1180310843",
+    "title": "Call Blocker",
+    "subtitle": "Block & Identify spam calls",
+    "rating": 4.8,
+    "ratingCount": "65",
+    "ad": false
+   },
+   {
+    "id": "929968679",
+    "title": "Whoscall: Caller ID & Block",
+    "subtitle": "Report scam, build community",
+    "rating": 4.7,
+    "ratingCount": "64",
+    "ad": false
+   },
+   {
+    "id": "6801486911",
+    "title": "Truecaller : Caller ID & Block",
+    "subtitle": "Spam & Scam Call Blocker",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "6796200077",
+    "title": "Truecaller ~ Caller ID & Block",
+    "subtitle": "Spam & Unknown Call Blocker",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1488464489",
+    "title": "ViewCaller: Caller ID",
+    "subtitle": "Block spam & check call risk",
+    "rating": 4.6,
+    "ratingCount": "191",
+    "ad": false
+   },
+   {
+    "id": "6739289261",
+    "title": "CallApp: Caller ID & Block",
+    "subtitle": "Stop Spam & Know Who's Calling",
+    "rating": 5,
+    "ratingCount": "6",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "986999874",
+    "title": "Hiya: Spam Blocker",
+    "subtitle": "AI fraud & spam protection",
+    "rating": 4.7,
+    "ratingCount": "84",
+    "ad": false
+   },
+   {
+    "id": "448142450",
+    "title": "Truecaller: Premium Caller ID",
+    "subtitle": "Scam shield: Block spam calls",
+    "rating": 4.4,
+    "ratingCount": "9k",
+    "ad": true
+   },
+   {
+    "id": "6502348779",
+    "title": "Caller ID - Spam Call Blocker",
+    "subtitle": "Identify unknown calls & spam",
+    "rating": 5,
+    "ratingCount": "1",
+    "ad": false
+   }
+  ],
+  "block spam calls": [
+   {
+    "id": "986999874",
+    "title": "Hiya: Spam Blocker",
+    "subtitle": "AI fraud & spam protection",
+    "rating": 4.7,
+    "ratingCount": "84",
+    "ad": false
+   },
+   {
+    "id": "6800204952",
+    "title": "PrefixBlock: Spam Call Filter",
+    "subtitle": "Block entire number ranges",
+    "rating": 4.9,
+    "ratingCount": "8",
+    "ad": false
+   },
+   {
+    "id": "1603462111",
+    "title": "Spam Text & Call Blocker",
+    "subtitle": "Finally free from the nonsense",
+    "rating": 0,
+    "ratingCount": "",
+    "ad": false
+   },
+   {
+    "id": "1596818195",
+    "title": "Begone: Spam Call Blocker",
+    "subtitle": "Call blocking and directory",
+    "rating": 4.9,
+    "ratingCount": "41",
+    "ad": false
+   },
+   {
+    "id": "6801486911",
+    "title": "Truecaller : Caller ID & Block",
+    "subtitle": "Spam & Scam Call Blocker",
+    "rating": 3,
+    "ratingCount": "1",
+    "ad": false
+   },
+   {
+    "id": "1640197557",
+    "title": "CleanCall: Caller ID & Block",
+    "subtitle": "Identify & block spam calls",
+    "rating": 4.7,
+    "ratingCount": "5.9k",
+    "ad": false
+   },
+   {
+    "id": "1440014663",
+    "title": "Call Protect Spam Call Blocker",
+    "subtitle": "Scam Shield, Caller ID Look Up",
+    "rating": 4.5,
+    "ratingCount": "1.6k",
+    "ad": false
+   },
+   {
+    "id": "1563456455",
+    "title": "Block-Spam: Call Blocker",
+    "subtitle": "Robocall Filter & Caller ID",
+    "rating": 3,
+    "ratingCount": "2",
+    "ad": false
+   },
+   {
+    "id": "929968679",
+    "title": "Whoscall: Caller ID & Block",
+    "subtitle": "Report scam, build community",
+    "rating": 4.7,
+    "ratingCount": "64",
+    "ad": false
+   },
+   {
+    "id": "1010631459",
+    "title": "Getcontact: Spam Caller ID",
+    "subtitle": "Block scam phone call & text",
+    "rating": 3.5,
+    "ratingCount": "707",
+    "ad": false
+   }
+  ]
+ },
+ "play": {
+  "app chặn cuộc gọi rác": [
+   "com.truecaller",
+   "vn.chanprefix.blocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "org.litewhite.callblocker",
+   "call.blacklist.blocker",
+   "com.vn.trustcall",
+   "com.callblocker.callblocker_app",
+   "info.icaller",
+   "com.vladlee.easyblacklist"
+  ],
+  "ứng dụng chặn cuộc gọi rác": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.truecaller",
+   "org.litewhite.callblocker",
+   "call.blacklist.blocker",
+   "com.vladlee.easyblacklist",
+   "info.icaller",
+   "gogolook.callgogolook2",
+   "com.syncme.syncmeapp",
+   "com.mrnumber.blocker",
+   "com.webascender.callerid"
+  ],
+  "app chặn số lạ": [
+   "org.litewhite.callblocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.truecaller",
+   "call.blacklist.blocker",
+   "vn.sorac",
+   "com.vladlee.easyblacklist",
+   "gogolook.callgogolook2",
+   "com.syncme.syncmeapp",
+   "com.callapp.contacts",
+   "com.mrnumber.blocker"
+  ],
+  "chặn cuộc gọi ngoài danh bạ": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "org.litewhite.callblocker",
+   "com.viettel.allblocking",
+   "com.truecaller",
+   "org.whiteglow.antinuisance",
+   "com.vladlee.easyblacklist",
+   "info.icaller",
+   "com.androidrocker.callblocker",
+   "call.blacklist.blocker",
+   "vn.chanprefix.blocker"
+  ],
+  "chặn cuộc gọi số lạ": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "org.litewhite.callblocker",
+   "vn.chanprefix.blocker",
+   "com.truecaller",
+   "com.syncme.syncmeapp",
+   "com.vladlee.easyblacklist",
+   "com.viettel.allblocking",
+   "info.icaller",
+   "call.blacklist.blocker",
+   "com.mrnumber.blocker"
+  ],
+  "chặn cuộc gọi": [
+   "org.litewhite.callblocker",
+   "com.truecaller",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "vn.chanprefix.blocker",
+   "com.vladlee.easyblacklist",
+   "org.whiteglow.antinuisance",
+   "com.viettel.allblocking",
+   "info.icaller",
+   "com.androidrocker.callblocker",
+   "call.blacklist.blocker"
+  ],
+  "chặn số rác": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "vn.chanprefix.blocker",
+   "com.truecaller",
+   "com.vladlee.easyblacklist",
+   "org.litewhite.callblocker",
+   "call.blacklist.blocker",
+   "info.icaller",
+   "com.vn.trustcall",
+   "com.syncme.syncmeapp",
+   "com.mrnumber.blocker"
+  ],
+  "chặn cuộc gọi rác": [
+   "vn.chanprefix.blocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.truecaller",
+   "info.icaller",
+   "org.litewhite.callblocker",
+   "call.blacklist.blocker",
+   "com.vladlee.easyblacklist",
+   "com.vn.trustcall",
+   "com.syncme.syncmeapp",
+   "com.mrnumber.blocker"
+  ],
+  "chặn số lạ": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "org.litewhite.callblocker",
+   "com.truecaller",
+   "com.viettel.allblocking",
+   "com.vladlee.easyblacklist",
+   "info.icaller",
+   "org.whiteglow.antinuisance",
+   "vn.chanprefix.blocker",
+   "vn.sorac",
+   "call.blacklist.blocker"
+  ],
+  "chặn cuộc gọi lạ": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "org.litewhite.callblocker",
+   "com.truecaller",
+   "com.vladlee.easyblacklist",
+   "com.syncme.syncmeapp",
+   "com.backtrackingtech.callblocker",
+   "call.blacklist.blocker",
+   "vn.chanprefix.blocker",
+   "com.viettel.allblocking",
+   "com.mrnumber.blocker"
+  ],
+  "chặn cuộc gọi lừa đảo": [
+   "vn.chanprefix.blocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.eway.icallme",
+   "com.vladlee.easyblacklist",
+   "com.truecaller",
+   "com.mrnumber.blocker",
+   "com.ppcaller",
+   "org.litewhite.callblocker",
+   "com.nca.vn.ntrust",
+   "com.vn.trustcall"
+  ],
+  "chặn số lừa đảo": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.vladlee.easyblacklist",
+   "com.nca.vn.ntrust",
+   "com.truecaller",
+   "com.eway.icallme",
+   "vn.chanprefix.blocker",
+   "com.mrnumber.blocker",
+   "info.icaller",
+   "com.antifraud.app",
+   "com.backtrackingtech.callblocker"
+  ],
+  "chặn spam": [
+   "com.syncme.syncmeapp",
+   "com.truecaller",
+   "com.vladlee.easyblacklist",
+   "com.mrnumber.blocker",
+   "com.webascender.callerid",
+   "com.smsBlocker",
+   "call.blacklist.blocker",
+   "com.gingkolab.callblocker",
+   "io.cleanfox.android",
+   "pamiesolutions.blacklistcall"
+  ],
+  "chặn đầu số": [
+   "com.truecaller",
+   "vn.chanprefix.blocker",
+   "com.vladlee.easyblacklist",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "call.blacklist.blocker",
+   "com.mrnumber.blocker",
+   "com.cuiet.blockCalls",
+   "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls",
+   "com.backtrackingtech.callblocker",
+   "com.unknownphone.callblocker"
+  ],
+  "chặn số điện thoại": [
+   "com.truecaller",
+   "org.litewhite.callblocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.vladlee.easyblacklist",
+   "com.androidrocker.callblocker",
+   "org.whiteglow.antinuisance",
+   "com.viettel.allblocking",
+   "vn.chanprefix.blocker",
+   "info.icaller",
+   "call.blacklist.blocker"
+  ],
+  "chặn cuộc gọi quảng cáo": [
+   "com.truecaller",
+   "call.blacklist.blocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "info.icaller",
+   "org.litewhite.callblocker",
+   "vn.chanprefix.blocker",
+   "com.ppcaller",
+   "com.chansdt.chan_so_dt",
+   "org.whiteglow.antinuisance",
+   "com.androidrocker.callblocker"
+  ],
+  "chan cuoc goi": [
+   "org.litewhite.callblocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "org.whiteglow.antinuisance",
+   "com.vladlee.easyblacklist",
+   "com.truecaller",
+   "com.androidrocker.callblocker",
+   "call.blacklist.blocker",
+   "vn.chanprefix.blocker",
+   "com.viettel.allblocking",
+   "com.cuiet.blockCalls"
+  ],
+  "chan so rac": [
+   "info.icaller",
+   "org.litewhite.callblocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "vn.chanprefix.blocker",
+   "com.viettel.allblocking",
+   "merry.call.block",
+   "com.syncme.syncmeapp",
+   "vn.sorac",
+   "org.whiteglow.antinuisance",
+   "com.truecaller"
+  ],
+  "call blocker": [
+   "com.vladlee.easyblacklist",
+   "call.blacklist.blocker",
+   "com.truecaller",
+   "com.callapp.contacts",
+   "org.litewhite.callblocker",
+   "com.grus.callblocker",
+   "com.cuiet.blockCalls",
+   "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls",
+   "com.unknownphone.callblocker",
+   "com.lifesoftwarelab.android.incomingcallcontrol"
+  ],
+  "spam call blocker": [
+   "com.truecaller",
+   "com.callapp.contacts",
+   "com.webascender.callerid",
+   "com.vladlee.easyblacklist",
+   "com.syncme.syncmeapp",
+   "com.eyecon.global",
+   "gogolook.callgogolook2",
+   "com.mrnumber.blocker",
+   "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls",
+   "com.gingkolab.callblocker"
+  ],
+  "block unknown caller": [
+   "com.lifesoftwarelab.android.incomingcallcontrol",
+   "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls",
+   "com.vladlee.easyblacklist",
+   "com.alphasystem.callblocker",
+   "com.truecaller",
+   "com.unknownphone.callblocker",
+   "com.mrnumber.blocker",
+   "com.callapp.contacts",
+   "com.cuiet.blockCalls",
+   "com.gingkolab.callblocker"
+  ],
+  "block spam calls": [
+   "com.truecaller",
+   "com.callapp.contacts",
+   "com.webascender.callerid",
+   "com.vladlee.easyblacklist",
+   "com.google.android.dialer",
+   "gogolook.callgogolook2",
+   "com.syncme.syncmeapp",
+   "com.eyecon.global",
+   "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls",
+   "com.mrnumber.blocker"
+  ]
+ },
+ "playApps": {
+  "call.blacklist.blocker": {
+   "id": "call.blacklist.blocker",
+   "title": "Call Blocker - Block Numbers",
+   "short": "Chặn cuộc gọi rác và lừa đảo",
+   "longStart": "Ứng dụng Chặn Cuộc Gọi Spam , chặn các số không xác định và nói lời tạm biệt với các cuộc gọi lừa đảo, các chiêu trò gian lận và những người tiếp thị qua điện thoại phiền phức ngay bây giờ. Ứng dụng Chặn Cuộc Gọi cho phép bạn  chặn tất cả các cuộc gọi không mong muốn  và đưa các số cụ thể vào danh sách đen!  Bạn có mệt mỏi vì liên tục bị làm phiền bởi các cuộc gọi spam khó chịu và những người tiếp",
+   "installs": null,
+   "ratings": null,
+   "developer": "Spam Call Blocker Apps"
+  },
+  "com.alphasystem.callblocker": {
+   "id": "com.alphasystem.callblocker",
+   "title": "Unknown Call Blocker",
+   "short": "Chặn hoặc tắt tiếng cuộc gọi từ các số điện thoại không có trong danh bạ của bạn.",
+   "longStart": "Ứng dụng Chặn Cuộc Gọi Từ Số Không Xác Định giúp giảm thiểu sự gián đoạn từ các số điện thoại chưa được lưu. Sau khi bạn cấp các quyền cần thiết và chọn ứng dụng để hiển thị ID người gọi và lọc tin nhắn rác, các cuộc gọi từ danh bạ của bạn sẽ tiếp tục đổ chuông. Đối với các số điện thoại không có trong danh bạ, bạn có thể chọn từ chối hoặc tắt tiếng cuộc gọi.  Chức năng chặn cuộc gọi sẽ tự động đư",
+   "installs": "100+",
+   "ratings": null,
+   "developer": "Alpha System BR"
+  },
+  "com.androidrocker.callblocker": {
+   "id": "com.androidrocker.callblocker",
+   "title": "Trình chặn cuộc gọi",
+   "short": "Chặn các cuộc gọi không mong muốn giúp bạn!",
+   "longStart": "Trình chặn cuộc gọi có thể tự động từ chối các cuộc gọi không mong muốn. Nếu các cuộc gọi từ nhân viên bán hàng làm phiền bạn, hoặc nếu bạn muốn từ chối cuộc gọi từ một người bất kỳ, bạn chỉ cần thêm số đó vào danh sách đen và để Trình Chặn Cuộc gọi làm việc. Ứng dụng này rất nhẹ và ổn định, sử dụng rất ít bộ nhớ và tài nguyên CPU.  Tính năng:  1. Danh sách đen thêm các số vào danh sách đen để chặ",
+   "installs": null,
+   "ratings": null,
+   "developer": "AndroidRock"
+  },
+  "com.antifraud.app": {
+   "id": "com.antifraud.app",
+   "title": "Chống Lừa Đảo",
+   "short": "Kiểm tra tin nhắn, số lạ, link đáng ngờ ngay trên máy. Không cần đăng ký.",
+   "longStart": "Nhận tin nhắn lạ? Cuộc gọi từ số nước ngoài? Đường link không rõ nguồn gốc? Hãy kiểm tra trước khi tin, trước khi bấm, trước khi chuyển tiền.  Chống Lừa Đảo giúp bạn nhận ra các chiêu trò lừa đảo phổ biến tại Việt Nam — từ kẻ gian giả danh cơ quan chức năng, ngân hàng, nhà mạng, shipper cho tới việc nhẹ lương cao, đầu tư giả, lừa tình cảm qua mạng.  ■ KIỂM TRA TIN NHẮN NHANH Dán tin nhắn nghi ngờ ",
+   "installs": "10+",
+   "ratings": null,
+   "developer": "Huy Trần"
+  },
+  "com.backtrackingtech.callblocker": {
+   "id": "com.backtrackingtech.callblocker",
+   "title": "Call Blocker",
+   "short": "Một ứng dụng hiệu quả để chặn thư rác, không mong muốn và robocalls.",
+   "longStart": "Trình chặn cuộc gọi là ứng dụng chặn cuộc gọi trực quan và mạnh mẽ nhất. Nó giúp bạn chặn các cuộc gọi từ thư rác, không mong muốn, riêng tư (ẩn) hoặc robocalls.     Các tính năng chính  ★ Chặn cuộc gọi riêng tư hoặc ẩn. ★ Chặn tất cả các cuộc gọi từ các số chưa biết. ★ Chặn tất cả các cuộc gọi ngoại trừ số Whitelist ★ Tự động tạo lịch sử chặn cuộc gọi. ★ Bật / tắt thông báo chặn cuộc gọi. ★   Dan",
+   "installs": null,
+   "ratings": "571",
+   "developer": "Backtracking Technologies"
+  },
+  "com.callapp.contacts": {
+   "id": "com.callapp.contacts",
+   "title": "Callapp: ID Người gọi & Chặn",
+   "short": "Định danh người gọi, chặn cuộc gọi spam",
+   "longStart": "ID người gọi, ghi âm cuộc gọi & chặn cuộc gọi tự động cho phép bạn chặn các cuộc gọi không mong đợi và luôn nhận diện được ai là người gọi. Nhận diện cuộc gọi & tin nhắn bằng Trình chặn thư rác và ID người gọi  Chặn ID của người gọi - Xác định được ai đang gọi bằng cách sử dụng trình người gọi ẩn danh, Trình chặn cuộc gọi tự động và tin nhắn rác. Có thể chặn cuộc gọi điện thoại.  ★ Nhắn tin & SMS ",
+   "installs": null,
+   "ratings": null,
+   "developer": "CallApp Caller ID, Call Recorder & Spam Blocker"
+  },
+  "com.callblocker.callblocker_app": {
+   "id": "com.callblocker.callblocker_app",
+   "title": "Chặn Cuộc Gọi Rác & Lừa Đảo",
+   "short": "Chặn cuộc gọi rác, lừa đảo tự động ngay trên máy. Riêng tư, không lộ danh bạ.",
+   "longStart": "Chặn Cuộc Gọi Rác & Lừa Đảo giúp bạn yên tĩnh khỏi các cuộc gọi quảng cáo, mời chào, và lừa đảo mạo danh — chặn trực tiếp bằng hệ điều hành Android, trước cả khi điện thoại reo.  ━━━━━━━━━━━━━━━━━━ TÍNH NĂNG CHÍNH ━━━━━━━━━━━━━━━━━━  • Danh sách chặn cá nhân: thêm số điện thoại hoặc cả đầu số (ví dụ 028, 1900…) để chặn hàng loạt số rác cùng dạng. • Chặn theo đầu số + ký tự đại diện: nhập mẫu như 0",
+   "installs": "10+",
+   "ratings": null,
+   "developer": "Van Phuc Dang"
+  },
+  "com.chansdt.chan_so_dt": {
+   "id": "com.chansdt.chan_so_dt",
+   "title": "Chặn Cuộc gọi - SMS lừa đảo",
+   "short": "Ứng dụng chặn cuộc gọi/SMS, lọc spam",
+   "longStart": "Ứng dụng giúp bạn bảo vệ gia đình trước các cuộc gọi làm phiền (Lừa đảo), tin nhắn spam. 1. Chặn cuộc gọi & SMS thông minh -  Chặn cuộc gọi trong/ngoài danh bạ -  Chặn tin nhắn, cuộc gọi theo từ khóa -  Chặn Brandname quảng cáo, spam -  Chặn theo danh sách cộng đồng (cập nhật theo số spam nhiều người báo cáo) - Tự động ghi lại lịch sử cuộc gọi bị chặn -  Cho phép tạo danh sách đen (Blacklist) & da",
+   "installs": "500+",
+   "ratings": null,
+   "developer": "Công ty Cổ phần Công nghệ và Đào tạo HPK VIỆT NAM"
+  },
+  "com.cuiet.blockCalls": {
+   "id": "com.cuiet.blockCalls",
+   "title": "Trình chặn cuộc gọi",
+   "short": "Chặn thư rác và cuộc gọi không xác định. Danh sách đen. Trình quay số điện thoại",
+   "longStart": "Calls Blocker là một chương trình chặn các cuộc gọi không mong muốn, chẳng hạn như trung tâm cuộc gọi, spam, tiếp thị qua điện thoại, cuộc gọi riêng tư, cuộc gọi bí mật, cuộc gọi ẩn danh, người lạ, v.v.  Với tính năng chặn cuộc gọi đi, kết hợp với mã bảo mật, bạn sẽ rất dễ dàng quản lý các cuộc gọi đi, đối với trẻ em, nhân viên, người khuyết tật, v.v.  Là một chương trình chặn cuộc gọi rất đơn giả",
+   "installs": null,
+   "ratings": null,
+   "developer": "Applika GmbH"
+  },
+  "com.eway.icallme": {
+   "id": "com.eway.icallme",
+   "title": "iCallme: Nhận diện gọi lừa đảo",
+   "short": "Ứng phát hiện ID người gọi tối ưu giúp bạn không còn phải đoán xem ai đang gọi",
+   "longStart": "iCallme – Nhận diện, cảnh báo và chặn cuộc gọi lừa đảo, làm phiền  Bạn thường xuyên nhận cuộc gọi từ số lạ? Giả danh shipper, nhân viên ngân hàng, bảo hiểm, công an… để chiếm đoạt tài sản? iCallme giúp bạn biết ai đang gọi trước khi nhấc máy, và tự động chặn những cuộc gọi nguy hiểm.  iCallme được giao phát triển bởi Trung tâm Ứng dụng Công nghệ Bảo vệ Dữ liệu Cá nhân (Trung tâm PDP), với hơn 2 tr",
+   "installs": null,
+   "ratings": null,
+   "developer": "Trung Tâm Ứng Dụng CN Bảo Vệ Dữ Liệu Cá Nhân"
+  },
+  "com.eyecon.global": {
+   "id": "com.eyecon.global",
+   "title": "Ai Con: Chặn & Hiển Gọi Spam!",
+   "short": "🌍 Hiển thị số người gọi ✔️ Chặn tin nhắn rác ⛔️ Tra cứu ngược 📞",
+   "longStart": "Ai Con (Eyecon) là ứng dụng hiển thị người gọi và chặn cuộc gọi spam hàng đầu, giúp bạn làm chủ mọi cuộc gọi đến một cách dễ dàng, thông minh và an toàn. Thay vì chỉ thấy số lạ, giờ đây bạn sẽ nhận diện ngay ai đang gọi, với ảnh đại diện toàn màn hình và thông tin chi tiết. Nhờ đó, bạn thoải mái quyết định có nên bắt máy hay chặn ngay cuộc gọi rác, bảo vệ thời gian quý báu của mình.  📞 Hiển Thị Cu",
+   "installs": null,
+   "ratings": null,
+   "developer": "Eyecon Phone Dialer & Contacts"
+  },
+  "com.gingkolab.callblocker": {
+   "id": "com.gingkolab.callblocker",
+   "title": "Call Blocker - Robocall & Spam",
+   "short": "Chặn ngay lập tức các cuộc gọi tự động, tin nhắn rác và cuộc gọi lừa đảo — loại bỏ hoàn toàn các nhân viên tiếp thị qua điện thoại.",
+   "longStart": "Mệt mỏi vì các cuộc gọi tự động, tin nhắn rác và cuộc gọi tiếp thị qua điện thoại làm hỏng cả ngày của bạn? Ứng dụng Chặn Cuộc Gọi (Call Blocker) sẽ chặn ngay lập tức các cuộc gọi không mong muốn — mà không cần chuông reo.  Lấy lại quyền kiểm soát điện thoại của bạn. Chặn các số điện thoại lừa đảo, cuộc gọi gian lận và cuộc gọi tự động bằng các bộ lọc mạnh mẽ, có thể tùy chỉnh — tất cả đều được xử",
+   "installs": null,
+   "ratings": null,
+   "developer": "Gingko Lab"
+  },
+  "com.google.android.dialer": {
+   "id": "com.google.android.dialer",
+   "title": "Điện thoại",
+   "short": "Cách gọi điện hiệu quả hơn",
+   "longStart": "Google’s official phone calling app is now available to download for the first time. Phone helps you easily connect with family and friends, block spam callers, and know who’s calling before you answer – all with a simple, intuitive design.   Powerful spam protection  See warnings about suspicious callers that help you avoid unwanted calls from spammers, telemarketers and scammers. Block numbers t",
+   "installs": null,
+   "ratings": null,
+   "developer": "Google LLC"
+  },
+  "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls": {
+   "id": "com.growtons.call.blocker.block.spam.calls.blacklist.unknown.calls.block.robo.calls",
+   "title": "Unknown Call & Contact Blocker",
+   "short": "Chặn cuộc gọi không xác định, Chặn số dựa trên chữ số bắt đầu và Chặn danh bạ",
+   "longStart": "Bạn có nhận ra rằng hầu hết các cuộc gọi rác mà bạn nhận được đều bắt đầu bằng các chữ số giống nhau không? Chỉ cần chỉ định các chữ số bắt đầu của các cuộc gọi spam mà bạn nhận được và chúng tôi sẽ Chặn các thư rác đó mãi mãi!  Và tất nhiên, ứng dụng Chặn cuộc gọi của chúng tôi cũng cho phép bạn tự động tắt tiếng hoặc từ chối cuộc gọi từ Số không xác định hoặc danh bạ của bạn.  Bạn có thường xuyê",
+   "installs": null,
+   "ratings": null,
+   "developer": "Growtons Tech"
+  },
+  "com.grus.callblocker": {
+   "id": "com.grus.callblocker",
+   "title": "Call Blocker:Caller ID & Block",
+   "short": "Call Blocker giúp tìm tên người gọi và chặn các cuộc gọi không mong muốn và thư rác",
+   "longStart": "Call Blocker là ứng dụng tốt nhất để nhận dạng tên người gọi và chặn số spam & cuộc gọi không mong muốn. Call Blocker được hàng triệu người dùng trên toàn thế giới tin dùng! Đơn giản, hiệu quả và miễn phí.  Call Blocker sẽ tự động chặn số điện thoại từ những kẻ gửi thư rác, tiếp thị qua điện thoại và cuộc gọi tự động. Bạn cũng có thể chặn cuộc gọi bằng Calls Blacklist. Với cơ sở dữ liệu số điện th",
+   "installs": null,
+   "ratings": null,
+   "developer": "Ayago Dev"
+  },
+  "com.lifesoftwarelab.android.incomingcallcontrol": {
+   "id": "com.lifesoftwarelab.android.incomingcallcontrol",
+   "title": "Chặn số gọi không xác định",
+   "short": "Chặn hoặc tắt tiếng cuộc gọi từ các số không được lưu trong Danh bạ.",
+   "longStart": "Chặn Cuộc Gọi Lạ Ngay Hôm Nay! Bạn có mệt mỏi vì liên tục bị làm phiền bởi các cuộc gọi từ người tiếp thị, kẻ lừa đảo và những số lạ không? Easy Call Blocker mang đến giải pháp đơn giản nhất để bạn lấy lại quyền kiểm soát điện thoại của mình. Với thiết kế cực kỳ tối giản, bạn có thể bắt đầu chặn cuộc gọi rác chỉ trong vài giây.  Các Tính Năng Nổi Bật -Không Cần Đăng Nhập Bắt đầu chặn cuộc gọi rác ",
+   "installs": null,
+   "ratings": null,
+   "developer": "Life Software Lab"
+  },
+  "com.mrnumber.blocker": {
+   "id": "com.mrnumber.blocker",
+   "title": "Mr. Number: Spam Call Blocker",
+   "short": "Chặn và xác định các cuộc gọi lừa đảo, lừa đảo và spam",
+   "longStart": "Mr. Number giúp bạn dễ dàng chặn các cuộc gọi không mong muốn cũng như xác định và ngăn chặn thư rác, lừa đảo và gian lận.  - Đặt tên cho các số khi gọi đi - Chặn cuộc gọi từ một người, mã vùng hoặc toàn bộ quốc gia - Ngăn chặn những người tiếp thị qua điện thoại và người đòi nợ trước khi họ lãng phí thời gian của bạn - Chặn cuộc gọi từ các số riêng tư/không xác định và gửi vào hộp thư thoại - Báo",
+   "installs": null,
+   "ratings": null,
+   "developer": "Hiya"
+  },
+  "com.nca.vn.ntrust": {
+   "id": "com.nca.vn.ntrust",
+   "title": "nTrust: Phòng chống lừa đảo",
+   "short": "Phần mềm phòng chống lừa đảo do Hiệp hội An ninh mạng quốc gia phát triển",
+   "longStart": "nTrust - Phần mềm phòng chống lừa đảo do Hiệp hội An ninh mạng quốc gia phát triển, vận hành. Phần mềm hoàn toàn miễn phí, giúp phát hiện các dấu hiệu không an toàn thông qua kiểm tra số điện thoại, địa chỉ website (link), kiểm tra số tài khoản, kiểm tra ứng dụng và kiểm tra mã QR.  Chức năng chặn cuộc gọi lừa đảo  -  Chặn cuộc gọi đến từ số điện thoại lừa đảo có trong cơ sở dữ liệu -  Cảnh báo cu",
+   "installs": null,
+   "ratings": "739",
+   "developer": "Hiệp hội An ninh mạng Quốc gia"
+  },
+  "com.ppcaller": {
+   "id": "com.ppcaller",
+   "title": "CleanCall: Cảnh báo cuộc gọi",
+   "short": "Nhận diện & chặn cuộc gọi rác",
+   "longStart": "CleanCall giúp bạn nhận diện người gọi và chặn cuộc gọi rác, lừa đảo với các số không xác định phổ biến tại Việt Nam.  Tính năng của CleanCall: - THỰC HIỆN CUỘC GỌI NGAY TRONG ỨNG DỤNG + Xem lại lịch sử cuộc gọi, kể cả những cuộc gọi bị chặn + Hiển thị thông tin và làm nổi bật những số được nhận diện là spam, lừa đảo... + Hiển thị thông tin người gọi đến, sau khi cuộc gọi kết thúc, từ đó người dùn",
+   "installs": null,
+   "ratings": "748",
+   "developer": "PING PUSH"
+  },
+  "com.smsBlocker": {
+   "id": "com.smsBlocker",
+   "title": "Spam Blocker, Scam Block: Mezo",
+   "short": "Dừng ngay lập tức các tin nhắn văn bản gây phiền nhiễu với trình chặn thư rác mạnh mẽ nhất",
+   "longStart": "Bạn đã chán ngấy với thư rác? Hãy giành lại quyền kiểm soát với Mezo SMS Blocker – ứng dụng chống thư rác mạnh mẽ nhất dành cho Android!  Ngay lập tức chặn các tin nhắn phiền phức, bao gồm thư rác chính trị và cờ bạc, nội dung người lớn, ưu đãi cho vay và đủ loại tin nhắn không mong muốn, và tận hưởng sự an tâm với công nghệ chặn thư rác tiên tiến, được điều khiển bởi AI của chúng tôi.  Bạn đang t",
+   "installs": null,
+   "ratings": null,
+   "developer": "Mezo SMS AI - Spam Blocker, Text Blocker"
+  },
+  "com.syncme.syncmeapp": {
+   "id": "com.syncme.syncmeapp",
+   "title": "Sync.ME: Hiện ID & Chặn Spam",
+   "short": "Hiện tên người gọi lạ, chặn số rác & tìm kiếm thông tin số điện thoại.",
+   "longStart": "📞 Sync.me – Hiện ID Người Gọi, Chặn Cuộc Gọi Rác & Tra Cứu Số Điện Thọai  Sync.me là ứng dụng xác định danh tính người gọi (Caller ID) và chặn cuộc gọi rác mạnh mẽ, giúp bạn nhận biết các số điện thoại lạ, chặn cuộc gọi làm phiền và quản lý danh bạ dễ dàng.  Không còn phải tự hỏi “ai đang gọi cho mình?”. Hãy tránh xa các cuộc gọi lừa đảo, quảng cáo, hay số lạ quấy rầy. Với tính năng xác định người",
+   "installs": null,
+   "ratings": null,
+   "developer": "Sync.ME Caller ID"
+  },
+  "com.truecaller": {
+   "id": "com.truecaller",
+   "title": "Truecaller ID Người gọi & spam",
+   "short": "Nhận diện số điện thoại gọi đến, chặn cuộc gọi và tin nhắn rác",
+   "longStart": "Bảo vệ bạn trước cuộc gọi spam và lừa đảo nhờ Truecaller. Tính năng ID người gọi nổi tiếng của chúng tôi sẽ cho biết ai đang gọi cho bạn và lý do họ gọi tới để bạn có thể quyết định có nên nhấc máy hay không. Sử dụng tính năng Quay số hữu ích để tìm thông tin số điện thoại và gọi điện cho bạn bè và gia đình trong danh bạ. Truecaller cũng có tính năng nhận diện và cảnh báo bạn về cuộc gọi tự động, ",
+   "installs": null,
+   "ratings": null,
+   "developer": "Truecaller"
+  },
+  "com.unknownphone.callblocker": {
+   "id": "com.unknownphone.callblocker",
+   "title": "Call Blocker - Stop spam calls",
+   "short": "Chặn cuộc gọi rác, tra cứu số điện thoại đáng ngờ và kiểm soát ai có thể liên lạc với bạn.",
+   "longStart": "Nhận được các cuộc gọi rác không mong muốn? Kiểm tra xem những người khác đã báo cáo số điện thoại đó chưa và  chặn các cuộc gọi bạn không muốn nhận .  Ứng dụng Chặn Cuộc Gọi giúp bạn  chặn các cuộc gọi rác và tra cứu các số điện thoại đáng ngờ . Kiểm tra các báo cáo của cộng đồng về các cuộc gọi tiếp thị qua điện thoại không mong muốn và các vụ lừa đảo qua điện thoại tiềm ẩn, và chọn những cuộc g",
+   "installs": null,
+   "ratings": null,
+   "developer": "UnknownPhone.com"
+  },
+  "com.viettel.allblocking": {
+   "id": "com.viettel.allblocking",
+   "title": "Chống làm phiền",
+   "short": "Chống làm phiền is ứng dụng giúp khách hàng Viettel chặn cuộc gọi, tin nhắn SMS",
+   "longStart": "Chống làm phiền is one ứng dụng cho phép khách hàng thực hiện chặn the call or SMS unexpectedly from thuê bao khác. With the 3 chức năng chính: - Block cuộc gọi / sms from thuê bao ngoài danh bạ. - Block cuộc gọi / sms from thuê bao người dùng tự đăng ký. - Chủ động đặt khung giờ chặn. Ứng dụng \"Chống làm phiền\" giúp khách hàng chủ động in việc quản lý cuộc gọi of messages and chủ động về mặt thời",
+   "installs": null,
+   "ratings": "916",
+   "developer": "VIETTEL TELECOM"
+  },
+  "com.vladlee.easyblacklist": {
+   "id": "com.vladlee.easyblacklist",
+   "title": "Calls Blacklist: Chặn cuộc gọi",
+   "short": "Bộ chặn cuộc gọi linh hoạt với danh sách đen. Chặn cuộc gọi hiệu quả!",
+   "longStart": "Bạn mệt mỏi vì những cuộc gọi phiền toái? Calls Blacklist: Chặn cuộc gọi giúp bạn chặn các cuộc gọi không xác định và số riêng tư bằng danh sách đen. Giảm gián đoạn từ cuộc gọi rác, tiếp thị qua điện thoại và các cuộc gọi không mong muốn với ứng dụng chặn cuộc gọi này, đồng thời luôn kiểm soát được ai có thể liên lạc với bạn.  Không cần tài khoản. Ứng dụng đơn giản và nhẹ. Tạo quy tắc theo tiền tố",
+   "installs": null,
+   "ratings": null,
+   "developer": "Enchan Li"
+  },
+  "com.vn.trustcall": {
+   "id": "com.vn.trustcall",
+   "title": "TrustCall: Chặn cuộc gọi rác",
+   "short": "TrustCall bảo vệ người dùng khỏi cuộc gọi và tin nhắn rác.",
+   "longStart": "Trust Call: ứng dụng cho điện thoại thông minh hỗ trợ người dùng nhận diện và chặn các cuộc gọi rác, lừa đảo, spam, quảng cáo hiệu quả, an toàn.  Với nhiều tính năng ưu việt và công nghệ phân tích dữ liệu Spam tự động, người dùng yên tâm được bảo vệ khỏi cuộc gọi và tin nhắn rác 24/24. LỢI ÍCH KHI SỬ DỤNG TRUSTCALL:  -\tBIẾT TRƯỚC AI GỌI ĐẾN: Với tính năng nhận diện ID người gọi, Trust Call giúp kh",
+   "installs": null,
+   "ratings": "30",
+   "developer": "Leeon Cyber Security"
+  },
+  "com.webascender.callerid": {
+   "id": "com.webascender.callerid",
+   "title": "Hiya: Spam Blocker & Caller ID",
+   "short": "Chặn tin nhắn rác, sàng lọc cuộc gọi và phát hiện các trò lừa đảo bằng giọng nói AI trong thời gian thực.",
+   "longStart": "LỌC CUỘC GỌI KHÔNG MONG MUỐN Hiya Call Screener có thể trả lời các cuộc gọi không xác định và hỏi lý do người gọi gọi. Nếu cuộc gọi có vẻ không mong muốn, Hiya có thể giúp bạn tránh bị gián đoạn công việc hàng ngày.  PHÁT HIỆN GIỌNG NÓI AI & DEEPFAKE Những kẻ lừa đảo đang sử dụng giọng nói do AI tạo ra để nghe có vẻ đáng tin hơn. Hiya phân tích các cuộc gọi trong thời gian thực và cảnh báo bạn khi",
+   "installs": null,
+   "ratings": null,
+   "developer": "Hiya"
+  },
+  "gogolook.callgogolook2": {
+   "id": "gogolook.callgogolook2",
+   "title": "Whoscall: chặn quấy rối mobile",
+   "short": "Với Whoscall, bạn có thể nhận biết được người lạ trước khi nhận cuộc gọi",
+   "longStart": "Với Whoscall, bạn ngay lập tức có thể xác định nguồn gốc của các cuộc gọi và tin nhắn văn bản ngay cả khi số điện thoại của người gọi không có trong danh bạ của bạn. Whoscall cũng giúp bạn ngăn chặn các số điện thoại cụ thể.  Cơ sở dữ liệu toàn cầu của chúng tôi cung cấp hơn 1,6 tỷ số. Trợ giúp Whoscall đã lọc và chặn khoảng 7 tỷ cuộc gọi & SMS gây phiền nhiễu hàng năm.   ★ Google Play - Ứng dụng ",
+   "installs": null,
+   "ratings": null,
+   "developer": "Gogolook"
+  },
+  "info.icaller": {
+   "id": "info.icaller",
+   "title": "vCaller chặn gọi spam, đòi nợ",
+   "short": "vCaller giúp chặn cuộc gọi làm phiền nhưng không bỏ lỡ cuộc gọi quan trọng",
+   "longStart": "vCaller - Chặn Cuộc Gọi Làm Phiền     Giới thiệu về ứng dụng     vCaller  (trước đây là  iCaller ) là  ứng dụng chặn cuộc gọi làm phiền tiên tiến , được xây dựng trên  công nghệ AI trí tuệ nhân tạo  và  báo cáo của cộng đồng  để  phát hiện các cuộc gọi spam, quảng cáo, lừa đảo, đòi nợ . Với  tính năng hiển thị tên người gọi , vCaller giúp người dùng có thể  dễ dàng nhận biết và quyết định trước kh",
+   "installs": null,
+   "ratings": null,
+   "developer": "Inmoteck"
+  },
+  "io.cleanfox.android": {
+   "id": "io.cleanfox.android",
+   "title": "Cleanfox: Spam & Email Cleaner",
+   "short": "Hủy đăng ký nhận email không mong muốn và bảo vệ hộp thư đến của bạn bằng phần mềm chống thư rác.",
+   "longStart": "🥇 \"Cleanfox là một ứng dụng giúp người dùng hủy đăng ký nhận bản tin, và cho đến nay đã 'làm sạch' hơn 30 triệu email.\" — Tech.eu  🥇 \"Ứng dụng này hoàn toàn miễn phí — không quảng cáo, không hạn chế và không giới hạn số lần sử dụng.\" — The Economic Times  Cleanfox là trình chặn thư rác cho Android và trình dọn dẹp email được hơn 10 triệu người dùng tin dùng. Ngừng lãng phí thời gian tìm kiếm trong",
+   "installs": null,
+   "ratings": null,
+   "developer": "NielsenIQ"
+  },
+  "merry.call.block": {
+   "id": "merry.call.block",
+   "title": "Ứng dụng chặn cuộc gọi spam",
+   "short": "Chặn cuộc gọi - Chặn tin nhắn rác, lừa đảo, tiếp thị qua điện thoại.",
+   "longStart": "Bạn có thường xuyên bị làm phiền bởi những cuộc gọi không mong muốn từ người gửi tin nhắn rác, người tiếp thị qua điện thoại, kẻ lừa đảo hoặc số điện thoại lạ...?  Vậy làm thế nào để chặn các cuộc gọi rác?  Đừng lo lắng, chúng tôi ở đây để mang đến cho bạn giải pháp giúp bạn chặn các cuộc gọi đến rác. Ứng dụng Quay số và Chặn cuộc gọi đa năng này giúp bạn quản lý cuộc gọi hiệu quả đồng thời bảo vệ",
+   "installs": null,
+   "ratings": "205",
+   "developer": "Just Prank It"
+  },
+  "org.litewhite.callblocker": {
+   "id": "org.litewhite.callblocker",
+   "title": "Chặn cuộc gọi - Điện thoại",
+   "short": "Trình chặn cuộc gọi miễn phí để chặn những cuộc gọi không mong muốn.",
+   "longStart": "Ứng dụng điện thoại và trình chặn cuộc gọi để xử lý các cuộc gọi điện thoại của bạn và chặn các cuộc gọi spam.  Chặn thư rác: * Chặn thư rác cho cuộc gọi bằng cách thêm số điện thoại vào danh sách đen. * Chặn tất cả mọi người ngoại trừ danh bạ. * Chặn số riêng tư. * Danh sách trắng cho các số điện thoại không bao giờ bị chặn. * Nhật ký chặn cuộc gọi. * Tìm kiếm nhanh các cuộc gọi và số điện thoại ",
+   "installs": null,
+   "ratings": null,
+   "developer": "KiteTech"
+  },
+  "org.whiteglow.antinuisance": {
+   "id": "org.whiteglow.antinuisance",
+   "title": "Hệ thống chặn cuộc gọi và SMS",
+   "short": "Trình chặn cuộc gọi và Trình chặn SMS với nhiều tùy chọn chặn cuộc gọi.",
+   "longStart": "Ứng dụng điện thoại và ứng dụng nhắn tin SMS để xử lý các cuộc gọi điện thoại và tin nhắn SMS của bạn. Tích hợp tính năng chặn các cuộc gọi và tin nhắn SMS không mong muốn.  Lưu ý: Chặn tin nhắn văn bản spam yêu cầu ứng dụng phải là ứng dụng SMS mặc định.  Chặn thư rác: * Chặn thư rác cho các cuộc gọi bằng cách thêm số điện thoại vào danh sách đen. * Chặn mọi người ngoại trừ danh bạ. * Chặn số điệ",
+   "installs": null,
+   "ratings": null,
+   "developer": "KiteTech"
+  },
+  "pamiesolutions.blacklistcall": {
+   "id": "pamiesolutions.blacklistcall",
+   "title": "Block-Spam: Chặn cuộc gọi",
+   "short": "Chặn cuộc gọi & nhận diện người gọi miễn phí: chặn spam, biết ai đang gọi.",
+   "longStart": "Lấy lại sự yên tĩnh: Block-Spam là ứng dụng chặn cuộc gọi giúp dừng cuộc gọi rác, cuộc gọi tự động và lừa đảo trước khi điện thoại kịp đổ chuông. Chỉ những người quan trọng mới gọi được cho bạn, và danh bạ của bạn không bao giờ rời khỏi điện thoại.  ĐIỆN THOẠI LẠI LÀ CỦA BẠN • Tự động chặn cuộc gọi rác: các số rác đã biết tự bị ngắt, khi bạn họp, ăn tối hay đang ngủ. • Biết ai gọi trước khi nghe m",
+   "installs": null,
+   "ratings": null,
+   "developer": "Block-Spam"
+  },
+  "vn.chanprefix.blocker": {
+   "id": "vn.chanprefix.blocker",
+   "title": "Chặn cuộc gọi rác & lừa đảo",
+   "short": "Chặn cuộc gọi rác, số lạ, đầu số và cảnh báo lừa đảo có nguồn.",
+   "longStart": "Bạn thường xuyên bị làm phiền bởi cuộc gọi rác, số lạ, cuộc gọi quảng cáo hoặc những số có dấu hiệu lừa đảo? Chặn số này nhưng bên gọi lại tiếp tục sử dụng số khác?  Chặn cuộc gọi rác & lừa đảo giúp bạn chủ động lọc cuộc gọi theo cả số điện thoại, đầu số hoặc chuỗi số. Ứng dụng còn đồng bộ kho số cảnh báo có nguồn để hỗ trợ bảo vệ người dùng trước những cuộc gọi đáng ngờ.  CHẶN CUỘC GỌI LINH HOẠT ",
+   "installs": "500+",
+   "ratings": "6",
+   "developer": "hellovietnam"
+  },
+  "vn.sorac": {
+   "id": "vn.sorac",
+   "title": "Số Lạ",
+   "short": "Nhận diện cuộc gọi Spam, QC, BĐS, tín dụng đen, đòi nợ",
+   "longStart": "App phát hiện cuộc gọi rác, hiện ID người gọi, hoạt động hiệu quả với Blacklist siêu khủng. - Spam, Quảng cáo, Bất động sản, Đòi nợ, Tín dụng đen, đầu tư tài chính, cờ bạc... Siêu Danh Bạ Việt - đầy đủ danh bạ công ty, hàng quán, shop kinh doanh... đến tên cá nhân theo số ĐT.  Đơn giản dễ dùng, tôn trọng dữ liệu cá nhân: - Không yêu cầu nhập số điện thoại. - Không yêu cầu đăng ký - đăng nhập. - Kh",
+   "installs": null,
+   "ratings": "338",
+   "developer": "Vu Tuan Anh"
+  }
+ }
+}

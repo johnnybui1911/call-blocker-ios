@@ -1,0 +1,80 @@
+== CallStop [vn]: 
+== CallStop [us]: Google Voice (62017, Productivity) ; Gruveo (991, Business) ; TapeACall: Call Recorder (38462, Business) ; TeleMe – Record on 2nd Number (481, Social Networking) ; CallerSmart: Reverse Lookup (14933, Utilities) ; mytello: International calling (5918, Social Networking)
+== StopCall [vn]: 
+== StopCall [us]: Google Voice (62017, Productivity) ; Getcontact: Spam Caller ID (61778, Utilities) ; YouMail: Spam Call Blocker (100047, Utilities) ; Mr. Number Lookup & Call Block (100046, Utilities) ; Call Control: #1 Call Blocker (6687, Utilities) ; NumberBox:CallerID (575, Utilities)
+== BlockCall [vn]: Begone: Spam Call Blocker (41, Productivity) ; Simple Call Blocker (116, Utilities) ; Call Blocker (65, Utilities) ; Truecaller: Premium Caller ID (8954, Utilities) ; CleanCall: Caller ID & Block (5874, Utilities)
+== BlockCall [us]: Call Blocker (1237, Utilities) ; Simple Call Blocker (3766, Utilities) ; Begone: Spam Call Blocker (68, Productivity) ; Call Control: #1 Call Blocker (6687, Utilities) ; Mr. Number Lookup & Call Block (100046, Utilities) ; Sync.me - Caller ID & Blocker (22119, Social Networking)
+== CallBlock [vn]: **Call Blocker (65, Utilities) ; Truecaller: Premium Caller ID (8954, Utilities) ; CleanCall: Caller ID & Block (5874, Utilities) ; **Call Blocker™ - Block Spam (9, Utilities) ; CallApp: Caller ID & Block (6, Utilities) ; **Callblock (1, Productivity)
+== CallBlock [us]: **Call Blocker (1237, Utilities) ; Call Control: #1 Call Blocker (6687, Utilities) ; Robokiller: Spam Call Blocker (414723, Utilities) ; Verizon Call Filter (337648, Utilities) ; Hiya: Spam Blocker (238476, Utilities) ; Mr. Number Lookup & Call Block (100046, Utilities)
+== NoCall [vn]: **NoCall: Spam Call Blocker (0, Utilities) ; **NoCall - 隐私来电拦截与短信过滤 (0, Utilities) ; nocal - calendar reinvented (0, Productivity) ; NoCal Nutrition (0, Health & Fitness)
+== NoCall [us]: **NoCall: Spam Call Blocker (0, Utilities) ; Truecaller : Caller ID & Block (55, Utilities) ; NumberBox:CallerID (575, Utilities) ; **NoCall - 隐私来电拦截与短信过滤 (1, Utilities) ; Reveal No Caller ID – MaskOff (841, Business) ; TrapCall: Reveal No Caller ID (26273, Business)
+== CallBye [vn]: 
+== CallBye [us]: Gruveo (991, Business) ; Call Recorder iCall (23362, Business) ; mytello: International calling (5918, Social Networking) ; TeleMe – Record on 2nd Number (481, Social Networking) ; Call Santa Claus - Prank Call (33682, Lifestyle)
+== ByeCall [vn]: 
+== ByeCall [us]: magicApp Calling & Messaging (25879, Utilities) ; Gruveo (991, Business) ; Getcontact: Spam Caller ID (61778, Utilities) ; ViewCaller: Caller ID (823, Utilities) ; PhoneLine - 2nd Phone Number (33, Utilities) ; mytello: International calling (5918, Social Networking)
+== CallNope [vn]: 
+== CallNope [us]: Fake-A-Call Now! (223, Entertainment) ; Gruveo (991, Business) ; Call Voice Changer - IntCall (5518, Entertainment) ; Call Santa Claus - Prank Call (33682, Lifestyle) ; ViewCaller: Caller ID (823, Utilities)
+== CallWall [vn]: **CallWall: Spam Call Blocker (0, Utilities)
+== CallWall [us]: **CallWall: Spam Call Blocker (11, Utilities) ; Google Voice (62017, Productivity) ; NumberBox:CallerID (575, Utilities) ; Dialpad (4568, Business) ; Gruveo (991, Business) ; Mitel Connect (4829, Business)
+== CallGate [vn]: CellGate Mobile Connect (0, Productivity) ; **CallGate Lite (0, Utilities) ; Cellcard (769, Productivity) ; 보이는 ARS (0, Business)
+== CallGate [us]: CellGate Mobile Connect (458, Productivity) ; SmartLine Second Phone Number (43911, Business) ; ePhoneGo2 (1520, Business) ; Vialer (2, Business) ; **CallGate Lite (0, Utilities) ; COREcontact (2, Utilities)
+== CallSafe [vn]: **CallSafe Recorder (0, Lifestyle)
+== CallSafe [us]: **CallSafe Recorder (0, Lifestyle) ; Google Voice (62017, Productivity) ; Truecaller: Premium Caller ID (253217, Utilities) ; Gruveo (991, Business) ; TapeACall: Call Recorder (38462, Business) ; NumberBox:CallerID (575, Utilities)
+== SafeCall [vn]: **Safe Call (0, Utilities) ; **SafeCall (0, Health & Fitness)
+== SafeCall [us]: Guardian: SAFECALL (0, Business) ; **Safe Call (0, Utilities) ; NumberBox:CallerID (575, Utilities) ; **SafeCall PH: Emergency Hotline (0, Utilities) ; Sideline: Private 2nd Number (14880, Utilities)
+== CallGuard [vn]: **來電管家 Call Guard (1, Utilities) ; **CallGuard – Spam Blocker (0, Productivity) ; Spam Text Blocker: Call Filter (0, Utilities) ; Phone (842, Utilities)
+== CallGuard [us]: Xfinity Call Guard (1073, Utilities) ; **來電管家 Call Guard (4, Utilities) ; Cloaked: Protect your privacy (49879, Productivity) ; Call Protect: Robocall Blocker (31830, Utilities) ; **CallGuard – Spam Blocker (0, Productivity)
+== CallOff [vn]: Call of Duty: Mobile VN (95021, Games) ; World War 2 : Call Of Courage (188, Games) ; Snapchat: Chat with friends (18465, Photo & Video)
+== CallOff [us]: Call of Duty®: Mobile (2027013, Games) ; PUBG MOBILE (1627460, Games) ; Special Forces Group 2 (15545, Games) ; Modern Strike Online: War FPS (82495, Games)
+== CallZero [vn]: 
+== CallZero [us]: Gruveo (991, Business) ; Call Recorder iCall (23362, Business) ; TapeACall Pro: Call Recorder (18447, Business) ; mytello: International calling (5918, Social Networking) ; TeleMe – Record on 2nd Number (481, Social Networking)
+== CallCut [vn]: CapCut: Video & Photo Editor (757189, Photo & Video)
+== CallCut [us]: CapCut: Video & Photo Editor (1128255, Photo & Video) ; Edits: Video Editor (108449, Photo & Video) ; VITA - Video Editor & Maker (78302, Photo & Video) ; VideoShow AI Video Editor (45710, Photo & Video) ; TikTok Studio (40378, Photo & Video)
+== CallMute [vn]: 
+== CallMute [us]: Google Voice (62017, Productivity) ; magicApp Calling & Messaging (25879, Utilities) ; TeleMe – Record on 2nd Number (481, Social Networking) ; Gruveo (991, Business) ; Mitel Connect (4829, Business) ; Call Voice Changer - IntCall (5518, Entertainment)
+== CallLock [vn]: Messenger (4719907, Social Networking) ; Block Craft 3D: Crafting Game (119975, Games) ; Contact Poster 17: Call Themes (58, Graphics & Design) ; VPN - Super Unlimited Proxy ™ (142734, Productivity) ; CleanCall: Caller ID & Block (5874, Utilities)
+== CallLock [us]: AppLock - Fingerprint (35, Utilities) ; App Lock - Lock Apps & Photos (25475, Utilities) ; Lock Screen Contact Widget Pro (1, Utilities) ; Super App Lock: Lock Apps (2472, Utilities) ; Contact Poster 17: Call Themes (1645, Graphics & Design)
+== CallBan [vn]: 
+== CallBan [us]: Google Voice (62017, Productivity) ; Dialpad (4568, Business) ; Mr. Number Lookup & Call Block (100046, Utilities) ; NumberBox:CallerID (575, Utilities) ; Hiya: Spam Blocker (238476, Utilities) ; magicApp Calling & Messaging (25879, Utilities)
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    d=json.load(sys.stdin)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+== CallKick [us]: Gruveo (991, Business) ; Mr. Number Lookup & Call Block (100046, Utilities) ; TeleMe – Record on 2nd Number (481, Social Networking) ; Mike Vick : GameTime Football (59261, Games) ; Kickerinho World (1149, Games) ; Sync.me - Caller ID & Blocker (22119, Social Networking)
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    d=json.load(sys.stdin)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+        cls=cls, object_hook=object_hook,
+        parse_float=parse_float, parse_int=parse_int,
+        parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.13/3.13.2/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+== CallShield [us]: **CallShield: Scam Call Blocker (3, Utilities) ; **Call Shield (0, Utilities) ; **Call Shield: Spam Blocker (0, Utilities) ; **Call Shield: Spam Call Blocker (1, Utilities) ; NumberBox:CallerID (575, Utilities) ; Gruveo (991, Business)
+== CallKick [vn]: 
+== CallShield [vn]: Call Shield: Spam Blocker (0) ; Call Shield: Spam Call Blocker (0) ; Call Shield (0)
+== Call Stop [vn]: CallApp: Caller ID & Block (6) ; Reverd scam call stopper (0) ; Spam Call Blocker: Stop Scam (353) ; CallTimer - Call Timer (281) ; Getcontact: Spam Caller ID (707) ; SeaTalk (216)
+== Call Stop [us]: Robokiller: Spam Call Blocker (414723) ; Stop - Categories Word Game (106481) ; Stop Spam: Call Blocker (0) ; Stop Calling (3) ; Getcontact: Spam Caller ID (61778) ; YouMail: Spam Call Blocker (100047)
+== Call Bye [us]: Zoom Workplace (3278308) ; Truecaller: Premium Caller ID (253217) ; Google Meet (2332752) ; Free Fire MAX x NARUTO (60265) ; Call Ghost Scary (695) ; Wallpaper 4K HD - Color Call (342)
+== Stop Call [vn]: CallApp: Caller ID & Block (6) ; Spam Call Blocker: Stop Scam (353) ; WideProtect Spam Call Blocker (11) ; Stop Calling (1) ; CallTimer - Call Timer (281) ; Getcontact: Spam Caller ID (707)
