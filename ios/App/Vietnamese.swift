@@ -102,5 +102,7 @@ enum Vietnamese {
         "Danh sách đang rất lớn. Nếu thấy chặn không ổn định, hãy bỏ bớt dải số."
     }
 
+    static let alreadyInList = "Số này đã có trong danh sách."
+
     static let localOnlySaved = "Đã lưu trên máy. Bản cài thử này chưa chặn được cuộc gọi."
 }

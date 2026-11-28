@@ -107,3 +107,114 @@ struct ConfettiBurst: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.95) { visible = false }
     }
 }
+
+/// The round icon used for the header buttons. It is one accessibility element named
+/// `title`; the glyph keeps a fixed size so the header never overflows, and the Large
+/// Content Viewer shows it full size on long press.
+struct CircleIcon: View {
+    let systemName: String
+    let title: String
+
+    var body: some View {
+        Image(systemName: systemName)
+            .font(.system(size: 17, weight: .heavy, design: .rounded))
+            .foregroundStyle(Theme.protectedText)
+            .frame(width: Theme.Size.touchTarget, height: Theme.Size.touchTarget)
+            .background(Theme.surface, in: Circle())
+            .shadow(color: Theme.shadow, radius: 8, y: 4)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(title)
+            .accessibilityShowsLargeContentViewer { Label(title, systemImage: systemName) }
+    }
+}
+
+/// A list row that slides left to show "Sửa" and "Bỏ chặn".
+///
+/// Each row is a native horizontal scroll view, so iOS itself tells a sideways swipe
+/// from a vertical scroll of the list. The actions sit inside the row's own bounds, so
+/// the card that clips the list also shapes them.
+struct SwipeRow<Content: View>: View {
+    /// Width of the card the row sits in.
+    let width: CGFloat
+    let onEdit: () -> Void
+    let onDelete: () -> Void
+    @ViewBuilder let content: () -> Content
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @ScaledMetric(relativeTo: .subheadline) private var scaledActionWidth: CGFloat = 88
+
+    private var actionWidth: CGFloat { min(scaledActionWidth, 120) }
+    private static var contentID: String { "content" }
+
+    var body: some View {
+        if width <= 0 {
+            content()
+        } else {
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 0) {
+                        content()
+                            .frame(width: width)
+                            .id(Self.contentID)
+                        action("Sửa", background: Theme.field, foreground: Theme.ink) { close(proxy); onEdit() }
+                        action("Bỏ chặn", background: Theme.danger, foreground: Theme.onDanger) { close(proxy); onDelete() }
+                    }
+                    .modifier(SnapTargets())
+                }
+                .modifier(SnapToTargets())
+            }
+        }
+    }
+
+    private func action(_ title: String, background: Color, foreground: Color, perform: @escaping () -> Void) -> some View {
+        Button(action: perform) {
+            Text(title)
+                .font(Theme.font(.subheadline, weight: .heavy))
+                .foregroundStyle(foreground)
+                .lineLimit(2)
+                .minimumScaleFactor(0.7)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 6)
+                .frame(width: actionWidth)
+                .frame(maxHeight: .infinity)
+                .background(background)
+        }
+        .buttonStyle(.plain)
+        // VoiceOver reaches these through the row's custom actions instead.
+        .accessibilityHidden(true)
+    }
+
+    private func close(_ proxy: ScrollViewProxy) {
+        withAnimation(reduceMotion ? nil : Theme.Motion.spring) {
+            proxy.scrollTo(Self.contentID, anchor: .leading)
+        }
+    }
+}
+
+/// Rows settle fully open or fully closed on iOS 17 and later. iOS 16 has no snapping
+/// API, so there the row rests where the finger leaves it.
+private struct SnapTargets: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 17.0, *) {
+            content.scrollTargetLayout()
+        } else {
+            content
+        }
+    }
+}
+
+private struct SnapToTargets: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 17.0, *) {
+            content.scrollTargetBehavior(.viewAligned)
+        } else {
+            content
+        }
+    }
+}
+
+/// Reports the width of the list card so rows can size their content to it.
+struct CardWidthKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) { value = max(value, nextValue()) }
+}

@@ -81,6 +81,11 @@ final class RuleStore: ObservableObject {
     }
 
     func upsert(_ rule: BlockRule) {
+        // The same numbers must not appear twice, whichever way they were typed.
+        guard rules.firstDuplicate(of: rule) == nil else {
+            banner = .warning(Vietnamese.alreadyInList)
+            return
+        }
         var next = rules
         let isNew: Bool
         if let index = next.firstIndex(where: { $0.id == rule.id }) {

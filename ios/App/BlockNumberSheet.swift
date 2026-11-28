@@ -29,6 +29,11 @@ struct BlockNumberSheet: View {
     @State private var lengthOverride: Int?
     @State private var didLoad = false
     @FocusState private var numberFocused: Bool
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    /// At accessibility text sizes nothing is pinned, so the result is never hidden
+    /// behind the button or the keyboard.
+    private var roomy: Bool { dynamicTypeSize.isAccessibilitySize }
 
     private var editingID: UUID? {
         if case .edit(let identifier) = route { return identifier }
@@ -49,8 +54,17 @@ struct BlockNumberSheet: View {
         return BlocklistBuild.evaluate(rules: next)
     }
 
+    /// An entry already in the list that blocks the same numbers.
+    private var duplicate: BlockRule? {
+        let reading = reading
+        guard reading.preview.error == nil, let pattern = reading.preview.normalized else { return nil }
+        let draft = BlockRule(id: editingID ?? UUID(), kind: reading.kind, rawInput: rawInput, pattern: pattern,
+                              targetLength: reading.targetLength, enabled: enabled, note: note)
+        return store.rules.firstDuplicate(of: draft)
+    }
+
     private var listWouldBeFull: Bool { enabled && combined?.hardCapExceeded == true }
-    private var canSave: Bool { reading.preview.canSave && !listWouldBeFull }
+    private var canSave: Bool { reading.preview.canSave && !listWouldBeFull && duplicate == nil }
 
     var body: some View {
         NavigationStack {
@@ -70,9 +84,13 @@ struct BlockNumberSheet: View {
                         .tint(Theme.accent)
                         .padding(.top, 8)
                     advanced
+                    if roomy {
+                        saveButton.padding(.top, 12)
+                    }
                 }
                 .padding(20)
             }
+            .scrollDismissesKeyboard(.interactively)
             .background(Theme.sheet.ignoresSafeArea())
             .navigationTitle(editingID == nil ? "Chặn số" : "Sửa số chặn")
             .navigationBarTitleDisplayMode(.inline)
@@ -82,23 +100,29 @@ struct BlockNumberSheet: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                Button(action: save) {
-                    Text(editingID == nil ? "Chặn" : "Lưu")
-                        .font(Theme.font(.headline, weight: .heavy))
-                        .frame(maxWidth: .infinity, minHeight: Theme.Size.buttonHeight)
-                        .foregroundStyle(canSave ? Theme.onAccent : Theme.muted)
-                        .background(canSave ? Theme.accent : Theme.field, in: Capsule())
+                if !roomy {
+                    saveButton
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 8)
+                        .background(Theme.sheet)
                 }
-                .buttonStyle(PressableStyle())
-                .disabled(!canSave)
-                .padding(.horizontal, 20)
-                .padding(.bottom, 8)
-                .background(Theme.sheet)
             }
             .onAppear(perform: load)
         }
         .tint(Theme.protectedText)
         .presentationDetents([.large])
+    }
+
+    private var saveButton: some View {
+        Button(action: save) {
+            Text(editingID == nil ? "Chặn" : "Lưu")
+                .font(Theme.font(.headline, weight: .heavy))
+                .frame(maxWidth: .infinity, minHeight: Theme.Size.buttonHeight)
+                .foregroundStyle(canSave ? Theme.onAccent : Theme.muted)
+                .background(canSave ? Theme.accent : Theme.field, in: Capsule())
+        }
+        .buttonStyle(PressableStyle())
+        .disabled(!canSave)
     }
 
     private func label(_ text: String) -> some View {
@@ -107,32 +131,53 @@ struct BlockNumberSheet: View {
             .foregroundStyle(Theme.muted)
     }
 
+    @ViewBuilder
     private var numberField: some View {
-        HStack(spacing: 8) {
-            TextField("Ví dụ 028 888 hoặc 090 123 4567", text: $rawInput)
-                .font(Theme.font(.title2, weight: .heavy))
-                .keyboardType(.phonePad)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-                .focused($numberFocused)
-                .accessibilityLabel("Số điện thoại hoặc đầu số")
-            PasteButton(payloadType: String.self) { strings in
-                if let first = strings.first { rawInput = first.trimmingCharacters(in: .whitespacesAndNewlines) }
-            }
-            .labelStyle(.titleOnly)
-            .buttonBorderShape(.capsule)
-            .tint(Theme.accent)
+        let field = TextField("Ví dụ 028 888 hoặc 090 123 4567", text: $rawInput)
+            .font(Theme.font(.title2, weight: .heavy))
+            .keyboardType(.phonePad)
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
+            .focused($numberFocused)
+            .accessibilityLabel("Số điện thoại hoặc đầu số")
+            // A full number must stay visible in one line; the result card below repeats
+            // it at the user's full text size.
+            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
+        let paste = PasteButton(payloadType: String.self) { strings in
+            if let first = strings.first { rawInput = first.trimmingCharacters(in: .whitespacesAndNewlines) }
         }
-        .padding(.leading, 16)
-        .padding(.trailing, 10)
-        .frame(minHeight: 60)
-        .background(Theme.field, in: RoundedRectangle(cornerRadius: Theme.Radius.field, style: .continuous))
+        .labelStyle(.titleOnly)
+        .buttonBorderShape(.capsule)
+        .tint(Theme.accent)
+        let shape = RoundedRectangle(cornerRadius: Theme.Radius.field, style: .continuous)
+        if roomy {
+            // Large text: the number gets the full width and the paste button moves below it.
+            VStack(alignment: .leading, spacing: 8) {
+                field
+                    .padding(.horizontal, 16)
+                    .frame(minHeight: 60)
+                    .background(Theme.field, in: shape)
+                paste
+            }
+        } else {
+            HStack(spacing: 8) {
+                field
+                paste
+            }
+            .padding(.leading, 16)
+            .padding(.trailing, 10)
+            .frame(minHeight: 60)
+            .background(Theme.field, in: shape)
+        }
     }
 
     @ViewBuilder
     private var liveCard: some View {
         let reading = reading
-        let result = Self.describe(reading, input: rawInput)
+        let isDuplicate = duplicate != nil
+        let result = isDuplicate
+            ? LiveResult(title: nil, message: Vietnamese.alreadyInList, isValid: false, isError: true)
+            : Self.describe(reading, input: rawInput)
         VStack(alignment: .leading, spacing: 4) {
             if let title = result.title {
                 Text(title)
@@ -249,6 +294,7 @@ struct BlockNumberSheet: View {
                 store.banner = .error(Vietnamese.hardCapMessage(count: combined?.mergedCount ?? 0))
                 return
             }
+            guard store.rules.firstDuplicate(of: rule) == nil else { return }
             store.upsert(rule)
             dismiss()
         }

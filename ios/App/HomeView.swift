@@ -36,6 +36,9 @@ struct HomeView: View {
     @State private var pendingImport: [BlockRule]?
     @State private var exportPayload: ExportPayload?
     @State private var toastTask: Task<Void, Never>?
+    @State private var cardWidth: CGFloat = 0
+
+    private var cardShape: RoundedRectangle { RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous) }
 
     private var homeStatus: HomeStatus {
         HomeStatus.resolve(
@@ -46,44 +49,27 @@ struct HomeView: View {
     }
 
     var body: some View {
-        List {
-            Section {
+        ScrollView {
+            VStack(spacing: 0) {
                 hero
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(EdgeInsets())
-            }
-            if store.build.reachesSoftCap && !store.build.hardCapExceeded {
-                Section {
+                if store.build.reachesSoftCap && !store.build.hardCapExceeded {
                     Text(Vietnamese.softCapMessage)
                         .font(Theme.font(.subheadline))
                         .foregroundStyle(Theme.warnText)
-                        .listRowBackground(Theme.surface)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(16)
+                        .background(Theme.surface, in: cardShape)
+                        .padding(.bottom, 16)
                 }
-            }
-            Section {
-                if store.rules.isEmpty {
-                    emptyState
-                        .listRowBackground(Theme.surface)
-                } else {
-                    ForEach(store.rules) { rule in
-                        row(rule)
-                            .listRowBackground(Theme.surface)
-                            .listRowSeparatorTint(Theme.hairline)
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                Button("Bỏ chặn") { pendingDelete = rule }
-                                    .tint(Theme.danger)
-                                Button("Sửa") { sheet = .block(.edit(rule.id)) }
-                                    .tint(Theme.muted)
-                            }
-                    }
-                }
-            } header: {
                 Text("Số đang chặn (\(store.rules.count))")
                     .font(Theme.font(.subheadline, weight: .heavy))
                     .foregroundStyle(Theme.ink)
-                    .textCase(nil)
-            } footer: {
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 8)
+                    .padding(.bottom, 8)
+                    .accessibilityAddTraits(.isHeader)
+                listCard
                 VStack(spacing: 6) {
                     if !store.rules.isEmpty {
                         Text("Vuốt một dòng sang trái để sửa hoặc bỏ chặn.")
@@ -93,12 +79,13 @@ struct HomeView: View {
                 .font(Theme.font(.footnote))
                 .foregroundStyle(Theme.muted)
                 .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity)
-                .padding(.top, 8)
+                .padding(.top, 16)
             }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
         }
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
         .background(Theme.backdrop.ignoresSafeArea())
         .animation(reduceMotion ? nil : Theme.Motion.spring, value: store.rules)
         .safeAreaInset(edge: .top, spacing: 0) { topBar }
@@ -129,10 +116,9 @@ struct HomeView: View {
             ActivityView(items: [payload.url])
         }
         .fileImporter(isPresented: $importing, allowedContentTypes: [.json], onCompletion: importFile)
-        .confirmationDialog(
+        .alert(
             "Bỏ chặn \(pendingDelete.map(Vietnamese.name(for:)) ?? "")?",
-            isPresented: Binding(get: { pendingDelete != nil }, set: { if !$0 { pendingDelete = nil } }),
-            titleVisibility: .visible
+            isPresented: Binding(get: { pendingDelete != nil }, set: { if !$0 { pendingDelete = nil } })
         ) {
             Button("Bỏ chặn", role: .destructive) {
                 if let pendingDelete { store.delete(pendingDelete.id) }
@@ -162,13 +148,15 @@ struct HomeView: View {
             Text("Chặn cuộc gọi")
                 .font(Theme.font(.headline, weight: .heavy))
                 .foregroundStyle(Theme.ink)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
                 .accessibilityAddTraits(.isHeader)
-            Spacer()
+            Spacer(minLength: 8)
             Button(action: toggleAppearance) {
-                circleIcon(colorScheme == .dark ? "sun.max.fill" : "moon.fill")
+                CircleIcon(systemName: colorScheme == .dark ? "sun.max.fill" : "moon.fill",
+                           title: colorScheme == .dark ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối")
             }
             .buttonStyle(PressableStyle())
-            .accessibilityLabel(colorScheme == .dark ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối")
             Menu {
                 Button { sheet = .setup } label: { Label("Cách bật chặn cuộc gọi", systemImage: "questionmark.circle") }
                 Button(action: exportList) { Label("Sao lưu danh sách", systemImage: "square.and.arrow.up") }
@@ -179,21 +167,22 @@ struct HomeView: View {
                     Text("Tối").tag(Appearance.dark.rawValue)
                 }
             } label: {
-                circleIcon("ellipsis")
+                CircleIcon(systemName: "ellipsis", title: "Thêm tùy chọn")
             }
+            // The system menu exposes its inner button and glyph as extra elements.
+            // Collapse them so VoiceOver meets one button; activating it taps the menu.
+            .accessibilityElement(children: .ignore)
             .accessibilityLabel("Thêm tùy chọn")
+            .accessibilityAddTraits(.isButton)
         }
+        // The bar keeps a readable size at the largest text settings; the Large Content
+        // Viewer shows the full-size label on long press.
+        .dynamicTypeSize(...DynamicTypeSize.accessibility1)
         .padding(.horizontal, 20)
         .padding(.vertical, 8)
-    }
-
-    private func circleIcon(_ name: String) -> some View {
-        Image(systemName: name)
-            .font(.system(.body, design: .rounded).weight(.heavy))
-            .foregroundStyle(Theme.protectedText)
-            .frame(width: Theme.Size.touchTarget, height: Theme.Size.touchTarget)
-            .background(Theme.surface, in: Circle())
-            .shadow(color: Theme.shadow, radius: 8, y: 4)
+        // Opaque, in the same colour the backdrop starts with, so scrolled rows pass
+        // under it instead of colliding with the title and the status bar.
+        .background(Theme.bgTop.ignoresSafeArea(edges: .top))
     }
 
     private func toggleAppearance() {
@@ -262,6 +251,31 @@ struct HomeView: View {
 
     // MARK: List
 
+    private var listCard: some View {
+        VStack(spacing: 0) {
+            if store.rules.isEmpty {
+                emptyState
+            } else {
+                ForEach(Array(store.rules.enumerated()), id: \.element.id) { index, rule in
+                    if index > 0 {
+                        Rectangle().fill(Theme.hairline).frame(height: 1).padding(.leading, 16)
+                    }
+                    SwipeRow(width: cardWidth,
+                             onEdit: { sheet = .block(.edit(rule.id)) },
+                             onDelete: { pendingDelete = rule }) {
+                        row(rule)
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .background(GeometryReader { proxy in Color.clear.preference(key: CardWidthKey.self, value: proxy.size.width) })
+        .onPreferenceChange(CardWidthKey.self) { cardWidth = $0 }
+        .background(Theme.surface)
+        .clipShape(cardShape)
+        .shadow(color: Theme.shadow, radius: 16, y: 10)
+    }
+
     private var emptyState: some View {
         VStack(spacing: 4) {
             Text("Chưa chặn số nào")
@@ -272,58 +286,66 @@ struct HomeView: View {
                 .foregroundStyle(Theme.muted)
         }
         .multilineTextAlignment(.center)
+        .fixedSize(horizontal: false, vertical: true)
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 20)
+        .padding(.vertical, 28)
+        .padding(.horizontal, 16)
     }
 
+    /// One row is one VoiceOver element: a switch named after the number, with
+    /// "Sửa" and "Bỏ chặn" as custom actions.
     private func row(_ rule: BlockRule) -> some View {
         let estimate = store.build.estimates.first { $0.id == rule.id }
+        let detail = estimate?.invalid == true
+            ? "Đầu số này quá ngắn nên chưa được chặn. Chạm để sửa."
+            : Vietnamese.detail(for: rule, count: estimate?.count ?? 0)
+        let isOn = Binding(get: { rule.enabled }, set: { Haptics.tap(); store.setEnabled(rule.id, $0) })
+        let spoken = [Vietnamese.tag(for: rule), Vietnamese.name(for: rule), detail, rule.note.isEmpty ? nil : rule.note]
+            .compactMap { $0 }.joined(separator: ", ")
         return HStack(spacing: 12) {
-            Button { sheet = .block(.edit(rule.id)) } label: {
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(Vietnamese.tag(for: rule))
-                        .font(Theme.font(.caption2, weight: .heavy))
-                        .foregroundStyle(Theme.tagInk)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 2)
-                        .background(Theme.tagBg, in: Capsule())
-                    Text(Vietnamese.title(for: rule))
-                        .font(Theme.font(.headline, weight: .heavy))
-                        .foregroundStyle(Theme.ink)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(Vietnamese.tag(for: rule))
+                    .font(Theme.font(.caption2, weight: .heavy))
+                    .foregroundStyle(Theme.tagInk)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 2)
+                    .background(Theme.tagBg, in: Capsule())
+                Text(Vietnamese.title(for: rule))
+                    .font(Theme.font(.headline, weight: .heavy))
+                    .foregroundStyle(Theme.ink)
+                    .monospacedDigit()
+                if let detail {
+                    Text(detail)
+                        .font(Theme.font(.footnote))
+                        .foregroundStyle(estimate?.invalid == true ? Theme.dangerText : Theme.muted)
                         .monospacedDigit()
-                    if estimate?.invalid == true {
-                        Text("Đầu số này quá ngắn nên chưa được chặn. Chạm để sửa.")
-                            .font(Theme.font(.footnote))
-                            .foregroundStyle(Theme.dangerText)
-                    } else if let detail = Vietnamese.detail(for: rule, count: estimate?.count ?? 0) {
-                        Text(detail)
-                            .font(Theme.font(.footnote))
-                            .foregroundStyle(Theme.muted)
-                            .monospacedDigit()
-                    }
-                    if !rule.note.isEmpty {
-                        Text(rule.note)
-                            .font(Theme.font(.footnote))
-                            .foregroundStyle(Theme.muted)
-                    }
                 }
-                .fixedSize(horizontal: false, vertical: true)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .opacity(rule.enabled ? 1 : 0.5)
-                .contentShape(Rectangle())
+                if !rule.note.isEmpty {
+                    Text(rule.note)
+                        .font(Theme.font(.footnote))
+                        .foregroundStyle(Theme.muted)
+                }
             }
-            .buttonStyle(.plain)
-            .accessibilityHint("Chạm để sửa")
+            .fixedSize(horizontal: false, vertical: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .opacity(rule.enabled ? 1 : 0.5)
+            .contentShape(Rectangle())
+            .onTapGesture { sheet = .block(.edit(rule.id)) }
 
-            Toggle(isOn: Binding(get: { rule.enabled }, set: { Haptics.tap(); store.setEnabled(rule.id, $0) })) {
-                Text("Chặn")
-            }
-            .labelsHidden()
-            .tint(Theme.accent)
-            .accessibilityLabel("Chặn \(Vietnamese.name(for: rule))")
-            .accessibilityValue(rule.enabled ? "Đang chặn" : "Tạm ngưng")
+            Toggle("Chặn", isOn: isOn)
+                .labelsHidden()
+                .tint(Theme.accent)
         }
-        .padding(.vertical, 4)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(Theme.surface)
+        .accessibilityElement(children: .ignore)
+        .accessibilityRepresentation {
+            Toggle(spoken, isOn: isOn)
+        }
+        .accessibilityValue(rule.enabled ? "Đang chặn" : "Tạm ngưng")
+        .accessibilityAction(named: "Sửa") { sheet = .block(.edit(rule.id)) }
+        .accessibilityAction(named: "Bỏ chặn") { pendingDelete = rule }
     }
 
     // MARK: Dock and toast
@@ -335,12 +357,14 @@ struct HomeView: View {
         } label: {
             Text("Chặn số")
                 .font(Theme.font(.headline, weight: .heavy))
+                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 .frame(maxWidth: .infinity, minHeight: Theme.Size.buttonHeight)
                 .foregroundStyle(Theme.onAccent)
                 .background(Theme.accent, in: Capsule())
                 .shadow(color: Theme.glowOn, radius: 14, y: 10)
         }
         .buttonStyle(PressableStyle())
+        .accessibilityShowsLargeContentViewer { Text("Chặn số") }
         .padding(.horizontal, 16)
         .padding(.top, 12)
         .padding(.bottom, 8)
