@@ -1,0 +1,80 @@
+<style>
+  .c-pill { display: flex; align-items: center; gap: var(--s-2); min-height: 44px; padding: 0 var(--s-4) 0 var(--s-3); border-radius: var(--r-full); background: color-mix(in oklch, var(--state) 16%, transparent); color: var(--state); font-weight: 600; font-size: var(--t-sm); transition: background var(--dur-slow), color var(--dur-slow); }
+  .c-pill::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--state); box-shadow: 0 0 0 4px color-mix(in oklch, var(--state) 25%, transparent); }
+  .c-main { flex: 1; display: flex; flex-direction: column; padding: 0 var(--s-5) 86px; min-height: 0; }
+  .c-disp { flex: 1; display: flex; flex-direction: column; justify-content: center; text-align: center; min-height: 0; }
+  .c-disp .k { color: var(--subtle); font-size: var(--t-sm); }
+  .c-num { font-size: var(--t-2xl); font-weight: 600; letter-spacing: 0.01em; line-height: 1.2; min-height: 48px; }
+  .c-num:empty::before { content: "0…"; color: var(--surface-3); }
+  .c-num::after { content: ""; display: inline-block; width: 2px; height: 34px; margin-left: 3px; vertical-align: -4px; background: var(--accent); animation: blink 1s steps(2) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .c-main .live { margin-top: var(--s-2); text-align: center; align-items: center; }
+  .c-main .btn { margin: var(--s-3) 0; flex: none; }
+  .c-pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-2) var(--s-3); flex: none; }
+  .c-pad button { height: 58px; border-radius: var(--r-md); background: var(--glass); border: 1px solid var(--glass-line); font-size: 26px; font-weight: 500; box-shadow: inset 0 1px 0 oklch(100% 0 0 / 0.08); transition: transform 90ms, background 90ms; }
+  .c-pad button:active { transform: scale(0.94); background: var(--surface-3); }
+  .c-pad button.fn { font-size: var(--t-base); background: none; border-color: transparent; box-shadow: none; color: var(--muted); }
+  .c-drawer { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; height: 78px; padding: var(--s-2) var(--s-5) 0; background: var(--surface-2); border-top: 1px solid var(--glass-line); border-radius: var(--r-lg) var(--r-lg) 0 0; text-align: left; display: block; width: 100%; }
+  .c-drawer b { font-size: var(--t-base); }
+  .c-drawer span { float: right; color: var(--muted); font-size: var(--t-sm); }
+  #listSheet { height: 80%; padding-left: 0; padding-right: 0; }
+  #listSheet header { padding: 0 var(--s-3); margin: 0 0 var(--s-2); }
+</style>
+
+<header class="top">
+  <button class="c-pill" id="cPill"></button>
+  <button class="iconbtn" data-act="menu" aria-label="Thêm tùy chọn">⋯</button>
+</header>
+<div class="c-main">
+  <div class="c-disp">
+    <div class="k">Nhập số hoặc đầu số</div>
+    <div class="c-num num" id="cNum" aria-live="polite"></div>
+    <div class="live" id="cLive"></div>
+  </div>
+  <button class="btn btn-primary" id="cSave" disabled>Chặn</button>
+  <div class="c-pad" id="cPad"></div>
+</div>
+<button class="c-drawer" data-act="list"><div class="grab"></div><b id="cCount"></b><span id="cPrev"></span></button>
+
+<section class="sheet" id="listSheet" aria-label="Số đang chặn">
+  <div class="grab"></div>
+  <header><button class="txtbtn" data-act="close">Đóng</button><h2>Số đang chặn</h2><span></span></header>
+  <div id="cList"></div>
+</section>
+
+<script>
+  let buf = '';
+  $('#cPad').innerHTML = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'Dán', '0', '⌫']
+    .map((k) => '<button data-key="' + k + '"' + (/\d/.test(k) ? '' : ' class="fn"') + (k === '⌫' ? ' aria-label="Xóa"' : '') + '>' + k + '</button>').join('');
+  function cUpdate() {
+    const a = analyze(buf);
+    $('#cNum').textContent = buf ? fmt(norm(buf)) : '';
+    const live = $('#cLive');
+    live.dataset.kind = a.kind;
+    live.innerHTML = (a.title ? '<b class="num">' + a.title + '</b>' : '') + a.msg;
+    $('#cSave').disabled = !a.d;
+  }
+  $('#cPad').addEventListener('click', (e) => {
+    const k = e.target.dataset.key;
+    if (!k) return;
+    if (k === '⌫') buf = buf.slice(0, -1);
+    else if (k === 'Dán') buf = '02838234567'; // prototype: stands in for the clipboard
+    else if (buf.length < 12) buf += k;
+    cUpdate();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (/^\d$/.test(e.key)) { buf += e.key; cUpdate(); }
+    else if (e.key === 'Backspace') { buf = buf.slice(0, -1); cUpdate(); }
+  });
+  $('#cSave').addEventListener('click', () => { const a = analyze(buf); if (a.d) { buf = ''; block(a.d); cUpdate(); } });
+  window.openAdd = function (prefill) { buf = prefill || ''; closeAll(); cUpdate(); };
+  window.renderHome = function (S) {
+    const st = statusText();
+    $('#cPill').textContent = st.cta ? st.title + ' · ' + st.cta : st.title;
+    $('#cPill').dataset.act = st.cta ? 'setup' : 'list';
+    $('#cCount').textContent = 'Số đang chặn (' + S.items.length + ')';
+    $('#cPrev').textContent = S.items.length ? 'Vuốt lên để xem' : 'Chưa chặn số nào';
+    $('#cList').innerHTML = listHTML();
+    cUpdate();
+  };
+</script>

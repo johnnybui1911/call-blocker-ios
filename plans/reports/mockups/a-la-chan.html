@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · Lá chắn — Chặn cuộc gọi mockup</title>
+<style>
+/* Tokens: primitive -> semantic -> component. Dark mode is the design target. */
+:root {
+  /* primitive */
+  --hue: 160;
+  --g-0: oklch(0% 0 0);
+  --g-1: oklch(14% 0.006 var(--hue));
+  --g-2: oklch(18% 0.007 var(--hue));
+  --g-3: oklch(23% 0.008 var(--hue));
+  --g-4: oklch(32% 0.01 var(--hue));
+  --g-6: oklch(60% 0.012 var(--hue));
+  --g-8: oklch(76% 0.01 var(--hue));
+  --g-10: oklch(97% 0.004 var(--hue));
+  --green: oklch(85% 0.19 155);
+  --amber: oklch(85% 0.15 85);
+  --red: oklch(72% 0.19 25);
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px; --s-7: 32px; --s-8: 48px;
+  --t-xs: 12px; --t-sm: 13px; --t-base: 15px; --t-md: 17px; --t-lg: 20px; --t-xl: 28px; --t-2xl: 40px;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 28px; --r-full: 999px;
+  --dur: 220ms; --dur-slow: 360ms; --ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* semantic */
+  --bg: var(--g-0);
+  --surface: var(--g-1);
+  --surface-2: var(--g-2);
+  --surface-3: var(--g-3);
+  --line: oklch(100% 0 0 / 0.1);
+  --text: var(--g-10);
+  --muted: var(--g-8);
+  --subtle: var(--g-6);
+  --ok: var(--green);
+  --warn: var(--amber);
+  --off: var(--red);
+  --accent: var(--green);
+  --on-accent: oklch(20% 0.05 155);
+  --glass: oklch(22% 0.01 var(--hue) / 0.62);
+  --glass-line: oklch(100% 0 0 / 0.16);
+  --state: var(--ok);
+  --font: -apple-system, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* component */
+  --btn-h: 56px;
+  --row-pad: var(--s-4);
+  --switch-w: 51px; --switch-h: 31px;
+  --phone-w: 390px; --phone-h: 844px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  background: oklch(10% 0.006 var(--hue));
+  color: var(--text);
+  font: 400 var(--t-base)/1.45 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: none; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Stage around the phone (prototype chrome, not part of the app) */
+.stage { min-height: 100%; display: flex; gap: var(--s-8); align-items: center; justify-content: center; padding: var(--s-7); flex-wrap: wrap; }
+.ctl { width: 250px; display: grid; gap: var(--s-3); align-content: start; }
+.ctl h1 { font-size: var(--t-lg); line-height: 1.2; }
+.ctl p { color: var(--muted); font-size: var(--t-sm); }
+.ctl .grp { display: grid; gap: var(--s-2); margin-top: var(--s-3); }
+.ctl .grp span { font-size: var(--t-xs); color: var(--subtle); text-transform: uppercase; letter-spacing: 0.06em; }
+.ctl button, .ctl a { text-align: left; padding: 10px var(--s-3); min-height: 44px; border-radius: var(--r-sm); background: var(--surface-2); border: 1px solid var(--line); font-size: var(--t-sm); color: var(--text); text-decoration: none; display: flex; align-items: center; }
+.ctl button:hover, .ctl a:hover { background: var(--surface-3); }
+.ctl button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+
+.phone { width: calc(var(--phone-w) + 20px); height: calc(var(--phone-h) + 20px); padding: 10px; border-radius: 58px; background: oklch(24% 0.006 var(--hue)); box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.14), 0 40px 80px oklch(0% 0 0 / 0.6); flex: none; }
+.screen { position: relative; width: var(--phone-w); height: var(--phone-h); border-radius: 48px; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; isolation: isolate; }
+.screen[data-prot="off"] { --state: var(--off); }
+body.bare { background: var(--bg); }
+body.bare .stage { padding: 0; display: block; }
+body.bare .ctl { display: none; }
+body.bare .phone { padding: 0; width: var(--phone-w); height: var(--phone-h); border-radius: 0; box-shadow: none; }
+body.bare .screen { border-radius: 0; }
+body.still *, body.still *::before, body.still *::after { transition: none !important; animation: none !important; }
+
+/* iOS status bar */
+.sb { height: 54px; flex: none; display: flex; align-items: flex-end; justify-content: space-between; padding: 0 30px 8px; font-weight: 600; font-size: var(--t-base); position: relative; z-index: 1; }
+.sb::after { content: ""; position: absolute; left: 50%; top: 11px; width: 120px; height: 34px; margin-left: -60px; border-radius: var(--r-full); background: #000; box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.06); }
+.sb i { display: flex; gap: 5px; align-items: center; font-style: normal; font-size: var(--t-xs); }
+.sb i b { width: 24px; height: 12px; border-radius: 4px; border: 1px solid var(--muted); position: relative; }
+.sb i b::after { content: ""; position: absolute; inset: 1.5px; right: 5px; border-radius: 2px; background: var(--text); }
+
+.top { flex: none; display: flex; align-items: center; justify-content: space-between; padding: var(--s-2) var(--s-5) var(--s-2); }
+.top h1 { font-size: var(--t-md); font-weight: 600; letter-spacing: -0.01em; }
+.iconbtn { width: 44px; height: 44px; border-radius: var(--r-full); display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: var(--t-lg); line-height: 1; margin-right: -4px; }
+.iconbtn:active { background: var(--surface-3); }
+.scroll { flex: 1; overflow-y: auto; scrollbar-width: none; }
+.scroll::-webkit-scrollbar { display: none; }
+
+/* Buttons */
+.btn { height: var(--btn-h); width: 100%; border-radius: var(--r-full); font-size: var(--t-md); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: var(--s-2); transition: transform var(--dur) var(--ease), opacity var(--dur), background var(--dur); }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:disabled { background: var(--surface-3); color: var(--subtle); cursor: default; }
+.btn-state { background: var(--state); color: oklch(16% 0.04 25); height: 48px; width: auto; padding: 0 var(--s-6); font-size: var(--t-base); }
+.btn-ghost { background: var(--surface-2); border: 1px solid var(--line); }
+.txtbtn { min-height: 44px; padding: 0 var(--s-2); color: var(--accent); font-size: var(--t-md); }
+
+/* Blocked-number rows */
+.sect { display: flex; justify-content: space-between; align-items: baseline; padding: 0 var(--s-5); margin: var(--s-6) 0 var(--s-2); }
+.sect h3 { font-size: var(--t-sm); font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.list { margin: 0 var(--s-4); border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
+.row { display: flex; align-items: center; gap: var(--s-3); padding: 14px var(--row-pad); border-top: 1px solid var(--line); transition: opacity var(--dur); }
+.row:first-child { border-top: 0; }
+.row.new { animation: rowin var(--dur-slow) var(--ease); }
+@keyframes rowin { from { opacity: 0; transform: translateY(-10px); background: oklch(85% 0.19 155 / 0.18); } }
+.row .main { flex: 1; min-width: 0; }
+.row .n { font-size: var(--t-md); font-weight: 600; letter-spacing: 0.01em; }
+.row .d { font-size: var(--t-sm); color: var(--muted); }
+.row .note { font-size: var(--t-sm); color: var(--subtle); }
+.row.paused .main { opacity: 0.45; }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--r-full); background: oklch(85% 0.19 155 / 0.14); color: var(--ok); margin-bottom: 4px; }
+.tag.one { background: oklch(100% 0 0 / 0.09); color: var(--muted); }
+.switch { width: var(--switch-w); height: var(--switch-h); border-radius: var(--r-full); background: var(--surface-3); position: relative; flex: none; transition: background var(--dur); box-shadow: 0 0 0 7px transparent; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; transition: transform var(--dur) var(--ease); box-shadow: 0 2px 4px oklch(0% 0 0 / 0.4); }
+.switch[aria-checked="true"] { background: var(--ok); }
+.switch[aria-checked="true"]::after { transform: translateX(20px); }
+.empty { margin: 0 var(--s-4); padding: var(--s-7) var(--s-5); border-radius: var(--r-md); border: 1px dashed var(--line); text-align: center; }
+.empty b { display: block; font-size: var(--t-md); margin-bottom: var(--s-1); }
+.empty span { color: var(--muted); font-size: var(--t-sm); }
+.foot { padding: var(--s-5) var(--s-6) var(--s-4); text-align: center; font-size: var(--t-xs); color: var(--subtle); }
+
+/* Shield: the single element that carries depth */
+.shield { width: 132px; height: 148px; position: relative; transition: transform var(--dur) var(--ease); transform-style: preserve-3d; }
+.shield::before { content: ""; position: absolute; inset: -46px; border-radius: 50%; background: radial-gradient(closest-side, color-mix(in oklch, var(--state) 34%, transparent), transparent); transition: background var(--dur-slow); }
+.shield svg { position: relative; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 16px 22px oklch(0% 0 0 / 0.6)); }
+.shield .body { fill: color-mix(in oklch, var(--state) 22%, var(--g-1)); stroke: var(--state); stroke-width: 2.5; transition: fill var(--dur-slow), stroke var(--dur-slow); }
+.shield .shine { fill: oklch(100% 0 0 / 0.1); }
+.shield .core { fill: var(--state); transition: fill var(--dur-slow); }
+.shield .mark { fill: none; stroke: oklch(16% 0.04 155); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.shield .x { display: none; }
+[data-prot="off"] .shield .v { display: none; }
+[data-prot="off"] .shield .x { display: block; }
+.shield.sm { width: 64px; height: 72px; }
+.shield.sm::before { inset: -20px; }
+
+/* Overlays */
+.scrim { position: absolute; inset: 0; background: oklch(0% 0 0 / 0.6); opacity: 0; pointer-events: none; transition: opacity var(--dur); z-index: 5; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; background: var(--glass); backdrop-filter: blur(30px) saturate(1.5); -webkit-backdrop-filter: blur(30px) saturate(1.5); border-top: 1px solid var(--glass-line); border-radius: var(--r-lg) var(--r-lg) 0 0; padding: var(--s-2) var(--s-5) var(--s-7); transform: translateY(105%); transition: transform var(--dur-slow) var(--ease); max-height: 92%; overflow-y: auto; }
+.screen[data-sheet] .scrim { opacity: 1; pointer-events: auto; }
+.screen[data-sheet="add"] #addSheet, .screen[data-sheet="setup"] #setupSheet, .screen[data-sheet="list"] #listSheet { transform: none; }
+.grab { width: 36px; height: 5px; border-radius: var(--r-full); background: oklch(100% 0 0 / 0.28); margin: 0 auto var(--s-2); }
+.sheet header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; margin: 0 calc(var(--s-2) * -1) var(--s-4); }
+.sheet header h2 { font-size: var(--t-md); font-weight: 600; }
+.sheet header .txtbtn { justify-self: start; }
+.lbl { display: block; font-size: var(--t-sm); color: var(--muted); margin: var(--s-4) 0 var(--s-2); }
+.field { display: flex; align-items: center; gap: var(--s-2); background: oklch(0% 0 0 / 0.45); border: 1px solid var(--line); border-radius: var(--r-md); padding: 0 var(--s-3) 0 var(--s-4); height: 60px; transition: border-color var(--dur); }
+.field:focus-within { border-color: var(--accent); }
+.field input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; font-size: var(--t-lg); font-weight: 600; letter-spacing: 0.02em; }
+.field input::placeholder { color: var(--subtle); font-weight: 400; font-size: var(--t-base); letter-spacing: 0; }
+.field.plain input { font-size: var(--t-base); font-weight: 400; }
+.chip { min-height: 36px; padding: 0 var(--s-3); border-radius: var(--r-full); background: oklch(100% 0 0 / 0.1); font-size: var(--t-sm); white-space: nowrap; }
+.live { margin-top: var(--s-3); padding: var(--s-3) var(--s-4); border-radius: var(--r-md); background: oklch(100% 0 0 / 0.06); font-size: var(--t-sm); color: var(--muted); min-height: 68px; display: flex; flex-direction: column; justify-content: center; }
+.live b { display: block; color: var(--text); font-size: var(--t-md); }
+.live[data-kind="one"], .live[data-kind="prefix"] { background: oklch(85% 0.19 155 / 0.12); }
+.live[data-kind="one"] b, .live[data-kind="prefix"] b { color: var(--ok); }
+.live[data-kind="error"] { background: oklch(85% 0.15 85 / 0.12); color: var(--warn); }
+.try { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; margin-top: var(--s-3); font-size: var(--t-xs); color: var(--subtle); }
+.try button { min-height: 32px; padding: 0 var(--s-3); border-radius: var(--r-full); border: 1px dashed var(--line); font-size: var(--t-xs); color: var(--muted); }
+.sheet .btn { margin-top: var(--s-5); }
+.steps { list-style: none; padding: 0; display: grid; gap: var(--s-2); counter-reset: s; margin-top: var(--s-4); }
+.steps li { counter-increment: s; display: flex; gap: var(--s-3); align-items: center; padding: var(--s-3) var(--s-4); border-radius: var(--r-md); background: oklch(0% 0 0 / 0.35); border: 1px solid var(--line); }
+.steps li::before { content: counter(s); width: 28px; height: 28px; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: var(--t-sm); }
+.sub { color: var(--muted); font-size: var(--t-sm); }
+.done { text-align: center; display: none; padding-top: var(--s-4); }
+.done .shield { margin: var(--s-4) auto var(--s-5); }
+.done b { font-size: var(--t-lg); display: block; margin-bottom: var(--s-2); }
+#setupSheet[data-done] .todo { display: none; }
+#setupSheet[data-done] .done { display: block; }
+.menu { position: absolute; top: 104px; right: var(--s-4); z-index: 7; min-width: 240px; padding: var(--s-1); border-radius: var(--r-md); background: var(--glass); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border: 1px solid var(--glass-line); opacity: 0; transform: scale(0.92); transform-origin: top right; pointer-events: none; transition: opacity var(--dur), transform var(--dur) var(--ease); }
+.screen[data-menu] .menu { opacity: 1; transform: none; pointer-events: auto; }
+.menu button { display: block; width: 100%; text-align: left; min-height: 44px; padding: 0 var(--s-4); border-radius: var(--r-sm); font-size: var(--t-base); }
+.menu button:hover { background: oklch(100% 0 0 / 0.08); }
+.toast { position: absolute; left: 50%; top: 62px; z-index: 8; transform: translate(-50%, -140%); padding: 10px var(--s-4); border-radius: var(--r-full); background: var(--ok); color: var(--on-accent); font-weight: 600; font-size: var(--t-sm); white-space: nowrap; opacity: 0; transition: transform var(--dur-slow) var(--ease), opacity var(--dur); }
+.toast.show { transform: translate(-50%, 0); opacity: 1; }
+.home-ind { position: absolute; bottom: 8px; left: 50%; width: 134px; height: 5px; margin-left: -67px; border-radius: var(--r-full); background: oklch(100% 0 0 / 0.5); z-index: 9; pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+
+</style>
+<script>
+// Shared prototype logic. Sample data only: nothing here talks to iOS.
+const Q = new URLSearchParams(location.search);
+const SAMPLE = [
+  { d: '028888', note: 'Spam vay tiền', on: true },
+  { d: '0901234567', note: 'Môi giới bất động sản', on: true },
+  { d: '0247300', note: '', on: false },
+];
+const LIMIT = 2000000;
+const S = { prot: 'on', items: SAMPLE.map((x) => ({ ...x })), fresh: -1 };
+const $ = (s) => document.querySelector(s);
+const nf = (n) => n.toLocaleString('vi-VN');
+
+function norm(raw) {
+  let d = String(raw).replace(/\D/g, '');
+  if (d.startsWith('0084')) d = '0' + d.slice(4);
+  else if (d.startsWith('84')) d = '0' + d.slice(2);
+  return d;
+}
+const fullLen = (d) => (d.startsWith('02') ? 11 : 10);
+function fmt(d) {
+  const cuts = d.startsWith('02') ? [3, 7] : [3, 6];
+  return [d.slice(0, cuts[0]), d.slice(cuts[0], cuts[1]), d.slice(cuts[1])].filter(Boolean).join(' ');
+}
+const countOf = (d) => Math.pow(10, fullLen(d) - d.length);
+const isOne = (d) => d.length === fullLen(d);
+const total = () => S.items.filter((i) => i.on).reduce((a, i) => a + countOf(i.d), 0);
+
+// Decide what a typed value means. Copy comes from the wording table.
+function analyze(raw) {
+  const d = norm(raw);
+  if (!d) return { kind: 'empty', title: 'Nhập số bạn muốn chặn.', msg: 'Một số đầy đủ, hoặc ít nhất 6 số đầu để chặn cả dải số.' };
+  if (d[0] !== '0') return { kind: 'error', msg: 'Hiện chỉ chặn được số Việt Nam (bắt đầu bằng 0 hoặc +84).' };
+  const full = fullLen(d);
+  if (d.length > full) return { kind: 'error', msg: 'Số này dài quá. Kiểm tra lại giúp nhé.' };
+  if (d.length < 6) return { kind: 'error', msg: 'Nhập ít nhất 6 số đầu, ví dụ 028 888. iPhone không cho chặn dải số rộng hơn.' };
+  if (d.length === full) return { kind: 'one', d, title: 'Sẽ chặn 1 số: ' + fmt(d), msg: 'Chỉ chặn đúng số này.' };
+  const pad = full - d.length;
+  return {
+    kind: 'prefix', d,
+    title: 'Sẽ chặn ' + nf(countOf(d)) + ' số',
+    msg: 'Mọi số bắt đầu bằng ' + fmt(d) + ', từ ' + fmt(d + '0'.repeat(pad)) + ' đến ' + fmt(d + '9'.repeat(pad)) + '.',
+  };
+}
+
+function statusText() {
+  if (S.prot === 'off') return { title: 'Chưa bật chặn', sub: 'Còn một bước trong Cài đặt để bắt đầu chặn.', cta: 'Bật ngay' };
+  if (!S.items.length) return { title: 'Đã bật', sub: 'Thêm số đầu tiên để bắt đầu chặn.' };
+  return { title: 'Đang bảo vệ', sub: 'Đang chặn ' + nf(total()) + ' số.' };
+}
+
+function listHTML() {
+  if (!S.items.length) {
+    return '<div class="empty"><b>Chưa chặn số nào</b><span>Nhập một số, hoặc vài số đầu để chặn cả dải số.</span></div>';
+  }
+  return '<div class="list">' + S.items.map((it, i) => {
+    const one = isOne(it.d);
+    return '<div class="row' + (it.on ? '' : ' paused') + (i === S.fresh ? ' new' : '') + '"><div class="main">' +
+      '<span class="tag' + (one ? ' one' : '') + '">' + (one ? 'Một số' : 'Đầu số') + '</span>' +
+      '<div class="n num">' + fmt(it.d) + (one ? '' : '…') + '</div>' +
+      (one ? '' : '<div class="d num">' + nf(countOf(it.d)) + ' số bắt đầu bằng ' + fmt(it.d) + '</div>') +
+      (it.note ? '<div class="note">' + it.note.replace(/</g, '&lt;') + '</div>' : '') +
+      '</div><button class="switch" role="switch" aria-checked="' + it.on + '" data-act="toggle:' + i +
+      '" aria-label="' + (it.on ? 'Tạm ngưng chặn ' : 'Đang chặn ') + fmt(it.d) + '"></button></div>';
+  }).join('') + '</div>';
+}
+
+const SHIELD = '<svg viewBox="0 0 132 148" aria-hidden="true"><path class="body" d="M66 4 120 24v46c0 36-23 60-54 74C35 130 12 106 12 70V24Z"/>' +
+  '<path class="shine" d="M66 4 12 24v46c0 20 7 36 19 49C28 96 30 54 66 4Z"/><circle class="core" cx="66" cy="72" r="30"/>' +
+  '<path class="mark v" d="m52 73 10 10 19-21"/><path class="mark x" d="M55 61l22 22M77 61 55 83"/></svg>';
+
+function render() {
+  const sc = $('.screen');
+  sc.dataset.prot = S.prot;
+  document.querySelectorAll('.shield:empty').forEach((el) => (el.innerHTML = SHIELD));
+  window.renderHome(S);
+  document.querySelectorAll('[data-act^="state:"]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.act === 'state:' + S.name));
+  S.fresh = -1;
+}
+
+function setState(name) {
+  S.name = name;
+  S.prot = name === 'off' ? 'off' : 'on';
+  S.items = name === 'empty' ? [] : SAMPLE.map((x) => ({ ...x }));
+  closeAll();
+  render();
+}
+
+function closeAll() {
+  const sc = $('.screen');
+  delete sc.dataset.sheet;
+  delete sc.dataset.menu;
+}
+function openSheet(name) {
+  closeAll();
+  $('.screen').dataset.sheet = name;
+  if (name === 'setup') delete $('#setupSheet').dataset.done;
+}
+function toast(msg) {
+  const t = $('.toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toast.t);
+  toast.t = setTimeout(() => t.classList.remove('show'), 2200);
+}
+function block(d, note) {
+  S.items.unshift({ d, note: note || '', on: true });
+  S.fresh = 0;
+  closeAll();
+  render();
+  toast('Đã chặn ' + fmt(d) + '.');
+}
+
+// Add sheet (directions A and B). Direction C overrides openAdd with its keypad.
+function updateLive() {
+  const a = analyze($('#num').value);
+  const live = $('#live');
+  live.dataset.kind = a.kind;
+  live.innerHTML = (a.title ? '<b class="num">' + a.title + '</b>' : '') + a.msg;
+  $('#saveBtn').disabled = !a.d;
+}
+window.openAdd = function (prefill) {
+  $('#num').value = prefill ? fmt(norm(prefill)) : '';
+  $('#note').value = '';
+  updateLive();
+  openSheet('add');
+};
+
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-act]');
+  if (!el) return;
+  const [act, arg] = el.dataset.act.split(':');
+  if (act === 'state') setState(arg);
+  else if (act === 'add') window.openAdd(arg);
+  else if (act === 'fill') { $('#num').value = fmt(arg); updateLive(); }
+  else if (act === 'save') { const a = analyze($('#num').value); if (a.d) block(a.d, $('#note').value); }
+  else if (act === 'toggle') {
+    const it = S.items[+arg];
+    it.on = !it.on;
+    render();
+    toast((it.on ? 'Đang chặn ' : 'Đã tạm ngưng chặn ') + fmt(it.d) + '.');
+  }
+  else if (act === 'setup') openSheet('setup');
+  else if (act === 'list') openSheet('list');
+  else if (act === 'setupgo') { S.prot = 'on'; S.name = ''; $('#setupSheet').dataset.done = '1'; const s = $('.screen').dataset.sheet; render(); $('.screen').dataset.sheet = s; }
+  else if (act === 'menu') { const sc = $('.screen'); sc.dataset.menu ? delete sc.dataset.menu : (sc.dataset.menu = '1'); }
+  else if (act === 'close') closeAll();
+  else if (act === 'soon') { closeAll(); toast('Chưa có trong bản mẫu.'); }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (Q.has('embed') || Q.has('shot')) document.body.classList.add('bare');
+  if (Q.has('shot')) document.body.classList.add('still');
+  $('#num').addEventListener('input', updateLive);
+  setState(Q.get('state') || 'home');
+  const sheet = Q.get('sheet');
+  if (sheet) window.openAdd(sheet === 'prefix' ? '028888' : '02838234567');
+});
+
+</script>
+</head>
+<body>
+<div class="stage">
+  <aside class="ctl">
+    <h1>A · Lá chắn</h1>
+    <p>Status first: one shield, one button, the list below.</p>
+    <p>Clickable mockup with sample data. Nothing here blocks real calls.</p>
+    <div class="grp"><span>State</span>
+      <button data-act="state:home">Home, protection on</button>
+      <button data-act="state:empty">Empty, no numbers yet</button>
+      <button data-act="state:off">Protection off</button>
+    </div>
+    <div class="grp"><span>Add a number</span>
+      <button data-act="add:02838234567">Full number 028 3823 4567</button>
+      <button data-act="add:028888">Prefix 028888</button>
+    </div>
+    <div class="grp"><span>Compare</span><a href="index.html">All three side by side</a></div>
+  </aside>
+  <div class="phone"><div class="screen" data-prot="on">
+    <div class="sb"><span>9:41</span><i>5G <b></b></i></div>
+<style>
+  .a-hero { display: grid; justify-items: center; text-align: center; padding: var(--s-6) var(--s-6) var(--s-5); perspective: 600px; }
+  .a-hero h2 { font-size: var(--t-xl); font-weight: 700; letter-spacing: -0.02em; margin-top: var(--s-7); color: var(--state); transition: color var(--dur-slow); }
+  .a-hero p { color: var(--muted); font-size: var(--t-md); margin-top: var(--s-1); }
+  .a-hero .btn-state { margin-top: var(--s-4); }
+  .a-scroll { padding-bottom: 110px; }
+  .a-bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; padding: var(--s-3) var(--s-4) var(--s-7); background: linear-gradient(transparent, oklch(0% 0 0 / 0.85) 45%); }
+  .a-bar .btn { box-shadow: 0 10px 30px oklch(85% 0.19 155 / 0.28), inset 0 1px 0 oklch(100% 0 0 / 0.5); }
+</style>
+
+<header class="top">
+  <h1>Chặn cuộc gọi</h1>
+  <button class="iconbtn" data-act="menu" aria-label="Thêm tùy chọn">⋯</button>
+</header>
+<main class="scroll a-scroll">
+  <section class="a-hero">
+    <div class="shield" id="aShield"></div>
+    <h2 id="aTitle"></h2>
+    <p id="aSub" class="num"></p>
+    <button class="btn btn-state" id="aCta" data-act="setup" hidden></button>
+  </section>
+  <div class="sect"><h3 id="aCount"></h3></div>
+  <div id="aList"></div>
+  <p class="foot">Số bạn chặn sẽ không làm máy đổ chuông.<br>Không cần tài khoản. Không đọc danh bạ.</p>
+</main>
+<div class="a-bar"><button class="btn btn-primary" data-act="add">＋ Chặn số</button></div>
+
+<script>
+  window.renderHome = function (S) {
+    const st = statusText();
+    $('#aTitle').textContent = st.title;
+    $('#aSub').textContent = st.sub;
+    $('#aCta').hidden = !st.cta;
+    $('#aCta').textContent = st.cta || '';
+    $('#aCount').textContent = 'Số đang chặn (' + S.items.length + ')';
+    $('#aList').innerHTML = listHTML();
+  };
+  // Restrained 3D: the shield leans a few degrees toward the pointer.
+  document.addEventListener('pointermove', (e) => {
+    const r = $('.screen').getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    if (Math.abs(x) > 0.6 || Math.abs(y) > 0.6) return;
+    $('#aShield').style.transform = 'rotateY(' + x * 22 + 'deg) rotateX(' + -y * 16 + 'deg)';
+  });
+</script>
+
+<div class="scrim" data-act="close"></div>
+
+<section class="sheet" id="addSheet" aria-label="Chặn số">
+  <div class="grab"></div>
+  <header><button class="txtbtn" data-act="close">Hủy</button><h2>Chặn số</h2><span></span></header>
+  <label class="lbl" for="num">Số điện thoại hoặc đầu số</label>
+  <div class="field">
+    <input id="num" class="num" inputmode="tel" autocomplete="off" placeholder="Ví dụ 028 888 hoặc 090 123 4567">
+    <button class="chip" data-act="fill:02838234567">Dán số</button>
+  </div>
+  <div class="live" id="live" aria-live="polite"></div>
+  <div class="try">Bản mẫu, thử nhanh:
+    <button data-act="fill:02838234567">một số</button>
+    <button data-act="fill:028888">đầu số 028888</button>
+    <button data-act="fill:0288">quá ngắn</button>
+  </div>
+  <label class="lbl" for="note">Ghi chú</label>
+  <div class="field plain"><input id="note" autocomplete="off" placeholder="Ví dụ: spam vay tiền"></div>
+  <button class="btn btn-primary" id="saveBtn" data-act="save" disabled>Chặn</button>
+</section>
+
+<section class="sheet" id="setupSheet" aria-label="Bật chặn cuộc gọi">
+  <div class="grab"></div>
+  <header><button class="txtbtn" data-act="close">Đóng</button><h2>Bật chặn cuộc gọi</h2><span></span></header>
+  <div class="todo">
+    <p class="sub">iPhone cần bạn cho phép một lần. Mất khoảng 10 giây.</p>
+    <ol class="steps">
+      <li>Chạm “Mở Cài đặt” bên dưới.</li>
+      <li>Chọn Điện thoại.</li>
+      <li>Chọn Chặn cuộc gọi &amp; Nhận dạng.</li>
+      <li>Bật công tắc “Chặn cuộc gọi”, rồi quay lại đây.</li>
+    </ol>
+    <button class="btn btn-primary" data-act="setupgo">Mở Cài đặt</button>
+    <p class="foot">Không cần tài khoản. Không đọc danh bạ hay lịch sử cuộc gọi. Mọi thứ nằm trên máy bạn.</p>
+  </div>
+  <div class="done">
+    <div class="shield sm"></div>
+    <b>Đã bật</b>
+    <p class="sub">Máy sẽ không đổ chuông với số bạn chặn.<br>Muốn kiểm tra? Chặn số của một máy khác rồi gọi thử.</p>
+    <button class="btn btn-primary" data-act="close">Xong</button>
+  </div>
+</section>
+
+<div class="menu" role="menu">
+  <button role="menuitem" data-act="soon">Sao lưu danh sách</button>
+  <button role="menuitem" data-act="soon">Khôi phục danh sách</button>
+  <button role="menuitem" data-act="setup">Cách bật chặn cuộc gọi</button>
+</div>
+<div class="toast" role="status"></div>
+<div class="home-ind"></div>
+
+  </div></div>
+</div>
+</body>
+</html>

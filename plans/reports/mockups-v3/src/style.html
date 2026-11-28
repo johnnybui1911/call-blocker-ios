@@ -1,0 +1,104 @@
+<style>
+  /* Hợp nhất: the micro-interaction design, coloured by the round-one green and red. Every colour is a token, so dark and light share this file. */
+  .screen { --card-line: 0; --field-line: 2px solid transparent; --row-line: 1px solid var(--c-hairline); --link: var(--c-protected-text); --state-text: var(--c-protected-text); --glow: var(--c-glow-on); transition: background 300ms, color 300ms; }
+  .screen[data-prot="off"] { --state-text: var(--c-danger-text); --glow: var(--c-glow-off); }
+  .a-top h1 { font-size: 17px; font-weight: 800; }
+  .a-actions { display: flex; gap: 8px; }
+  .a-help, .a-mode { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--c-surface); box-shadow: 0 6px 16px var(--c-shadow); color: var(--c-protected-text); font-weight: 800; font-size: 17px; transition: transform var(--dur) var(--ease), background 300ms; }
+  .a-help:active, .a-mode:active { transform: scale(0.85) rotate(-12deg); }
+  .a-hero { display: grid; justify-items: center; text-align: center; padding: 18px 24px 16px; }
+  .a-shield { position: relative; width: 124px; height: 138px; transition: transform var(--dur) var(--ease); }
+  .a-shield::before, .a-shield::after { content: ""; position: absolute; inset: 8px 2px; border-radius: 50%; border: 3px solid var(--state); opacity: 0; animation: ring 2.4s ease-out infinite; }
+  .a-shield::after { animation-delay: 1.2s; }
+  @keyframes ring { 0% { transform: scale(0.75); opacity: 0.6; } 100% { transform: scale(1.55); opacity: 0; } }
+  [data-prot="off"] .a-shield::before, [data-prot="off"] .a-shield::after { animation: none; }
+  [data-prot="off"] .a-shield { animation: wobble 1.6s ease-in-out infinite; }
+  @keyframes wobble { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+  .a-shield.stamp { animation: stamp 620ms var(--ease); }
+  @keyframes stamp { 0% { transform: scale(1); } 35% { transform: scale(0.72) rotate(-8deg); } 70% { transform: scale(1.18) rotate(4deg); } 100% { transform: scale(1); } }
+  .shield { position: relative; z-index: 1; height: 100%; filter: drop-shadow(0 0 26px var(--glow)) drop-shadow(0 10px 14px var(--glow)); }
+  .shield .body { fill: var(--state); transition: fill 300ms; } .shield .shine { fill: #ffffff38; } .shield .core { fill: var(--c-shield-core); transition: fill 300ms; }
+  .shield .mark { fill: none; stroke: var(--state); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 300ms; }
+  .a-hero h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin-top: 18px; color: var(--state-text); transition: color 300ms; }
+  .a-hero p { font-size: 17px; color: var(--muted); margin-top: 2px; }
+  .a-cta { padding: 0 24px; border-radius: 999px; background: var(--c-danger); color: var(--c-on-danger); font-weight: 800; font-size: 17px; box-shadow: 0 10px 24px var(--c-glow-off); animation: nudge 1.4s var(--ease) infinite; }
+  @keyframes nudge { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-5px); } }
+  .a-sect { font-size: 15px; font-weight: 800; }
+  .a-hint { padding: 0 24px 8px; font-size: 13px; color: var(--muted); }
+  .list { box-shadow: 0 14px 34px var(--c-shadow); }
+  .row { overflow: hidden; touch-action: pan-y; }
+  .row .del { display: flex; align-items: center; justify-content: center; position: absolute; right: 0; top: 0; bottom: 0; width: 104px; background: var(--c-danger); color: var(--c-on-danger); font-weight: 800; font-size: 15px; }
+  .row-in { background: var(--c-surface); position: relative; transition: transform 380ms var(--ease), background 300ms; cursor: grab; }
+  .row.open .row-in { transform: translateX(-104px); }
+  .row.peek .row-in { animation: peek 1.3s var(--ease) 700ms 1; }
+  @keyframes peek { 30%, 55% { transform: translateX(-46px); } }
+  .row.new { animation: pop 560ms var(--ease); }
+  .row.new .row-in { animation: flash 1.2s ease-out; }
+  @keyframes pop { from { transform: scale(0.8); opacity: 0; } }
+  @keyframes flash { from { background: var(--c-highlight); } }
+  .row .n { font-weight: 800; } .tag { font-weight: 800; }
+  .switch { transition: transform var(--dur) var(--ease); }
+  .switch:active { transform: scale(0.9); } .switch:active::after { width: 34px; }
+  .switch::after { transition: transform 320ms var(--ease), width 160ms; }
+  .a-dock { background: linear-gradient(transparent, var(--c-bg) 45%); }
+  .btn { font-weight: 800; box-shadow: 0 12px 26px var(--c-glow-on), inset 0 2px 0 #ffffff40; transition: transform 260ms var(--ease), box-shadow 200ms; position: relative; overflow: hidden; }
+  .btn:active { transform: scale(0.93); box-shadow: 0 4px 10px var(--c-glow-on); }
+  .btn:disabled { box-shadow: none; }
+  .ripple { position: absolute; width: 20px; height: 20px; margin: -10px; border-radius: 50%; background: #ffffff80; animation: ripple 520ms ease-out forwards; pointer-events: none; }
+  @keyframes ripple { to { transform: scale(22); opacity: 0; } }
+  .screen.buzz { animation: buzz 260ms linear; }
+  @keyframes buzz { 20% { transform: translateX(-3px); } 40% { transform: translateX(3px); } 60% { transform: translateX(-2px); } 80% { transform: translateX(2px); } }
+  .confetti { position: absolute; left: 50%; top: 210px; width: 10px; height: 14px; border-radius: 3px; z-index: 7; pointer-events: none; animation: fly 900ms cubic-bezier(0.2, 0.8, 0.3, 1) forwards; }
+  @keyframes fly { to { transform: translate(var(--x), var(--y)) rotate(var(--r)); opacity: 0; } }
+  .sheet { box-shadow: 0 -20px 50px var(--c-shadow); transition-property: transform, visibility, background; }
+  .sheet header h2 { font-weight: 800; font-size: 19px; }
+  .field:focus-within { background: var(--c-surface); box-shadow: 0 0 0 4px var(--c-glow-on); }
+  .field input { font-weight: 800; }
+  .live { transition: background 240ms; } .live b { font-weight: 800; }
+  .live[data-kind="one"] b, .live[data-kind="prefix"] b { animation: pop 420ms var(--ease); }
+  .chip, .try button { transition: transform var(--dur) var(--ease); } .chip:active, .try button:active { transform: scale(0.9); }
+  .toast { font-weight: 800; box-shadow: 0 10px 24px var(--c-shadow); }
+</style>
+<script>
+  window.onRender = function (S) {
+    $('.a-hint').textContent = S.items.length ? '← Vuốt một dòng sang trái để bỏ chặn' : '';
+    const first = $('.a-list .row');
+    if (first && S.name && !document.body.classList.contains('still')) first.classList.add('peek');
+  };
+  // Tap-to-block feedback: screen buzz (stands in for a haptic), shield stamp, confetti in the mode's colours.
+  window.onBlocked = function () {
+    const sc = $('.screen'), sh = $('.a-shield'), cs = getComputedStyle(document.documentElement);
+    sc.classList.add('buzz'); sh.classList.add('stamp');
+    setTimeout(() => { sc.classList.remove('buzz'); sh.classList.remove('stamp'); }, 700);
+    for (let i = 0; i < 16; i++) {
+      const c = document.createElement('i');
+      c.className = 'confetti';
+      const a = (i / 16) * Math.PI * 2;
+      c.style.cssText = 'background:' + cs.getPropertyValue('--c-confetti' + ((i % 4) + 1)) + ';--x:' + Math.round(Math.cos(a) * (90 + (i % 3) * 40)) + 'px;--y:' + Math.round(Math.sin(a) * (80 + (i % 4) * 30)) + 'px;--r:' + (i * 47) + 'deg';
+      sc.appendChild(c);
+      setTimeout(() => c.remove(), 950);
+    }
+  };
+  // Swipe a row left to reveal "Bỏ chặn", right to close it.
+  let drag = null;
+  document.addEventListener('pointerdown', (e) => {
+    const rin = e.target.closest('.a-list .row-in');
+    if (rin && !e.target.closest('.switch')) drag = { row: rin.parentElement, x: e.clientX };
+  });
+  document.addEventListener('pointermove', (e) => {
+    if (!drag) return;
+    const dx = e.clientX - drag.x;
+    if (dx < -30) { $$('.row.open').forEach((r) => r !== drag.row && r.classList.remove('open')); drag.row.classList.add('open'); }
+    else if (dx > 30) drag.row.classList.remove('open');
+  });
+  document.addEventListener('pointerup', () => (drag = null));
+  document.addEventListener('pointerdown', (e) => {
+    const b = e.target.closest('.btn');
+    if (!b || b.disabled) return;
+    const r = b.getBoundingClientRect(), s = document.createElement('span');
+    s.className = 'ripple';
+    s.style.left = e.clientX - r.left + 'px'; s.style.top = e.clientY - r.top + 'px';
+    b.appendChild(s);
+    setTimeout(() => s.remove(), 540);
+  });
+</script>

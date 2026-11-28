@@ -1,0 +1,69 @@
+<style>
+  .b-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--s-3); padding: var(--s-2) var(--s-4) var(--s-8); }
+  .tile { position: relative; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); padding: var(--s-4); text-align: left; display: flex; flex-direction: column; justify-content: flex-end; min-height: 124px; overflow: hidden; transition: transform var(--dur) var(--ease), background var(--dur); }
+  button.tile:active { transform: scale(0.97); }
+  .tile .k { font-size: var(--t-sm); color: var(--muted); }
+  .tile .v { font-size: var(--t-xl); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+  .tile .go { position: absolute; top: var(--s-4); right: var(--s-4); color: var(--subtle); font-size: var(--t-lg); line-height: 1; }
+  .b-status { grid-column: span 4; min-height: 190px; background: linear-gradient(160deg, color-mix(in oklch, var(--state) 20%, var(--g-1)), var(--g-1) 70%); border-color: color-mix(in oklch, var(--state) 40%, transparent); transition: background var(--dur-slow); }
+  .b-status .shield { position: absolute; top: var(--s-4); left: var(--s-4); }
+  .b-status .v { color: var(--state); font-size: 24px; }
+  .b-add { grid-column: span 2; min-height: 190px; background: var(--accent); color: var(--on-accent); border: 0; justify-content: space-between; box-shadow: inset 0 1px 0 oklch(100% 0 0 / 0.5); }
+  .b-add .plus { font-size: 44px; font-weight: 300; line-height: 1; }
+  .b-add .v { font-size: var(--t-lg); }
+  .b-half { grid-column: span 3; }
+  .b-wide { grid-column: span 6; min-height: 0; }
+  .demo { position: absolute; top: var(--s-3); right: var(--s-3); font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 7px; border-radius: var(--r-full); border: 1px dashed var(--warn); color: var(--warn); }
+  .ring { width: 46px; height: 46px; border-radius: 50%; background: conic-gradient(var(--ok) calc(var(--p) * 1%), var(--surface-3) 0); display: grid; place-items: center; margin-bottom: var(--s-3); }
+  .ring::after { content: ""; width: 34px; height: 34px; border-radius: 50%; background: var(--surface); }
+  .b-prev { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+  .b-prev span { font-size: var(--t-sm); padding: 5px 10px; border-radius: var(--r-full); background: var(--surface-3); }
+  .b-prev span.p { opacity: 0.45; }
+  #listSheet { height: 92%; padding-left: 0; padding-right: 0; }
+  #listSheet header, #listSheet .grab { margin-left: auto; margin-right: auto; }
+  #listSheet header { padding: 0 var(--s-3); margin: 0 0 var(--s-2); }
+</style>
+
+<header class="top">
+  <h1>Chặn cuộc gọi</h1>
+  <button class="iconbtn" data-act="menu" aria-label="Thêm tùy chọn">⋯</button>
+</header>
+<main class="scroll">
+  <div class="b-grid">
+    <button class="tile b-status" id="bStatus">
+      <div class="shield sm"></div>
+      <div class="v" id="bTitle"></div>
+      <div class="k" id="bSub"></div>
+    </button>
+    <button class="tile b-add" data-act="add"><span class="plus">＋</span><span class="v">Chặn số</span></button>
+    <div class="tile b-half"><span class="demo">Minh họa</span><div class="v num" id="bTotal"></div><div class="k">số đang chặn</div></div>
+    <div class="tile b-half"><span class="demo">Minh họa</span><div class="ring" id="bRing"></div><div class="v num" id="bCap"></div><div class="k">dung lượng đã dùng</div></div>
+    <button class="tile b-wide" data-act="list"><span class="go">›</span><div class="k" id="bCount"></div><div class="b-prev" id="bPrev"></div></button>
+    <button class="tile b-half" data-act="setup"><span class="go">›</span><div class="v" style="font-size:var(--t-md)">Gọi thử để kiểm tra</div><div class="k">Chặn số máy khác rồi gọi</div></button>
+    <button class="tile b-half" data-act="soon"><span class="go">›</span><div class="v" style="font-size:var(--t-md)">Sao lưu danh sách</div><div class="k">Lưu ra tệp trên máy</div></button>
+  </div>
+</main>
+
+<section class="sheet" id="listSheet" aria-label="Số đang chặn">
+  <div class="grab"></div>
+  <header><button class="txtbtn" data-act="close">Đóng</button><h2>Số đang chặn</h2><button class="txtbtn" style="justify-self:end" data-act="add">Chặn số</button></header>
+  <div id="bList"></div>
+</section>
+
+<script>
+  window.renderHome = function (S) {
+    const st = statusText();
+    $('#bTitle').textContent = st.title;
+    $('#bSub').textContent = st.cta ? 'Chạm để bật trong Cài đặt' : st.sub;
+    $('#bStatus').dataset.act = st.cta ? 'setup' : 'list';
+    const t = total(), pct = Math.round((t / LIMIT) * 1000) / 10;
+    $('#bTotal').textContent = nf(t);
+    $('#bCap').textContent = nf(pct) + '%';
+    $('#bRing').style.setProperty('--p', Math.max(pct, t ? 2 : 0));
+    $('#bCount').textContent = 'Số đang chặn (' + S.items.length + ')';
+    $('#bPrev').innerHTML = S.items.length
+      ? S.items.map((i) => '<span class="num' + (i.on ? '' : ' p') + '">' + fmt(i.d) + (isOne(i.d) ? '' : '…') + '</span>').join('')
+      : '<span>Chưa chặn số nào</span>';
+    $('#bList').innerHTML = listHTML();
+  };
+</script>
