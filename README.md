@@ -159,6 +159,13 @@ python3 scripts/generate-theme-assets.py          # sinh lại color set sau khi
 python3 scripts/generate-theme-assets.py --check  # báo lỗi nếu asset hoặc Theme.swift lệch token
 ```
 
+Icon app (khiên, vòng xung và ống nghe) cũng sinh từ `design/tokens.json`. Bản mặc định dùng bảng màu tối; iOS 18 có thêm bản tối và bản tinted. Cần `rsvg-convert` và `magick` (Homebrew: `librsvg`, `imagemagick`):
+
+```bash
+python3 scripts/generate-app-icon.py          # sinh lại AppIcon sau khi sửa tokens.json
+python3 scripts/generate-app-icon.py --check  # báo lỗi nếu icon có kênh alpha hoặc sai kích thước
+```
+
 Để chụp màn hình trên Simulator (Call Directory không chạy ở đó), bản Debug nhận tham số `-demoState home|empty|off|add-full|add-prefix`, dùng dữ liệu mẫu trong bộ nhớ.
 
 ## Cách thử với 028888
