@@ -11,8 +11,8 @@ struct ShieldView: View {
     let stampTrigger: Int
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
     @ScaledMetric(relativeTo: .largeTitle) private var scaledWidth: CGFloat = 124
-    @State private var pulsing = false
     @State private var rocking = false
     @State private var stampScale: CGFloat = 1
     @State private var stampTilt: Double = 0
@@ -23,10 +23,7 @@ struct ShieldView: View {
 
     var body: some View {
         ZStack {
-            if isProtected {
-                ring(delay: 0)
-                ring(delay: Theme.Motion.shieldPulse / 2)
-            }
+            if isProtected { pulse }
             shield
                 .rotationEffect(.degrees(!isProtected && rocking ? 5 : (!isProtected && !reduceMotion ? -5 : 0)))
                 .scaleEffect(stampScale)
@@ -56,27 +53,51 @@ struct ShieldView: View {
         .animation(reduceMotion ? nil : Theme.Motion.fast, value: isProtected)
     }
 
-    private func ring(delay: Double) -> some View {
-        Circle()
+    /// Soft halo plus two rings that expand and fade, offset by half a period
+    /// (mockup `ring`: scale 0.75 -> 1.55, opacity 0.6 -> 0, 2.4 s ease-out, second ring 1.2 s later).
+    /// Driven by a timeline instead of a repeating animation so it is paused whenever the
+    /// app is not active or the view is off screen; Reduce Motion keeps one still ring.
+    private var pulse: some View {
+        TimelineView(.animation(minimumInterval: nil, paused: reduceMotion || scenePhase != .active)) { context in
+            let t = context.date.timeIntervalSinceReferenceDate
+            ZStack {
+                Circle()
+                    .fill(RadialGradient(colors: [tint.opacity(0.28), tint.opacity(0)],
+                                         center: .center, startRadius: width * 0.3, endRadius: width * 0.95))
+                    .frame(width: width * 1.9, height: width * 1.9)
+                if reduceMotion {
+                    ringShape(progress: 0.3)
+                } else {
+                    ringShape(progress: Self.progress(t, delay: 0))
+                    ringShape(progress: Self.progress(t, delay: Theme.Motion.shieldPulse / 2))
+                }
+            }
+        }
+        .allowsHitTesting(false)
+    }
+
+    private func ringShape(progress: Double) -> some View {
+        let eased = 1 - pow(1 - progress, 2.2)
+        return Ellipse()
             .stroke(tint, lineWidth: 3)
-            
             .frame(width: width * 120 / 124, height: width * 122 / 124)
-            .scaleEffect(reduceMotion ? 1.2 : (pulsing ? 1.55 : 0.75))
-            .opacity(reduceMotion ? 0.25 : (pulsing ? 0 : 0.6))
-            .animation(
-                reduceMotion ? nil : .easeOut(duration: Theme.Motion.shieldPulse).repeatForever(autoreverses: false).delay(delay),
-                value: pulsing
-            )
+            .scaleEffect(0.75 + 0.8 * eased)
+            .opacity(0.6 * (1 - eased))
+            .shadow(color: glow, radius: 6)
+    }
+
+    /// 0...1 position inside the current period; the negative-delay ring starts mid-cycle.
+    private static func progress(_ t: TimeInterval, delay: Double) -> Double {
+        let period = Theme.Motion.shieldPulse
+        let x = (t - delay).truncatingRemainder(dividingBy: period)
+        return (x < 0 ? x + period : x) / period
     }
 
     private func startLoops() {
-        pulsing = false
         rocking = false
         guard !reduceMotion else { return }
         DispatchQueue.main.async {
-            if isProtected {
-                pulsing = true
-            } else {
+            if !isProtected {
                 withAnimation(.easeInOut(duration: 1.6).repeatForever(autoreverses: true)) { rocking = true }
             }
         }
