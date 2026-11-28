@@ -57,6 +57,8 @@ enum Theme {
         static let spring = Animation.spring(response: 0.35, dampingFraction: 0.62)
         static let fast = Animation.easeOut(duration: 0.22)
         static let shieldPulse: Double = 2.4
+        /// The mockup's cubic-bezier(0.34, 1.56, 0.64, 1).
+        static func overshoot(_ duration: Double) -> Animation { .timingCurve(0.34, 1.56, 0.64, 1, duration: duration) }
     }
 
     /// Rounded system font that still follows Dynamic Type.

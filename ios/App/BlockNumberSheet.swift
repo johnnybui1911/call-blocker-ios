@@ -133,13 +133,14 @@ struct BlockNumberSheet: View {
 
     @ViewBuilder
     private var numberField: some View {
-        let field = TextField("Ví dụ 028 888 hoặc 090 123 4567", text: $rawInput)
+        let field = TextField("", text: $rawInput)
             .font(Theme.font(.title2, weight: .heavy))
             .keyboardType(.phonePad)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
             .focused($numberFocused)
             .accessibilityLabel("Số điện thoại hoặc đầu số")
+            .accessibilityHint("Ví dụ 0901 234 567, hoặc 028 888 để chặn cả dải")
             // A full number must stay visible in one line; the result card below repeats
             // it at the user's full text size.
             .dynamicTypeSize(...DynamicTypeSize.accessibility1)
@@ -187,6 +188,11 @@ struct BlockNumberSheet: View {
             Text(result.message)
                 .font(Theme.font(.subheadline))
                 .foregroundStyle(result.isError ? Theme.warnText : (result.isValid ? Theme.okInk : Theme.muted))
+            if let example = result.example {
+                Text(example)
+                    .font(Theme.font(.subheadline))
+                    .foregroundStyle(Theme.muted)
+            }
             if result.isValid, reading.preview.reachesSoftCap {
                 Text("Dải số này rất lớn. Thêm chữ số để chặn chắc hơn.")
                     .font(Theme.font(.footnote))
@@ -236,6 +242,7 @@ struct BlockNumberSheet: View {
     struct LiveResult: Equatable {
         var title: String?
         var message: String
+        var example: String?
         var isValid: Bool
         var isError: Bool
     }
@@ -244,7 +251,7 @@ struct BlockNumberSheet: View {
     static func describe(_ reading: InputReading, input: String) -> LiveResult {
         let preview = reading.preview
         if case .normalization(.empty)? = preview.error {
-            return LiveResult(title: "Nhập số bạn muốn chặn.", message: "Một số đầy đủ, hoặc ít nhất 6 số đầu để chặn cả dải số.", isValid: false, isError: false)
+            return LiveResult(title: nil, message: "Nhập số bạn muốn chặn. Một số đầy đủ, hoặc ít nhất 6 số đầu để chặn cả dải số.", example: "Ví dụ: 0901 234 567, hoặc 028 888 để chặn cả dải.", isValid: false, isError: false)
         }
         if let error = preview.error {
             return LiveResult(title: nil, message: Vietnamese.message(for: error), isValid: false, isError: true)

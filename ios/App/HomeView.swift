@@ -222,7 +222,7 @@ struct HomeView: View {
             Text(copy.title)
                 .font(Theme.font(.title, weight: .heavy))
                 .foregroundStyle(isProtectedLook ? Theme.protectedText : Theme.dangerText)
-                .padding(.top, 8)
+                .padding(.top, 14)
                 .accessibilityAddTraits(.isHeader)
             Text(copy.detail)
                 .font(Theme.font(.body))
@@ -246,6 +246,7 @@ struct HomeView: View {
         .fixedSize(horizontal: false, vertical: true)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 8)
+        .padding(.top, 12)
         .padding(.bottom, 8)
     }
 

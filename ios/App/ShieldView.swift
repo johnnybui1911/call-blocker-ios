@@ -15,6 +15,7 @@ struct ShieldView: View {
     @State private var pulsing = false
     @State private var rocking = false
     @State private var stampScale: CGFloat = 1
+    @State private var stampTilt: Double = 0
 
     private var width: CGFloat { min(scaledWidth, 168) }
     private var tint: Color { isProtected ? Theme.protected : Theme.danger }
@@ -29,8 +30,9 @@ struct ShieldView: View {
             shield
                 .rotationEffect(.degrees(!isProtected && rocking ? 5 : (!isProtected && !reduceMotion ? -5 : 0)))
                 .scaleEffect(stampScale)
+                .rotationEffect(.degrees(stampTilt))
         }
-        .frame(width: width * 1.6, height: width * 148 / 132 * 1.25)
+        .frame(width: width * 1.6, height: width * 148 / 132 * 1.4)
         .onAppear(perform: startLoops)
         .onChange(of: isProtected) { _ in startLoops() }
         .onChange(of: stampTrigger) { _ in stamp() }
@@ -49,15 +51,16 @@ struct ShieldView: View {
                 .stroke(tint, style: StrokeStyle(lineWidth: width * 8 / 132, lineCap: .round, lineJoin: .round))
         }
         .frame(width: width, height: width * 148 / 132)
-        .shadow(color: glow, radius: 22)
-        .shadow(color: glow, radius: 10, y: 8)
+        .shadow(color: glow, radius: 13)
+        .shadow(color: glow, radius: 7, y: 10)
         .animation(reduceMotion ? nil : Theme.Motion.fast, value: isProtected)
     }
 
     private func ring(delay: Double) -> some View {
         Circle()
             .stroke(tint, lineWidth: 3)
-            .frame(width: width, height: width)
+            
+            .frame(width: width * 120 / 124, height: width * 122 / 124)
             .scaleEffect(reduceMotion ? 1.2 : (pulsing ? 1.55 : 0.75))
             .opacity(reduceMotion ? 0.25 : (pulsing ? 0 : 0.6))
             .animation(
@@ -79,11 +82,15 @@ struct ShieldView: View {
         }
     }
 
+    /// Mockup keyframes over 620 ms: 1 -> 0.72 (-8°) at 35% -> 1.18 (4°) at 70% -> 1.
     private func stamp() {
         guard !reduceMotion else { return }
-        withAnimation(.easeIn(duration: 0.12)) { stampScale = 0.74 }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
-            withAnimation(Theme.Motion.spring) { stampScale = 1 }
+        withAnimation(.easeIn(duration: 0.217)) { stampScale = 0.72; stampTilt = -8 }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.217) {
+            withAnimation(.easeInOut(duration: 0.217)) { stampScale = 1.18; stampTilt = 4 }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.434) {
+            withAnimation(Theme.Motion.overshoot(0.186)) { stampScale = 1; stampTilt = 0 }
         }
     }
 }
