@@ -1,0 +1,50 @@
+<div class="scrim" data-act="close"></div>
+
+<section class="sheet" id="addSheet" aria-label="Chặn số">
+  <div class="grab"></div>
+  <header><button class="txtbtn" data-act="close">Hủy</button><h2>Chặn số</h2><span></span></header>
+  <label class="lbl" for="num">Số điện thoại hoặc đầu số</label>
+  <div class="field">
+    <input id="num" class="num" inputmode="tel" autocomplete="off" placeholder="Ví dụ 028 888 hoặc 090 123 4567">
+    <button class="chip" data-act="fill:02838234567">Dán số</button>
+  </div>
+  <div class="live" id="live" aria-live="polite"></div>
+  <div class="try">Bản mẫu, thử nhanh:
+    <button data-act="fill:02838234567">một số</button>
+    <button data-act="fill:028888">đầu số 028888</button>
+    <button data-act="fill:0288">quá ngắn</button>
+  </div>
+  <label class="lbl" for="note">Ghi chú</label>
+  <div class="field plain"><input id="note" autocomplete="off" placeholder="Ví dụ: spam vay tiền"></div>
+  <button class="btn btn-primary" id="saveBtn" data-act="save" disabled>Chặn</button>
+</section>
+
+<section class="sheet" id="setupSheet" aria-label="Bật chặn cuộc gọi">
+  <div class="grab"></div>
+  <header><button class="txtbtn" data-act="close">Đóng</button><h2>Bật chặn cuộc gọi</h2><span></span></header>
+  <div class="todo">
+    <p class="sub">iPhone cần bạn cho phép một lần. Mất khoảng 10 giây.</p>
+    <ol class="steps">
+      <li>Chạm “Mở Cài đặt” bên dưới.</li>
+      <li>Chọn Điện thoại.</li>
+      <li>Chọn Chặn cuộc gọi &amp; Nhận dạng.</li>
+      <li>Bật công tắc “Chặn cuộc gọi”, rồi quay lại đây.</li>
+    </ol>
+    <button class="btn btn-primary" data-act="setupgo">Mở Cài đặt</button>
+    <p class="foot">Không cần tài khoản. Không đọc danh bạ hay lịch sử cuộc gọi. Mọi thứ nằm trên máy bạn.</p>
+  </div>
+  <div class="done">
+    <div class="shield sm"></div>
+    <b>Đã bật</b>
+    <p class="sub">Máy sẽ không đổ chuông với số bạn chặn.<br>Muốn kiểm tra? Chặn số của một máy khác rồi gọi thử.</p>
+    <button class="btn btn-primary" data-act="close">Xong</button>
+  </div>
+</section>
+
+<div class="menu" role="menu">
+  <button role="menuitem" data-act="soon">Sao lưu danh sách</button>
+  <button role="menuitem" data-act="soon">Khôi phục danh sách</button>
+  <button role="menuitem" data-act="setup">Cách bật chặn cuộc gọi</button>
+</div>
+<div class="toast" role="status"></div>
+<div class="home-ind"></div>

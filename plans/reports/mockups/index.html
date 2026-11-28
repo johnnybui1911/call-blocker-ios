@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chặn cuộc gọi — three directions</title>
+<style>
+  :root {
+    --hue: 160;
+    --bg: oklch(10% 0.006 var(--hue));
+    --surface: oklch(16% 0.007 var(--hue));
+    --line: oklch(100% 0 0 / 0.1);
+    --text: oklch(97% 0.004 var(--hue));
+    --muted: oklch(76% 0.01 var(--hue));
+    --subtle: oklch(60% 0.012 var(--hue));
+    --accent: oklch(85% 0.19 155);
+    --warn: oklch(85% 0.15 85);
+    --scale: 0.82;
+    --font: -apple-system, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font: 400 15px/1.5 var(--font); -webkit-font-smoothing: antialiased; padding: 40px 24px 64px; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h1 { font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; text-wrap: balance; }
+  .lede { color: var(--muted); max-width: 68ch; margin-top: 8px; }
+  .bar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 16px 0; margin-top: 16px; background: linear-gradient(var(--bg) 80%, transparent); }
+  .bar span { color: var(--subtle); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4px; }
+  .bar button { font: inherit; font-size: 13px; color: var(--text); min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); cursor: pointer; }
+  .bar button:hover { border-color: var(--muted); }
+  .bar button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: oklch(20% 0.05 155); font-weight: 600; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(390px * var(--scale)), 1fr)); gap: 40px 32px; margin-top: 16px; justify-items: center; }
+  article { width: calc(390px * var(--scale)); }
+  article h2 { font-size: 20px; display: flex; align-items: center; gap: 8px; }
+  article h2 small { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: oklch(85% 0.19 155 / 0.15); color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; }
+  article ol { list-style: none; padding: 0; margin: 8px 0 16px; color: var(--muted); font-size: 13px; min-height: 9em; }
+  article ol li { padding-left: 16px; position: relative; }
+  article ol li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--subtle); }
+  article ol b { color: var(--text); font-weight: 600; }
+  .frame { width: calc(390px * var(--scale)); height: calc(844px * var(--scale)); border-radius: 40px; overflow: hidden; box-shadow: 0 0 0 8px oklch(24% 0.006 var(--hue)), 0 0 0 9px oklch(100% 0 0 / 0.14), 0 30px 60px oklch(0% 0 0 / 0.5); }
+  iframe { width: 390px; height: 844px; border: 0; transform: scale(var(--scale)); transform-origin: 0 0; display: block; }
+  article a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 20px; color: var(--accent); font-size: 13px; }
+  .note { margin-top: 48px; padding: 16px 20px; border-radius: 16px; border: 1px dashed var(--warn); color: var(--muted); font-size: 13px; max-width: 80ch; }
+  .note b { color: var(--warn); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Chặn cuộc gọi: three home-screen directions</h1>
+  <p class="lede">Same app, same Vietnamese wording, same sample data. Only the layout changes. Each phone is live: tap inside it, or use the buttons below to put all three into the same state.</p>
+
+  <div class="bar" id="bar">
+    <span>Show</span>
+    <button data-q="state=home" aria-pressed="true">Home</button>
+    <button data-q="state=home&sheet=full">Add a full number</button>
+    <button data-q="state=home&sheet=prefix">Add prefix 028888</button>
+    <button data-q="state=empty">Empty</button>
+    <button data-q="state=off">Protection off</button>
+  </div>
+
+  <div class="cols">
+    <article>
+      <h2>A · Lá chắn <small>Recommended</small></h2>
+      <ol>
+        <li><b>Status first.</b> One shield says whether the phone is protected.</li>
+        <li><b>3 screens:</b> home, “Chặn số” sheet, setup sheet. The list sits on the home screen.</li>
+        <li><b>Weak spot:</b> a long list starts below the shield.</li>
+      </ol>
+      <div class="frame"><iframe title="Direction A" data-src="a-la-chan.html"></iframe></div>
+      <a href="a-la-chan.html">Open A full size →</a>
+    </article>
+    <article>
+      <h2>B · Bảng điều khiển</h2>
+      <ol>
+        <li><b>Bento grid.</b> Status, add, count and capacity each get a tile.</li>
+        <li><b>4 screens:</b> the list moves one tap away, behind its tile.</li>
+        <li><b>Weak spot:</b> only two real numbers exist, so most tiles are navigation.</li>
+      </ol>
+      <div class="frame"><iframe title="Direction B" data-src="b-bang-dieu-khien.html"></iframe></div>
+      <a href="b-bang-dieu-khien.html">Open B full size →</a>
+    </article>
+    <article>
+      <h2>C · Bàn phím</h2>
+      <ol>
+        <li><b>Input first.</b> The app opens on a keypad; blocking takes one screen.</li>
+        <li><b>2 screens:</b> keypad home with a list drawer, setup sheet. No note field.</li>
+        <li><b>Weak spot:</b> “protection off” shrinks to a small pill at the top.</li>
+      </ol>
+      <div class="frame"><iframe title="Direction C" data-src="c-ban-phim.html"></iframe></div>
+      <a href="c-ban-phim.html">Open C full size →</a>
+    </article>
+  </div>
+
+  <p class="note"><b>What is illustrative.</b> Every number shown comes from three sample entries (028 888…, 090 123 4567, 024 7300…). In B, the count and capacity tiles carry a “Minh họa” badge because they are computed from that sample. No direction shows “calls blocked” figures: iOS does not report them, so the real app cannot either. “Mở Cài đặt” only flips the mockup to the on state, and swipe actions (Sửa, Bỏ chặn), backup and restore are not simulated.</p>
+</div>
+<script>
+  const frames = document.querySelectorAll('iframe');
+  function show(q) {
+    frames.forEach((f) => (f.src = f.dataset.src + '?embed=1&' + q));
+    document.querySelectorAll('#bar button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.q === q));
+  }
+  document.getElementById('bar').addEventListener('click', (e) => { if (e.target.dataset.q) show(e.target.dataset.q); });
+  const initial = new URLSearchParams(location.search).get('show');
+  show(initial ? decodeURIComponent(initial) : 'state=home');
+</script>
+</body>
+</html>

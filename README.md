@@ -112,7 +112,7 @@ Muốn thử xem máy bạn có ký được App Group hay không: đặt `ENABL
 
 Lần đầu container App Group mở được, nếu trong App Group chưa có `rules.json` mà máy còn bản lưu cục bộ, app copy file đó sang. Không ghi đè quy tắc đã có trong App Group.
 
-Đổi team thường buộc xóa app (iOS không cài đè khác chữ ký). Xóa app là mất dữ liệu cục bộ. Trước khi xóa: tab Quy tắc → menu `…` → **Xuất quy tắc**. Cài bản mới → **Nhập quy tắc**.
+Đổi team thường buộc xóa app (iOS không cài đè khác chữ ký). Xóa app là mất dữ liệu cục bộ. Trước khi xóa: menu `…` ở góc trên → **Sao lưu danh sách**. Cài bản mới → **Khôi phục danh sách**.
 
 ## Chuyển sang Team trả phí
 
@@ -128,8 +128,8 @@ Khi Apple Developer Program đã active (thường một đến hai ngày sau kh
 
    Giữ nguyên `BUNDLE_PREFIX` nếu bundle id đó đăng ký được cho team mới. Nếu portal báo bundle id đã thuộc team khác, đổi prefix.
 3. Nếu Build Settings còn Development Team cứng của Personal Team, xóa để lấy `$(TEAM_ID)`.
-4. Trên iPhone, xuất quy tắc, xóa app cũ, Run lại.
-5. Nhập quy tắc. App ghi `blocklist.bin` vào App Group và gọi `reloadExtension`.
+4. Trên iPhone, sao lưu danh sách, xóa app cũ, Run lại.
+5. Khôi phục danh sách. App ghi `blocklist.bin` vào App Group và gọi `reloadExtension`.
 6. Bật extension trong Cài đặt (mục dưới).
 7. Xcode automatic signing sẽ tạo App Group `group.<BUNDLE_PREFIX>` nếu team trả phí cho phép. Nếu không, vào [Identifiers](https://developer.apple.com/account/resources/identifiers/list) → App Groups, tạo đúng ID đó, rồi bật App Groups cho **cả** App ID của app và của extension.
 
@@ -142,20 +142,35 @@ Trên iPhone:
 3. Chọn Chặn cuộc gọi & Nhận dạng.
 4. Bật công tắc của “Chặn cuộc gọi”.
 
-Trong app, tab Hướng dẫn hiện trạng thái từ `CXCallDirectoryManager.getEnabledStatusForExtension`: Đã bật, Chưa bật, hoặc Chưa rõ. Nút **Mở phần Chặn cuộc gọi** gọi `openSettings` của CallKit. Nếu hệ thống không mở được đúng trang, nút **Mở Cài đặt của app** dùng `UIApplication.openSettingsURLString`; từ đó bạn tự vào Điện thoại → Chặn cuộc gọi & Nhận dạng.
+Màn hình chính hiện một trạng thái duy nhất, lấy từ `CXCallDirectoryManager.getEnabledStatusForExtension` và việc extension có đọc được danh sách hay không: Đang bảo vệ, Đã bật (chưa có số), Chưa bật chặn, Chưa kiểm tra được, hoặc Chưa chặn được (bản cài không có App Group). Nút **Bật ngay** hoặc menu `…` → **Cách bật chặn cuộc gọi** mở hướng dẫn; nút **Mở Cài đặt** ở đó gọi `openSettings` của CallKit, nếu hệ thống không mở được đúng trang thì app mở Cài đặt của app bằng `UIApplication.openSettingsURLString`. Chi tiết cho người build (App Group, bundle id) nằm trong mục **Thông tin kỹ thuật** của màn hình đó.
 
-Sau mỗi lần lưu quy tắc, app gọi `reloadExtension`. Nút **Tải lại danh sách chặn** làm lại việc đó. Lỗi CallKit hiện trên màn hình (extension chưa bật, đang tải, quá nhiều số, không tìm thấy extension).
+Sau mỗi lần lưu, app gọi `reloadExtension`. Không còn nút tải lại riêng: khi việc nạp danh sách lỗi, thông báo trên màn hình có nút **Thử lại** làm lại việc đó.
+
+## Giao diện và token thiết kế
+
+Giao diện là bản “Hợp nhất” (bố cục A “Lá chắn”): một màn hình chính có lá chắn trạng thái, danh sách **Số đang chặn** và một nút **Chặn số**; một sheet thêm/sửa số; một sheet hướng dẫn bật chặn. Không có tab. App theo chế độ Sáng/Tối của máy; nút mặt trời/mặt trăng ghim một chế độ, menu `…` → **Giao diện** → **Theo hệ thống** trả về mặc định.
+
+Khi nhập, app tự nhận **Một số** (đủ 10 chữ số di động hoặc 11 chữ số số bàn `02…`) hay **Đầu số** (ngắn hơn, tối thiểu 6 chữ số). Mục **Nâng cao** trong sheet cho phép chọn tay và đổi độ dài số.
+
+Màu nằm trong một file duy nhất, `design/tokens.json` (hai bộ `light` và `dark`, cùng tên token), để Android dùng lại đúng tên. Trên iOS mỗi token là một color set trong `ios/App/Assets.xcassets/Tokens`, truy cập qua `Theme.<tên token>`:
+
+```bash
+python3 scripts/generate-theme-assets.py          # sinh lại color set sau khi sửa tokens.json
+python3 scripts/generate-theme-assets.py --check  # báo lỗi nếu asset hoặc Theme.swift lệch token
+```
+
+Để chụp màn hình trên Simulator (Call Directory không chạy ở đó), bản Debug nhận tham số `-demoState home|empty|off|add-full|add-prefix`, dùng dữ liệu mẫu trong bộ nhớ.
 
 ## Cách thử với 028888
 
 `028888` không có sẵn trong app. Bạn tự thêm khi thử.
 
 1. Cài lên iPhone thật, App Group đang hoạt động, extension đã bật.
-2. Thêm quy tắc loại **Đầu số**, nhập `028888`, độ dài E.164 để **12** (mặc định).
-3. Ước tính phải là **100.000** số, từ `842888800000` đến `842888899999`. Ba cách gõ sau ra cùng một đầu số: `028888`, `+8428888`, `8428888`.
-4. Bật quy tắc, lưu, bấm Tải lại danh sách chặn. Trạng thái extension là Đã bật.
+2. Chạm **Chặn số**, nhập `028888`. App tự nhận đây là đầu số bàn (số đầy đủ 11 chữ số, E.164 dài 12); không cần chọn loại.
+3. Dòng kết quả phải là **Sẽ chặn 100.000 số**, từ `028 8880 0000` đến `028 8889 9999` (E.164 `842888800000` đến `842888899999`). Ba cách gõ sau ra cùng một đầu số: `028888`, `+8428888`, `8428888`.
+4. Chạm **Chặn**. Màn hình chính hiện **Đang bảo vệ**.
 5. Từ máy khác, gọi một số dạng `028 888x xxxx`, ví dụ `02888801234`. Máy cài app không đổ chuông.
-6. Cách chắc hơn nếu bạn không có đầu số 028888 thật: thêm quy tắc **Số đầy đủ** là số của điện thoại thứ hai, gọi từ máy đó, xác nhận bị chặn, rồi xóa quy tắc.
+6. Cách chắc hơn nếu bạn không có đầu số 028888 thật: chặn số đầy đủ của điện thoại thứ hai (app tự nhận là **Một số**), gọi từ máy đó, xác nhận bị chặn, rồi vuốt dòng đó sang trái và chọn **Bỏ chặn**.
 
 Số bàn TP.HCM là `028` + 8 chữ số thuê bao. `028888` đã chiếm 3 chữ số thuê bao, còn 5 chữ số, nên 10^5 = 100.000 số. E.164 dài 12 chữ số: bỏ số 0 đầu, thêm mã `84`.
 

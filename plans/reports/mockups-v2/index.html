@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chặn cuộc gọi — direction A, four versions</title>
+<style>
+  :root { --bg: #15161a; --surface: #202228; --line: #3a3d46; --text: #f3f3f3; --muted: #b9bcc4; --subtle: #8b8f99; --scale: 0.7; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font: 400 15px/1.5 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; padding: 40px 24px 64px; }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+  h1 { font-size: 28px; letter-spacing: -0.02em; line-height: 1.2; }
+  .lede { color: var(--muted); max-width: 70ch; margin-top: 8px; }
+  .bar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 16px 0; margin-top: 16px; background: linear-gradient(var(--bg) 80%, transparent); }
+  .bar span { color: var(--subtle); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 4px; }
+  .bar button { font: inherit; font-size: 13px; color: var(--text); min-height: 44px; padding: 0 16px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); cursor: pointer; }
+  .bar button[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: var(--bg); font-weight: 600; }
+  :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(calc(390px * var(--scale)), 1fr)); gap: 40px 24px; margin-top: 16px; justify-items: center; }
+  article { width: calc(390px * var(--scale)); }
+  article h2 { font-size: 20px; }
+  article ul { list-style: none; padding: 0; margin: 8px 0 16px; color: var(--muted); font-size: 13px; min-height: 13.5em; }
+  article li { padding-left: 16px; position: relative; }
+  article li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--subtle); }
+  article b { color: var(--text); font-weight: 600; }
+  .frame { width: calc(390px * var(--scale)); height: calc(844px * var(--scale)); border-radius: 36px; overflow: hidden; box-shadow: 0 0 0 8px #2b2d33, 0 0 0 9px #4a4d57, 0 30px 60px #0008; }
+  iframe { width: 390px; height: 844px; border: 0; transform: scale(var(--scale)); transform-origin: 0 0; display: block; }
+  article a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 20px; color: var(--text); font-size: 13px; }
+  h3 { font-size: 17px; margin: 56px 0 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--line); color: var(--muted); }
+  th { color: var(--text); font-weight: 600; } td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .tbl { overflow-x: auto; }
+  .note { margin-top: 32px; padding: 16px 20px; border-radius: 16px; border: 1px dashed var(--line); color: var(--muted); font-size: 13px; max-width: 84ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Chặn cuộc gọi: direction A in four versions</h1>
+  <p class="lede">All four use layout A “Lá chắn” (status, list, one button) and the same Vietnamese wording. The first is the original mockup from round one, unchanged; the other three are the new styles. Only the visual identity differs: palette, type, shapes, depth and motion. Each phone is live.</p>
+  <div class="bar" id="bar">
+    <span>Show</span>
+    <button data-q="state=home">Home</button>
+    <button data-q="state=home&sheet=full">Add a full number</button>
+    <button data-q="state=home&sheet=prefix">Add prefix 028888</button>
+    <button data-q="state=empty">Empty</button>
+    <button data-q="state=off">Protection off</button>
+  </div>
+  <div class="cols">
+    <article>
+      <h2>Bản gốc (A Lá chắn)</h2>
+      <ul>
+        <li><b>The round-one mockup,</b> shown as built: dark, green for “protected”, red for off.</li>
+        <li><b>Centred shield with a glow,</b> glass sheet, pill button.</li>
+        <li><b>Kept for comparison.</b> Its sample list already contains 028 888, so its numbers differ from the other three.</li>
+      </ul>
+      <div class="frame"><iframe title="Bản gốc (A Lá chắn)" data-src="../mockups/a-la-chan.html"></iframe></div>
+      <a href="../mockups/a-la-chan.html">Open full size →</a>
+    </article>
+    <article>
+      <h2>1 · Tối giản</h2>
+      <ul>
+        <li><b>Paper and ink.</b> Light background, hairlines, no shadows, one blue for “protected”.</li>
+        <li><b>Type does the work:</b> 40pt light title, left-aligned, line-art shield.</li>
+        <li><b>Motion:</b> short fades only. <b>Risk:</b> can read as plain.</li>
+      </ul>
+      <div class="frame"><iframe title="Tối giản" data-src="1-toi-gian.html"></iframe></div>
+      <a href="1-toi-gian.html">Open full size →</a>
+    </article>
+    <article>
+      <h2>2 · Tương phản cao</h2>
+      <ul>
+        <li><b>Black, white, one yellow.</b> 2px outlines, square corners, no transparency.</li>
+        <li><b>Heavy 19pt type, mono labels.</b> Every state has an icon and a word (BẬT / TẮT), never colour alone.</li>
+        <li><b>Motion:</b> near-instant. <b>Risk:</b> stark for users who keep light mode.</li>
+      </ul>
+      <div class="frame"><iframe title="Tương phản cao" data-src="2-tuong-phan-cao.html"></iframe></div>
+      <a href="2-tuong-phan-cao.html">Open full size →</a>
+    </article>
+    <article>
+      <h2>3 · Vi tương tác</h2>
+      <ul>
+        <li><b>Bright and rounded.</b> Blue with a sun-yellow highlight, soft tinted shadows.</li>
+        <li><b>Every tap answers back:</b> shield pulse, press squish, stamp and confetti on block, swipe a row to unblock.</li>
+        <li><b>Motion:</b> springs. <b>Risk:</b> playfulness must not undercut seriousness.</li>
+      </ul>
+      <div class="frame"><iframe title="Vi tương tác" data-src="3-vi-tuong-tac.html"></iframe></div>
+      <a href="3-vi-tuong-tac.html">Open full size →</a>
+    </article>
+  </div>
+
+  <h3>Shared tokens and what differs per platform</h3>
+  <div class="tbl"><table id="tok"><thead><tr><th>Style</th><th>Type</th><th>Shape and depth</th><th>Motion</th><th>Shared iOS + Android</th><th>iOS only</th><th>Android</th></tr></thead><tbody></tbody></table></div>
+  <p class="note">The table covers the three new styles. Values come from <code>src/tokens.json</code>, the single tokens file they are built from; colours are hex so SwiftUI and Compose can read the same file. Numbers on screen come from three sample entries, and no style shows “calls blocked” figures because iOS does not report them. “Mở Cài đặt” only flips the mockup to the on state. “Bản gốc” is loaded straight from <code>../mockups/a-la-chan.html</code>, which is not modified. Swipe-to-unblock is simulated in style 3 only; editing a number, backup and restore are not simulated.</p>
+</div>
+<script>
+  const TOKENS = {"$note": "Single source of truth for the three style mockups. Colours are hex so SwiftUI (Color) and Jetpack Compose (Color) can read them directly. build.py turns each style into CSS variables.", "shared": {"space": {"1": 4, "2": 8, "3": 12, "4": 16, "5": 20, "6": 24, "7": 32, "8": 48}, "touchTargetMin": 44, "layout": {"name": "A - Lá chắn", "order": ["status hero", "blocked list", "primary button docked at bottom"]}, "limits": {"minPrefixDigits": 6, "maxNumbers": 2000000}, "stateRule": "Protection state is always shown with an icon and words, never colour alone."}, "styles": {"toi-gian": {"label": "Tối giản", "color": {"bg": "#FAF8F4", "ink": "#1B1A17", "muted": "#6A665E", "accent": "#1B1A17", "onAccent": "#FAF8F4", "stateOn": "#2447C9", "stateOff": "#A04A08", "surface": "transparent", "sheet": "#FFFFFF", "field": "transparent", "tagBg": "transparent", "tagInk": "#6A665E", "switchOff": "#D9D5CC", "switchOn": "#1B1A17", "okBg": "#EAEEFB", "okInk": "#1B3391", "warnInk": "#A04A08", "scrim": "#1B1A1766", "toastBg": "#1B1A17", "toastInk": "#FAF8F4"}, "font": {"web": "-apple-system, 'SF Pro Text', system-ui, 'Segoe UI', Roboto, sans-serif", "ios": "SF Pro (system)", "android": "Roboto (system)", "titleSize": 40, "titleWeight": 300, "bodySize": 17}, "radius": {"card": 0, "button": 14, "field": 0, "sheet": 20}, "depth": "Hairlines only. No shadows, no blur.", "motion": {"fastMs": 140, "sheetMs": 260, "easingCss": "cubic-bezier(0.4, 0, 0.2, 1)", "character": "Fades and short slides. Nothing bounces."}, "size": {"buttonHeight": 56}, "platform": {"shared": "Everything. System font, flat surfaces and hairlines exist on both platforms.", "iosOnly": "On iOS 26 the sheet and toolbar pick up system Liquid Glass automatically.", "android": "Use Material 3 bottom sheet with tonal elevation set to 0."}}, "tuong-phan-cao": {"label": "Tương phản cao", "color": {"bg": "#000000", "ink": "#FFFFFF", "muted": "#D6D6D6", "accent": "#FFD60A", "onAccent": "#000000", "stateOn": "#FFD60A", "stateOff": "#FFFFFF", "surface": "#000000", "sheet": "#000000", "field": "#000000", "tagBg": "#000000", "tagInk": "#FFD60A", "switchOff": "#000000", "switchOn": "#FFD60A", "okBg": "#FFD60A", "okInk": "#000000", "warnInk": "#FFFFFF", "scrim": "#000000CC", "toastBg": "#FFD60A", "toastInk": "#000000"}, "font": {"web": "-apple-system, 'SF Pro Text', system-ui, 'Segoe UI', Roboto, sans-serif", "mono": "ui-monospace, 'SF Mono', Menlo, 'Roboto Mono', monospace", "ios": "SF Pro bold + SF Mono labels", "android": "Roboto bold + Roboto Mono labels", "titleSize": 30, "titleWeight": 800, "bodySize": 19}, "radius": {"card": 6, "button": 6, "field": 6, "sheet": 0}, "depth": "2px solid outlines. No shadows, no transparency.", "motion": {"fastMs": 60, "sheetMs": 120, "easingCss": "linear", "character": "Near-instant. State changes are shown by shape and words."}, "size": {"buttonHeight": 64}, "platform": {"shared": "Everything. Contrast is 21:1 for body text and about 15:1 for yellow on black.", "iosOnly": "Honour Increase Contrast and Bold Text. Opt custom surfaces out of Liquid Glass.", "android": "Honour font scale and high-contrast text. Disable dynamic colour so the yellow stays fixed."}}, "vi-tuong-tac": {"label": "Vi tương tác", "color": {"bg": "#F1F5FF", "bgGradient": "linear-gradient(180deg, #E4ECFF 0%, #F6F8FF 42%, #FFFFFF 100%)", "ink": "#101A3A", "muted": "#55608A", "accent": "#2F5BFF", "onAccent": "#FFFFFF", "stateOn": "#2F5BFF", "stateOff": "#C2410C", "surface": "#FFFFFF", "sheet": "#FFFFFF", "field": "#F1F5FF", "tagBg": "#FFE9A8", "tagInk": "#5A3D00", "switchOff": "#D5DCF2", "switchOn": "#2F5BFF", "okBg": "#E4ECFF", "okInk": "#1A3BC4", "warnInk": "#B84A00", "scrim": "#101A3A59", "toastBg": "#101A3A", "toastInk": "#FFFFFF"}, "font": {"web": "ui-rounded, 'SF Pro Rounded', 'Nunito', -apple-system, system-ui, sans-serif", "ios": "SF Pro Rounded (.rounded design)", "android": "Nunito or Google Sans Rounded (bundled)", "titleSize": 32, "titleWeight": 800, "bodySize": 17}, "radius": {"card": 28, "button": 999, "field": 20, "sheet": 36}, "depth": "Soft shadows tinted with the accent. One level only.", "motion": {"fastMs": 220, "sheetMs": 480, "easingCss": "cubic-bezier(0.34, 1.56, 0.64, 1)", "spring": {"response": 0.35, "dampingFraction": 0.62}, "character": "Springs with a little overshoot. Every tap answers back: press squish, shield pulse, stamp and confetti on block, swipe to unblock."}, "size": {"buttonHeight": 60}, "platform": {"shared": "Durations, spring values, colours and the sequence of each interaction.", "iosOnly": "Haptics via sensoryFeedback (iOS 17+) or UIImpactFeedbackGenerator on iOS 16. SF Pro Rounded is built in.", "android": "Haptics via HapticFeedback; strength varies by device. A rounded font must be bundled. Compose spring() takes stiffness and dampingRatio, so convert the spring values."}}}};
+  const frames = document.querySelectorAll('iframe');
+  function show(q) {
+    frames.forEach((f) => (f.src = f.dataset.src + '?embed=1&' + q));
+    document.querySelectorAll('#bar button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.q === q));
+  }
+  document.getElementById('bar').addEventListener('click', (e) => { if (e.target.dataset.q) show(e.target.dataset.q); });
+  show(new URLSearchParams(location.search).get('show') || 'state=home');
+  if (TOKENS) document.querySelector('#tok tbody').innerHTML = Object.values(TOKENS.styles).map((t) =>
+    '<tr><td>' + t.label + '</td><td>' + t.font.ios + ' / ' + t.font.android + ', title ' + t.font.titleSize + 'pt weight ' + t.font.titleWeight + '</td><td>Radius ' + t.radius.card + ' / ' + t.radius.button + '. ' + t.depth +
+    '</td><td>' + t.motion.fastMs + 'ms, sheet ' + t.motion.sheetMs + 'ms. ' + t.motion.character + '</td><td>' + t.platform.shared + '</td><td>' + t.platform.iosOnly + '</td><td>' + t.platform.android + '</td></tr>').join('');
+</script>
+</body>
+</html>

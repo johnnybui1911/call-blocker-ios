@@ -1,0 +1,45 @@
+<style>
+  .a-hero { display: grid; justify-items: center; text-align: center; padding: var(--s-6) var(--s-6) var(--s-5); perspective: 600px; }
+  .a-hero h2 { font-size: var(--t-xl); font-weight: 700; letter-spacing: -0.02em; margin-top: var(--s-7); color: var(--state); transition: color var(--dur-slow); }
+  .a-hero p { color: var(--muted); font-size: var(--t-md); margin-top: var(--s-1); }
+  .a-hero .btn-state { margin-top: var(--s-4); }
+  .a-scroll { padding-bottom: 110px; }
+  .a-bar { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; padding: var(--s-3) var(--s-4) var(--s-7); background: linear-gradient(transparent, oklch(0% 0 0 / 0.85) 45%); }
+  .a-bar .btn { box-shadow: 0 10px 30px oklch(85% 0.19 155 / 0.28), inset 0 1px 0 oklch(100% 0 0 / 0.5); }
+</style>
+
+<header class="top">
+  <h1>Chặn cuộc gọi</h1>
+  <button class="iconbtn" data-act="menu" aria-label="Thêm tùy chọn">⋯</button>
+</header>
+<main class="scroll a-scroll">
+  <section class="a-hero">
+    <div class="shield" id="aShield"></div>
+    <h2 id="aTitle"></h2>
+    <p id="aSub" class="num"></p>
+    <button class="btn btn-state" id="aCta" data-act="setup" hidden></button>
+  </section>
+  <div class="sect"><h3 id="aCount"></h3></div>
+  <div id="aList"></div>
+  <p class="foot">Số bạn chặn sẽ không làm máy đổ chuông.<br>Không cần tài khoản. Không đọc danh bạ.</p>
+</main>
+<div class="a-bar"><button class="btn btn-primary" data-act="add">＋ Chặn số</button></div>
+
+<script>
+  window.renderHome = function (S) {
+    const st = statusText();
+    $('#aTitle').textContent = st.title;
+    $('#aSub').textContent = st.sub;
+    $('#aCta').hidden = !st.cta;
+    $('#aCta').textContent = st.cta || '';
+    $('#aCount').textContent = 'Số đang chặn (' + S.items.length + ')';
+    $('#aList').innerHTML = listHTML();
+  };
+  // Restrained 3D: the shield leans a few degrees toward the pointer.
+  document.addEventListener('pointermove', (e) => {
+    const r = $('.screen').getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+    if (Math.abs(x) > 0.6 || Math.abs(y) > 0.6) return;
+    $('#aShield').style.transform = 'rotateY(' + x * 22 + 'deg) rotateX(' + -y * 16 + 'deg)';
+  });
+</script>
