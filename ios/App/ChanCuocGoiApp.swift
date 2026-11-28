@@ -28,7 +28,7 @@ struct ChanCuocGoiApp: App {
 }
 
 /// In-memory states for Simulator screenshots, where Call Directory does not run.
-/// Debug builds only: `-demoState home|empty|off|add-full|add-prefix|add-empty`.
+/// Debug builds only: `-demoState home|empty|off|add-full|add-prefix|add-empty|add-short|add-dup`.
 @MainActor
 struct DemoState {
     let store: RuleStore
@@ -44,7 +44,7 @@ struct DemoState {
         return DemoState(
             store: RuleStore(preview: true, previewRules: rules, previewReachesSystem: true),
             status: ExtensionStatus(preview: name == "off" ? .disabled : .enabled),
-            input: name == "add-full" ? "028 3823 4567" : (name == "add-prefix" ? "028888" : (name == "add-empty" ? "" : nil))
+            input: name == "add-full" ? "028 3823 4567" : (name == "add-prefix" ? "028888" : (name == "add-empty" ? "" : (name == "add-short" ? "0288" : (name == "add-dup" ? "0283999" : nil))))
         )
         #else
         return nil

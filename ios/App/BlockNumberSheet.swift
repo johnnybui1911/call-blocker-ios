@@ -131,45 +131,35 @@ struct BlockNumberSheet: View {
             .foregroundStyle(Theme.muted)
     }
 
-    @ViewBuilder
+    /// The number field. The placeholder is short, small and allowed to wrap, so it is never
+    /// cut off with an ellipsis at any text size; typed digits stay on one large line.
     private var numberField: some View {
-        let field = TextField("", text: $rawInput)
-            .font(Theme.font(.title2, weight: .heavy))
-            .keyboardType(.phonePad)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled()
-            .focused($numberFocused)
-            .accessibilityLabel("Số điện thoại hoặc đầu số")
-            .accessibilityHint("Ví dụ 0901 234 567, hoặc 028 888 để chặn cả dải")
-            // A full number must stay visible in one line; the result card below repeats
-            // it at the user's full text size.
-            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
-        let paste = PasteButton(payloadType: String.self) { strings in
-            if let first = strings.first { rawInput = first.trimmingCharacters(in: .whitespacesAndNewlines) }
-        }
-        .labelStyle(.titleOnly)
-        .buttonBorderShape(.capsule)
-        .tint(Theme.accent)
-        let shape = RoundedRectangle(cornerRadius: Theme.Radius.field, style: .continuous)
-        if roomy {
-            // Large text: the number gets the full width and the paste button moves below it.
-            VStack(alignment: .leading, spacing: 8) {
-                field
-                    .padding(.horizontal, 16)
-                    .frame(minHeight: 60)
-                    .background(Theme.field, in: shape)
-                paste
+        ZStack(alignment: .leading) {
+            if rawInput.isEmpty {
+                Text("VD: 0901 234 567 hoặc 028888")
+                    .font(Theme.font(.subheadline))
+                    .foregroundStyle(Theme.muted)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
             }
-        } else {
-            HStack(spacing: 8) {
-                field
-                paste
-            }
-            .padding(.leading, 16)
-            .padding(.trailing, 10)
-            .frame(minHeight: 60)
-            .background(Theme.field, in: shape)
+            TextField("", text: $rawInput)
+                .font(Theme.font(.title2, weight: .heavy))
+                .keyboardType(.phonePad)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .focused($numberFocused)
+                .accessibilityLabel("Số điện thoại hoặc đầu số")
+                .accessibilityHint("Ví dụ 0901 234 567 hoặc 028888")
+                // A full number must stay on one line; the card below repeats it at the
+                // user's full text size.
+                .dynamicTypeSize(...DynamicTypeSize.accessibility1)
         }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .frame(minHeight: 60)
+        .background(Theme.field, in: RoundedRectangle(cornerRadius: Theme.Radius.field, style: .continuous))
     }
 
     @ViewBuilder
@@ -186,13 +176,8 @@ struct BlockNumberSheet: View {
                     .foregroundStyle(result.isValid ? Theme.okInk : Theme.ink)
             }
             Text(result.message)
-                .font(Theme.font(.subheadline))
+                .font(Theme.font(.footnote))
                 .foregroundStyle(result.isError ? Theme.warnText : (result.isValid ? Theme.okInk : Theme.muted))
-            if let example = result.example {
-                Text(example)
-                    .font(Theme.font(.subheadline))
-                    .foregroundStyle(Theme.muted)
-            }
             if result.isValid, reading.preview.reachesSoftCap {
                 Text("Dải số này rất lớn. Thêm chữ số để chặn chắc hơn.")
                     .font(Theme.font(.footnote))
@@ -205,10 +190,11 @@ struct BlockNumberSheet: View {
             }
         }
         .fixedSize(horizontal: false, vertical: true)
-        .frame(maxWidth: .infinity, minHeight: 64, alignment: .leading)
-        .padding(.horizontal, 16)
+        .frame(maxWidth: .infinity, minHeight: 68, alignment: .leading)
+        .padding(.horizontal, result.isValid ? 16 : 4)
         .padding(.vertical, 12)
-        .background(result.isValid ? Theme.okBg : Theme.field, in: RoundedRectangle(cornerRadius: Theme.Radius.field, style: .continuous))
+        .background(result.isValid ? Theme.okBg : Color.clear, in: RoundedRectangle(cornerRadius: Theme.Radius.field, style: .continuous))
+        .animation(.easeOut(duration: 0.24), value: result.isValid)
         .accessibilityElement(children: .combine)
     }
 
@@ -242,7 +228,6 @@ struct BlockNumberSheet: View {
     struct LiveResult: Equatable {
         var title: String?
         var message: String
-        var example: String?
         var isValid: Bool
         var isError: Bool
     }
@@ -251,7 +236,7 @@ struct BlockNumberSheet: View {
     static func describe(_ reading: InputReading, input: String) -> LiveResult {
         let preview = reading.preview
         if case .normalization(.empty)? = preview.error {
-            return LiveResult(title: nil, message: "Nhập số bạn muốn chặn. Một số đầy đủ, hoặc ít nhất 6 số đầu để chặn cả dải số.", example: "Ví dụ: 0901 234 567, hoặc 028 888 để chặn cả dải.", isValid: false, isError: false)
+            return LiveResult(title: "Nhập số bạn muốn chặn.", message: "Một số đầy đủ, hoặc ít nhất 6 số đầu để chặn cả dải số.", isValid: false, isError: false)
         }
         if let error = preview.error {
             return LiveResult(title: nil, message: Vietnamese.message(for: error), isValid: false, isError: true)
@@ -261,13 +246,13 @@ struct BlockNumberSheet: View {
         }
         let name = NumberDisplay.formatted(pattern: pattern)
         if reading.kind == .fullNumber {
-            return LiveResult(title: "Sẽ chặn 1 số: \(name)", message: "Chỉ chặn đúng số này.", isValid: true, isError: false)
+            return LiveResult(title: "Chặn một số: \(name)", message: "Chỉ chặn đúng số này.", isValid: true, isError: false)
         }
-        var message = "Mọi số bắt đầu bằng \(name)"
+        var message = "Sẽ chặn \(Vietnamese.count(count)) số bắt đầu bằng \(name)"
         if let first = preview.first, let last = preview.last {
             message += ", từ \(NumberDisplay.formatted(number: first)) đến \(NumberDisplay.formatted(number: last))"
         }
-        return LiveResult(title: "Sẽ chặn \(Vietnamese.count(count)) số", message: message + ".", isValid: true, isError: false)
+        return LiveResult(title: "Chặn cả đầu số \(name)", message: message + ".", isValid: true, isError: false)
     }
 
     private func load() {
