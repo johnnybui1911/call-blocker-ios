@@ -2,6 +2,8 @@ import BlockerCore
 import CallKit
 import Foundation
 
+/// User-facing Vietnamese copy. The words "quy tắc", "extension", "CallKit" and
+/// "E.164" stay out of anything a user reads.
 enum Vietnamese {
     static func count(_ value: UInt64) -> String {
         let formatter = NumberFormatter()
@@ -11,8 +13,23 @@ enum Vietnamese {
         return formatter.string(from: NSNumber(value: value)) ?? String(value)
     }
 
-    static func digits(_ value: UInt64) -> String {
-        String(value)
+    /// `028 888…` for a range, `090 123 4567` for one number.
+    static func title(for rule: BlockRule) -> String {
+        let number = NumberDisplay.formatted(pattern: rule.pattern)
+        return rule.kind == .prefix ? number + "…" : number
+    }
+
+    static func name(for rule: BlockRule) -> String {
+        NumberDisplay.formatted(pattern: rule.pattern)
+    }
+
+    static func tag(for rule: BlockRule) -> String {
+        rule.kind == .prefix ? "Đầu số" : "Một số"
+    }
+
+    static func detail(for rule: BlockRule, count: UInt64) -> String? {
+        guard rule.kind == .prefix else { return nil }
+        return "\(self.count(count)) số bắt đầu bằng \(name(for: rule))"
     }
 
     static func message(for error: RuleValidationError) -> String {
@@ -20,32 +37,32 @@ enum Vietnamese {
         case .normalization(let normalizeError):
             return message(for: normalizeError)
         case .targetLengthOutOfRange:
-            return "Độ dài E.164 phải từ \(Limits.minimumTargetLength) đến \(Limits.maximumTargetLength)."
+            return "Độ dài số phải từ \(Limits.minimumTargetLength - 1) đến \(Limits.maximumTargetLength - 1) chữ số."
         case .prefixTooShort:
-            return "Đầu số phải có ít nhất \(Limits.minimumPrefixDigits) chữ số, tính cả số 0 đầu. Ví dụ 028888 hoặc 090123."
+            return "Nhập ít nhất \(Limits.minimumPrefixDigits) số đầu, ví dụ 028 888. iPhone không cho chặn dải số rộng hơn."
         case .prefixNotShorterThanTarget:
-            return "Đầu số đã dài bằng hoặc hơn độ dài đích. Hãy chọn Số đầy đủ, hoặc tăng độ dài E.164."
-        case .fullNumberTooShort(let length):
-            return "Số đầy đủ quá ngắn sau khi chuẩn hóa (\(length) chữ số). Cần ít nhất \(Limits.minimumFullNumberLength) chữ số E.164."
-        case .fullNumberTooLong(let length):
-            return "Số đầy đủ dài \(length) chữ số. E.164 tối đa \(Limits.maximumFullNumberLength)."
-        case .expansionExceedsHardCap(let count):
-            return "Đầu số này tạo ra \(self.count(count)) số, vượt giới hạn \(self.count(Limits.hardCap)). Hãy nhập thêm chữ số hoặc giảm độ dài E.164."
+            return "Số này đã đủ dài. Chọn “Một số” trong phần Nâng cao, hoặc tăng độ dài số."
+        case .fullNumberTooShort:
+            return "Số này còn thiếu chữ số."
+        case .fullNumberTooLong:
+            return "Số này dài quá. Kiểm tra lại giúp nhé."
+        case .expansionExceedsHardCap:
+            return "Dải số này quá lớn. Nhập thêm chữ số để thu hẹp."
         case .expansionOverflow:
-            return "Không tính được dải số. Hãy rút ngắn khoảng cách giữa đầu số và độ dài đích."
+            return "Dải số này quá lớn. Nhập thêm chữ số để thu hẹp."
         }
     }
 
     static func message(for error: NormalizeError) -> String {
         switch error {
         case .empty:
-            return "Hãy nhập đầu số hoặc số điện thoại."
+            return "Nhập số bạn muốn chặn."
         case .invalidCharacters:
-            return "Chỉ dùng chữ số, dấu +, khoảng trắng, dấu gạch, dấu chấm hoặc ngoặc."
+            return "Số điện thoại chỉ gồm chữ số."
         case .notVietnamese:
-            return "Chỉ nhận số Việt Nam dạng 0…, 84…, +84… hoặc 0084…."
+            return "Hiện chỉ chặn được số Việt Nam (bắt đầu bằng 0 hoặc +84)."
         case .tooLong:
-            return "Số dài hơn \(Limits.maximumFullNumberLength) chữ số."
+            return "Số này dài quá. Kiểm tra lại giúp nhé."
         }
     }
 
@@ -53,37 +70,37 @@ enum Vietnamese {
         let nsError = error as NSError
         guard nsError.domain == CXErrorDomainCallDirectoryManager,
               let code = CXErrorCodeCallDirectoryManagerError.Code(rawValue: nsError.code) else {
-            return "Không tải lại được extension. \(nsError.localizedDescription)"
+            return "Chưa cập nhật được danh sách chặn. Chạm “Thử lại”."
         }
         switch code {
         case .unknown:
-            return "CallKit báo lỗi không xác định khi tải lại extension."
+            return "Chưa cập nhật được danh sách chặn. Chạm “Thử lại”."
         case .noExtensionFound:
-            return "Không tìm thấy extension. Kiểm tra EXTENSION_BUNDLE_ID và đã cài app lên iPhone thật."
+            return "Bản cài này thiếu phần chặn cuộc gọi. Hãy cài lại ứng dụng."
         case .loadingInterrupted:
-            return "Việc tải danh sách bị gián đoạn. Hãy thử lại."
-        case .entriesOutOfOrder:
-            return "Danh sách không tăng dần. Đây là lỗi của app, chưa phải do quy tắc bạn nhập."
-        case .duplicateEntries:
-            return "Danh sách có số trùng. Đây là lỗi của app, chưa phải do quy tắc bạn nhập."
+            return "Cập nhật chưa xong. Chạm “Thử lại”."
+        case .entriesOutOfOrder, .duplicateEntries:
+            return "Có lỗi từ phía ứng dụng. Số của bạn vẫn được lưu. Chạm “Thử lại”."
         case .maximumEntriesExceeded:
-            return "iOS từ chối vì quá nhiều số. Hãy thu hẹp đầu số. Ngưỡng \(count(Limits.hardCap)) trong app chưa được đo trên máy này."
+            return "iPhone không nhận vì danh sách quá lớn. Bỏ bớt dải số rồi thử lại."
         case .extensionDisabled:
-            return "Extension chưa được bật. Vào Cài đặt > Điện thoại > Chặn cuộc gọi & Nhận dạng."
+            return "Chưa bật chặn cuộc gọi trong Cài đặt. Chạm “Bật ngay”."
         case .currentlyLoading:
-            return "Extension đang tải. Đợi vài giây rồi thử lại."
+            return "Đang cập nhật danh sách. Đợi vài giây nhé."
         case .unexpectedIncrementalRemoval:
-            return "iOS từ chối cập nhật danh sách. Hãy tải lại một lần nữa."
+            return "Cập nhật chưa xong. Chạm “Thử lại”."
         @unknown default:
-            return "Không tải lại được extension. \(nsError.localizedDescription)"
+            return "Chưa cập nhật được danh sách chặn. Chạm “Thử lại”."
         }
     }
 
     static func hardCapMessage(count: UInt64) -> String {
-        "Tổng số sau khi gộp là \(self.count(count)), vượt giới hạn \(self.count(Limits.hardCap)). Hãy tắt bớt quy tắc hoặc nhập đầu số dài hơn."
+        "Danh sách đã đầy (\(self.count(count))/\(self.count(Limits.hardCap)) số). Bỏ bớt một dải số rồi thử lại."
     }
 
     static var softCapMessage: String {
-        "Danh sách đang bật có từ \(count(Limits.softCap)) số trở lên. iOS có thể tắt extension vì thiếu bộ nhớ hoặc hết thời gian. Nên thu hẹp đầu số. Ngưỡng này chưa được đo trên iPhone của bạn."
+        "Danh sách đang rất lớn. Nếu thấy chặn không ổn định, hãy bỏ bớt dải số."
     }
+
+    static let localOnlySaved = "Đã lưu trên máy. Bản cài thử này chưa chặn được cuộc gọi."
 }

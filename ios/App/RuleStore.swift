@@ -21,6 +21,10 @@ final class RuleStore: ObservableObject {
     @Published private(set) var storageKind: RuleStorageKind = .localOnly(.turnedOffInBuild)
     @Published var banner: Banner?
     @Published private(set) var isReloading = false
+    /// True after the last attempt to hand the list to iOS failed, so the UI can offer a retry.
+    @Published private(set) var reloadFailed = false
+    /// Goes up each time a new number starts being blocked. The home screen answers with feedback.
+    @Published private(set) var blockedCount = 0
 
     private let previewMode: Bool
     private var directory: URL?
@@ -33,11 +37,17 @@ final class RuleStore: ObservableObject {
     var expectedGroupID: String { SharedConfig.appGroupIdentifier }
     var extensionIdentifier: String { SharedConfig.extensionBundleIdentifier }
 
-    init(preview: Bool = false) {
+    /// - Parameters:
+    ///   - preview: Keeps everything in memory. Used by previews and the debug demo state.
+    ///   - previewRules: Starting list for a preview store.
+    ///   - previewReachesSystem: Lets a preview store behave as if iOS could read its list.
+    init(preview: Bool = false, previewRules: [BlockRule] = [], previewReachesSystem: Bool = false) {
         previewMode = preview
         if preview {
-            storageKind = .localOnly(.turnedOffInBuild)
+            storageKind = previewReachesSystem ? .appGroup : .localOnly(.turnedOffInBuild)
             directory = nil
+            rules = previewRules
+            build = BlocklistBuild.evaluate(rules: previewRules)
             return
         }
 
@@ -62,7 +72,7 @@ final class RuleStore: ObservableObject {
             rules = try RuleArchive.loadIfPresent(from: directory.appendingPathComponent(RuleArchive.fileName))
         } catch {
             rules = []
-            banner = .error("Không đọc được tệp quy tắc. \(error.localizedDescription)")
+            banner = .error("Không đọc được danh sách đã lưu. \(error.localizedDescription)")
         }
         build = BlocklistBuild.evaluate(rules: rules)
         if usesAppGroup, !build.hardCapExceeded {
@@ -72,16 +82,25 @@ final class RuleStore: ObservableObject {
 
     func upsert(_ rule: BlockRule) {
         var next = rules
+        let isNew: Bool
         if let index = next.firstIndex(where: { $0.id == rule.id }) {
             next[index] = rule
+            isNew = false
         } else {
             next.insert(rule, at: 0)
+            isNew = true
         }
-        commit(next, reloadAfterSave: true, success: "Đã lưu quy tắc.")
+        let name = Vietnamese.name(for: rule)
+        let blocksNow = isNew && rule.enabled
+        let saved = commit(next, reloadAfterSave: true, success: blocksNow ? "Đã chặn \(name)." : "Đã lưu \(name).")
+        if saved && blocksNow {
+            blockedCount += 1
+        }
     }
 
     func delete(_ id: UUID) {
-        commit(rules.filter { $0.id != id }, reloadAfterSave: true, success: "Đã xóa quy tắc.")
+        guard let rule = rules.first(where: { $0.id == id }) else { return }
+        commit(rules.filter { $0.id != id }, reloadAfterSave: true, success: "Đã bỏ chặn \(Vietnamese.name(for: rule)).")
     }
 
     func setEnabled(_ id: UUID, _ enabled: Bool) {
@@ -89,7 +108,8 @@ final class RuleStore: ObservableObject {
         guard rules[index].enabled != enabled else { return }
         var next = rules
         next[index].enabled = enabled
-        commit(next, reloadAfterSave: true, success: enabled ? "Đã bật quy tắc." : "Đã tắt quy tắc.")
+        let name = Vietnamese.name(for: next[index])
+        commit(next, reloadAfterSave: true, success: enabled ? "Đang chặn \(name)." : "Đã tạm ngưng chặn \(name).")
     }
 
     func replaceAll(with imported: [BlockRule]) {
@@ -98,62 +118,58 @@ final class RuleStore: ObservableObject {
             do {
                 try persist(imported, publishBlocklist: false)
             } catch {
-                banner = .error("Không nhập được. \(error.localizedDescription)")
+                banner = .error("Không khôi phục được. \(error.localizedDescription)")
                 return
             }
             rules = imported
             build = importedBuild
-            banner = .error(Vietnamese.hardCapMessage(count: importedBuild.mergedCount) + " Đã nhập quy tắc nhưng chưa ghi danh sách chặn.")
+            banner = .error(Vietnamese.hardCapMessage(count: importedBuild.mergedCount) + " Đã khôi phục danh sách nhưng chưa chặn số nào.")
             return
         }
-        commit(imported, reloadAfterSave: true, success: "Đã nhập \(imported.count) quy tắc.")
+        commit(imported, reloadAfterSave: true, success: "Đã khôi phục \(imported.count) số chặn.")
     }
 
     func exportFileURL() throws -> URL {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("quy-tac-chan-cuoc-goi.json")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("chan-cuoc-goi-sao-luu.json")
         try RuleArchive.save(rules, to: url)
         return url
     }
 
     func reloadFromUser() {
-        let success = usesAppGroup
-            ? "Đã nạp danh sách vào CallKit."
-            : "Extension đã tải lại với danh sách trống. Chưa chặn cuộc gọi vì chưa có App Group."
-        reload(success: success, quietPersonalTeamFailure: false)
+        reload(success: usesAppGroup ? "Đã cập nhật danh sách chặn." : Vietnamese.localOnlySaved, quietPersonalTeamFailure: false)
     }
 
-    private func commit(_ next: [BlockRule], reloadAfterSave: Bool, success: String) {
+    @discardableResult
+    private func commit(_ next: [BlockRule], reloadAfterSave: Bool, success: String) -> Bool {
         let nextBuild = BlocklistBuild.evaluate(rules: next)
         if nextBuild.hardCapExceeded {
             banner = .error(Vietnamese.hardCapMessage(count: nextBuild.mergedCount))
-            return
+            return false
         }
         if previewMode {
             rules = next
             build = nextBuild
             banner = .success(success)
-            return
+            return true
         }
         do {
             try persist(next, publishBlocklist: usesAppGroup)
         } catch {
-            banner = .error("Không ghi được dữ liệu. \(error.localizedDescription)")
-            return
+            banner = .error("Không lưu được. \(error.localizedDescription)")
+            return false
         }
         rules = next
         build = nextBuild
         guard reloadAfterSave else {
             banner = .success(success)
-            return
+            return true
         }
         if usesAppGroup {
             reload(success: success, quietPersonalTeamFailure: false)
         } else {
-            reload(
-                success: "Đã lưu trên máy. Chưa chặn được cuộc gọi vì chưa có App Group.",
-                quietPersonalTeamFailure: true
-            )
+            reload(success: Vietnamese.localOnlySaved, quietPersonalTeamFailure: true)
         }
+        return true
     }
 
     private func persist(_ next: [BlockRule], publishBlocklist: Bool) throws {
@@ -186,18 +202,17 @@ final class RuleStore: ObservableObject {
     private func reload(success: String, quietPersonalTeamFailure: Bool) {
         let identifier = SharedConfig.extensionBundleIdentifier
         guard SharedConfig.isConfigured(identifier) else {
-            banner = .error("Thiếu mã extension. Kiểm tra Config/Signing.xcconfig.")
+            banner = .error("Bản cài này thiếu cấu hình chặn cuộc gọi.")
             return
         }
         isReloading = true
         CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: identifier) { error in
             Task { @MainActor in
                 self.isReloading = false
+                self.reloadFailed = error != nil && self.usesAppGroup
                 if let error {
-                    if quietPersonalTeamFailure {
-                        self.banner = .warning("Đã lưu trên máy. Extension không đọc được danh sách này, nên chưa chặn cuộc gọi.")
-                    } else if !self.usesAppGroup {
-                        self.banner = .error("Chưa có App Group nên danh sách extension đang trống. \(Vietnamese.reloadMessage(for: error))")
+                    if quietPersonalTeamFailure || !self.usesAppGroup {
+                        self.banner = .warning(Vietnamese.localOnlySaved)
                     } else {
                         self.banner = .error(Vietnamese.reloadMessage(for: error))
                     }
@@ -220,7 +235,7 @@ final class RuleStore: ObservableObject {
             try fileManager.createDirectory(at: container, withIntermediateDirectories: true)
             try fileManager.copyItem(at: source, to: destination)
         } catch {
-            banner = .warning("Không copy được quy tắc cục bộ sang App Group. \(error.localizedDescription)")
+            banner = .warning("Chưa chuyển được danh sách cũ sang bản cài mới. \(error.localizedDescription)")
         }
     }
 }
@@ -229,6 +244,6 @@ private enum StoreError: LocalizedError {
     case missingDirectory
 
     var errorDescription: String? {
-        "Không có thư mục lưu quy tắc."
+        "Không có chỗ lưu danh sách chặn."
     }
 }

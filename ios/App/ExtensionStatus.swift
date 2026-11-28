@@ -1,3 +1,4 @@
+import BlockerCore
 import CallKit
 import SwiftUI
 import UIKit
@@ -24,11 +25,20 @@ final class ExtensionStatus: ObservableObject {
         }
     }
 
+    /// The state in the platform-neutral form the home status is built from.
+    var blockingSwitch: BlockingSwitch {
+        switch phase {
+        case .enabled: return .on
+        case .disabled: return .off
+        case .unknown, .failed: return .unknown
+        }
+    }
+
     func refresh() {
         guard !previewMode else { return }
         let identifier = SharedConfig.extensionBundleIdentifier
         guard SharedConfig.isConfigured(identifier) else {
-            phase = .failed("Thiếu mã extension trong bản build.")
+            phase = .failed("Bản cài này thiếu cấu hình chặn cuộc gọi.")
             return
         }
         CXCallDirectoryManager.sharedInstance.getEnabledStatusForExtension(withIdentifier: identifier) { status, error in
@@ -56,7 +66,7 @@ final class ExtensionStatus: ObservableObject {
         CXCallDirectoryManager.sharedInstance.openSettings { error in
             Task { @MainActor in
                 if let error {
-                    self.settingsNote = "Không mở thẳng được mục chặn cuộc gọi. Đã mở Cài đặt. Đi tiếp: Điện thoại > Chặn cuộc gọi & Nhận dạng."
+                    self.settingsNote = "Đã mở Cài đặt. Đi tiếp: Điện thoại, rồi Chặn cuộc gọi & Nhận dạng."
                     if let url = URL(string: UIApplication.openSettingsURLString) {
                         UIApplication.shared.open(url)
                     }
