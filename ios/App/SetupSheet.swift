@@ -61,7 +61,7 @@ struct SetupSheet: View {
             step(1, "Chạm “Mở Cài đặt” bên dưới.")
             step(2, "Chọn Điện thoại (iOS 18 trở lên: Ứng dụng, rồi Điện thoại).")
             step(3, "Chọn Chặn cuộc gọi & Nhận dạng.")
-            step(4, "Bật công tắc “Chặn cuộc gọi”, rồi quay lại đây.")
+            step(4, "Bật công tắc “AntiCall”, rồi quay lại đây.")
             if let note = status.settingsNote {
                 Text(note)
                     .font(Theme.font(.footnote))

@@ -1,0 +1,30 @@
+== ByeSpam [vn]: ByeSpam - Spam SMS Filtrele (0)
+== ByeSpam [us]: ByeSpam - Spam SMS Filtrele (0)
+== NoScam [vn]: 
+== NoScam [us]: ScamPlus (4) ; O-KAM Pro (8662) ; blurams (77634) ; CareCam Pro (0) ; Camo Camera (8141)
+== StopCall [vn]: 
+== StopCall [us]: Google Voice (62017) ; Getcontact: Spam Caller ID (61778) ; YouMail: Spam Call Blocker (100047) ; Mr. Number Lookup & Call Block (100046) ; Call Control: #1 Call Blocker (6687)
+== Nope [vn]: Node Video (846) ; Nope: Block Reels & Shorts (0) ; SocialLite-Block Reels&Shorts (14) ; Nope Quiz (2) ; nope: stop impulse buying (0)
+== Nope [us]: Nope: Screen Time Blocker (0) ; Nope: Reels & Shorts Blocker (9) ; NOPE (0) ; nope: stop impulse buying (1) ; Nope Food (5)
+== ScamOff [vn]: 
+== ScamOff [us]: SchutzPro (0)
+== ByeScam [vn]: 
+== ByeScam [us]: 
+== AloSafe [vn]: 
+== AloSafe [us]: Alora - Honest Advice (421) ; Experience AlUla (267) ; الخليفي | Alkhulife Store (50) ; Aloe+ Onlayn Aptek (0) ; Renterus (0)
+== CallShield [vn]: Call Shield: Spam Blocker (0) ; Call Shield: Spam Call Blocker (0) ; Call Shield (0)
+== CallShield [us]: CallShield: Scam Call Blocker (3) ; Call Shield (0) ; Call Shield: Spam Blocker (0) ; Call Shield: Spam Call Blocker (1) ; NumberBox:CallerID (575)
+== Blocky [vn]: Blocky Moto Racing (3080) ; Blocky Highway (34) ; Blocky Cars - tank games (573) ; Blocky Shooter: FPS Gun (1) ; Blocky Roads Adventure (43)
+== Blocky [us]: Blockly for Dash & Dot robots (173) ; Blocky Football (2673) ; Blocky Basketball FreeStyle (890) ; Blocky Soccer (991) ; Blocky Baseball: Home Run Hero (1246)
+== ZeroScam [vn]: 
+== ZeroScam [us]: Zero for Intune (2) ; Flipper Relay (1) ; Zscaler CXO Exchange EMEA (0) ; Zscaler ZT Browser (0) ; Zero Network (0)
+== ScamStop [vn]: 
+== ScamStop [us]: ScamStöp (2) ; Trend Micro ScamCheck (2366) ; Payout: Claim Class Actions (11829) ; Kiren by F-Secure (107030) ; PCH Lotto - Real Cash Jackpots (31632)
+== SpamOff [vn]: Spam Text Blocker: SpamOff (7)
+== SpamOff [us]: Spam Text Blocker: SpamOff (36) ; VeroSMS (317) ; SpamOK temp email (92) ; SpamStrike: Block Spam Texts (27) ; SpamBlocker (6)
+== Byebye Scam [vn]: Truecaller: Premium Caller ID (8954) ; Fortnite (321) ; Stumble Guys (17029) ; Instagram (1355742) ; Google Maps (385767)
+== Byebye Scam [us]: Trend Micro ScamCheck (2366) ; ScamAdviser VPN & Scam Checker (29) ; ScamShield (2)
+== AloStop [vn]: 
+== AloStop [us]: Alopost (0) ; Yapp mn (0) ; Drink Log - Alcohol Tracker (0)
+== CallOff [vn]: Call of Duty: Mobile VN (95021) ; World War 2 : Call Of Courage (188)
+== CallOff [us]: Call of Duty®: Mobile (2027013) ; PUBG MOBILE (1627460) ; Special Forces Group 2 (15545) ; Modern Strike Online: War FPS (82495)

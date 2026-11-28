@@ -1,4 +1,4 @@
-# Chặn cuộc gọi
+# AntiCall
 
 App iOS cá nhân để chặn im lặng cuộc gọi đến theo **đầu số** hoặc **số đầy đủ**. Bạn thêm quy tắc trong app. App chuẩn hóa số Việt Nam sang E.164, mở rộng đầu số thành từng số, ghi một file nhị phân đã sắp tăng dần vào App Group, rồi Call Directory Extension nạp file đó vào CallKit.
 
@@ -140,7 +140,7 @@ Trên iPhone:
 1. Mở Cài đặt.
 2. Chọn Điện thoại.
 3. Chọn Chặn cuộc gọi & Nhận dạng.
-4. Bật công tắc của “Chặn cuộc gọi”.
+4. Bật công tắc của “AntiCall”.
 
 Màn hình chính hiện một trạng thái duy nhất, lấy từ `CXCallDirectoryManager.getEnabledStatusForExtension` và việc extension có đọc được danh sách hay không: Đang bảo vệ, Đã bật (chưa có số), Chưa bật chặn, Chưa kiểm tra được, hoặc Chưa chặn được (bản cài không có App Group). Nút **Bật ngay** hoặc menu `…` → **Cách bật chặn cuộc gọi** mở hướng dẫn; nút **Mở Cài đặt** ở đó gọi `openSettings` của CallKit, nếu hệ thống không mở được đúng trang thì app mở Cài đặt của app bằng `UIApplication.openSettingsURLString`. Chi tiết cho người build (App Group, bundle id) nằm trong mục **Thông tin kỹ thuật** của màn hình đó.
 
@@ -259,4 +259,4 @@ Test gồm chuẩn hóa, mở rộng `028888` ra 100.000 số (`842888800000` �
 
 - Chưa chạy Xcode, chưa cài lên iPhone, chưa đo bộ nhớ hay thời gian của extension.
 - Chưa biết máy của bạn với Personal Team có ký được App Group hay không. Mặc định tắt để bản đầu cài được.
-- Công tắc Chặn cuộc gọi có xuất hiện với profile miễn phí hay không tùy iOS và tài khoản. Nếu không xuất hiện, cần team trả phí.
+- Công tắc AntiCall có xuất hiện với profile miễn phí hay không tùy iOS và tài khoản. Nếu không xuất hiện, cần team trả phí.

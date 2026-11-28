@@ -164,7 +164,7 @@ struct HomeView: View {
 
     private var topBar: some View {
         HStack(spacing: 8) {
-            Text("Chặn cuộc gọi")
+            Text("AntiCall")
                 .font(Theme.font(.headline, weight: .heavy))
                 .foregroundStyle(Theme.ink)
                 .lineLimit(2)
@@ -428,7 +428,7 @@ struct HomeView: View {
                     pendingImport = decoded
                 }
             } catch {
-                store.banner = .error("Tệp này không phải bản sao lưu của Chặn cuộc gọi.")
+                store.banner = .error("Tệp này không phải bản sao lưu của AntiCall.")
             }
         }
     }
